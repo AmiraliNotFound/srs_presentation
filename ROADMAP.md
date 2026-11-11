@@ -11,8 +11,8 @@
 | Phase | Description | Status | Progress |
 |---|---|---|---|
 | **Phase 0** | Workspace Foundation, Git Setup, PDF Extraction & Syllabus Synthesis | **COMPLETED** | 100% |
-| **Phase 1** | Detailed 3-Speaker Allocation, 45-Min Timing Script & HTML Presentation Shell | **READY FOR EXECUTION** | 0% |
-| **Phase 2** | Production of Manim Animation Scenes & Interactive Slide Decks | **QUEUED** | 0% |
+| **Phase 1** | Detailed 3-Speaker Allocation, 45-Min Timing Script & HTML Presentation Shell | **COMPLETED** | 100% |
+| **Phase 2** | Production of Manim Animation Scenes & Interactive Slide Decks | **READY FOR EXECUTION** | 0% |
 | **Phase 3** | Visual & Aesthetic Polish (TeX Typography, Theme Styling & UI Transitions) | **QUEUED** | 0% |
 | **Phase 4** | FastAPI + WebSocket Mobile Companion, Audience Engagement & Live Quiz Sync | **QUEUED** | 0% |
 
@@ -36,17 +36,17 @@
 
 ---
 
-### [ ] Phase 1: Detailed Syllabus Allocation, 45-Min Timing Script & Presentation Shell
-- [ ] **1.1 Speaker Allocation Matrix:**
+### [x] Phase 1: Detailed Syllabus Allocation, 45-Min Timing Script & Presentation Shell
+- [x] **1.1 Speaker Allocation Matrix:**
   - **Person 1 (0:00 – 15:00):** Real-world shock phenomena, physical intuition, military standards (MIL-STD-810H), the Helicopter Drop-Box Motivating Problem, SDOF continuous-to-lumped Rayleigh reduction, and the circular design dilemma.
   - **Person 2 (15:00 – 30:00):** Mathematical machinery of transient vibrations, Laplace transform transfer function $H(s)$, Duhamel convolution integral, dual temporal eras (Era 1 Forced vs. Era 2 Residual), analytical derivations for Rectangular & Half-Sine pulses, and SRS spectrum properties.
   - **Person 3 (30:00 – 45:00):** Step-by-step numerical iterative solution of the Helicopter Drop-Box Bracket ($d = 0.6\text{ in}$), Overhead Crane earthquake derailment analysis ($S_a < 1.0g$, stiffness ceiling $k < 365\text{ kN/m}$), Automotive ECU PCB isolation ($T_d \le 10\%$), audience live quiz, and concluding Q&A.
-- [ ] **1.2 45-Minute Synchronized Cue Script:**
-  - Minute-by-minute speaking cues, slide transition triggers, and interactive pause points.
-- [ ] **1.3 Minimalist HTML5 Presentation Engine:**
+- [x] **1.2 45-Minute Synchronized Cue Script:**
+  - Minute-by-minute speaking cues, slide transition triggers, and interactive pause points in `docs/presentation_script_and_pacing.md`.
+- [x] **1.3 Minimalist HTML5 Presentation Engine:**
   - Build zero-flash slide runner in `presentation/index.html` with vanilla JavaScript controller (`presentation/js/main.js`).
-  - Implement keyboard navigation (`ArrowRight`, `ArrowLeft`, `Space`, `F` for fullscreen).
-  - Add video synchronization with automatic play/pause, loop controls, and fallback slide stills.
+  - Implement keyboard navigation (`ArrowRight`, `ArrowLeft`, `Space`, `F` for fullscreen, `L` for laser pointer, `Home`, `End`).
+  - Add video synchronization with automatic play/pause, loop controls, next-video background preloading, and wireframe fallback visuals.
   - Create high-contrast dark academic styling (`presentation/css/style.css`) incorporating University of Tehran Mechanical Engineering accent palette (`#0097F1`).
 
 ---
