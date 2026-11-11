@@ -1,0 +1,46 @@
+# Video and Media binaries
+*.mp4
+*.webm
+*.mov
+*.avi
+*.mkv
+*.gif
+
+# Manim rendering artifacts & caches
+media/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+
+# Python Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS Generated Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.Spotlight-V100
+.Trashes
+
+# Node / Web artifacts
+node_modules/
+dist/
+build/
+.npm/
+
+# Presentation video assets (stored locally, rendered on demand)
+presentation/assets/videos/*
+!presentation/assets/videos/.gitkeep
