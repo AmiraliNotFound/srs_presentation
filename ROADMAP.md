@@ -13,7 +13,7 @@
 | **Phase 0** | Workspace Foundation, Git Setup, PDF Extraction & Syllabus Synthesis | **COMPLETED** | 100% |
 | **Phase 1** | Detailed 3-Speaker Allocation, 45-Min Timing Script & HTML Presentation Shell | **COMPLETED** | 100% |
 | **Phase 1.5** | 3Blue1Brown Fullscreen Refactor: Zero-Chrome Stage & Card Slop Removal | **COMPLETED** | 100% |
-| **Phase 2** | Production of Manim Animation Scenes & Interactive Slide Decks | **READY FOR EXECUTION** | 0% |
+| **Phase 2** | Production of Manim Animation Scenes & Interactive Slide Decks | **IN PROGRESS** | 5% (1/20) |
 | **Phase 3** | Visual & Aesthetic Polish (TeX Typography, Theme Styling & UI Transitions) | **QUEUED** | 0% |
 | **Phase 4** | FastAPI + WebSocket Mobile Companion, Audience Engagement & Live Quiz Sync | **QUEUED** | 0% |
 
@@ -68,7 +68,7 @@
 
 | Slide ID | Speaker | Slide Title / Core Topic | Manim Scene Class | Render Status | Integration Status |
 |---|---|---|---|:---:|:---:|
-| **SLIDE-01** | Person 1 | Title Slide: Shock Response Spectrum & Transient Dynamics | `TitleCardScene` | [ ] | [ ] |
+| **SLIDE-01** | Person 1 | Title Slide: Shock Response Spectrum & Transient Dynamics | `TitleCardScene` | [x] | [x] |
 | **SLIDE-02** | Person 1 | Harmonic Vibration vs. Shock Loading: Why Statics Fails | `HarmonicVsShockScene` | [ ] | [ ] |
 | **SLIDE-03** | Person 1 | Real-World Shock Environments & Military Testing Standards | `ShockTaxonomyScene` | [ ] | [ ] |
 | **SLIDE-04** | Person 1 | The Motivating Problem: Helicopter Drop-Box Avionics | `HelicopterDropScene` | [ ] | [ ] |
