@@ -234,8 +234,14 @@ class PresentationController {
    * Reveals a specific fragment.
    */
   revealFragment(fragments, index) {
-    if (fragments[index]) {
-      fragments[index].classList.add('visible');
+    const fragment = fragments[index];
+    if (fragment) {
+      fragment.classList.add('visible');
+      const slide = this.slides[this.currentSlideIndex];
+      const video = slide.querySelector('video.stage-video') || slide.querySelector('video');
+      if (video && fragment.dataset.videoAction === 'resume') {
+        video.play();
+      }
     }
   }
 
@@ -243,8 +249,15 @@ class PresentationController {
    * Hides a specific fragment.
    */
   hideFragment(fragments, index) {
-    if (fragments[index]) {
-      fragments[index].classList.remove('visible');
+    const fragment = fragments[index];
+    if (fragment) {
+      fragment.classList.remove('visible');
+      const slide = this.slides[this.currentSlideIndex];
+      const video = slide.querySelector('video.stage-video') || slide.querySelector('video');
+      if (video && fragment.dataset.videoAction === 'resume') {
+        video.currentTime = 0;
+        video.pause();
+      }
     }
   }
 
@@ -371,6 +384,14 @@ class PresentationController {
     if (!video) return;
 
     video.currentTime = 0;
+
+    // Support slides that start in a paused initial state (e.g. Slide 1 Step 0)
+    if (slide.dataset.pauseOnEntry === 'true' && this.currentFragmentIndex < 0) {
+      video.pause();
+      video.classList.add('loaded', 'playing');
+      return;
+    }
+
     const playPromise = video.play();
     if (playPromise !== undefined) {
       playPromise

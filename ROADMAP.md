@@ -13,7 +13,7 @@
 | **Phase 0** | Workspace Foundation, Git Setup, PDF Extraction & Syllabus Synthesis | **COMPLETED** | 100% |
 | **Phase 1** | Detailed 3-Speaker Allocation, 45-Min Timing Script & HTML Presentation Shell | **COMPLETED** | 100% |
 | **Phase 1.5** | 3Blue1Brown Fullscreen Refactor: Zero-Chrome Stage & Card Slop Removal | **COMPLETED** | 100% |
-| **Phase 2** | Production of Manim Animation Scenes & Interactive Slide Decks | **IN PROGRESS** | 5% (1/20) |
+| **Phase 2** | Production of Manim Animation Scenes & Interactive Slide Decks | **IN PROGRESS** | 10% (2/21) |
 | **Phase 3** | Visual & Aesthetic Polish (TeX Typography, Theme Styling & UI Transitions) | **QUEUED** | 0% |
 | **Phase 4** | FastAPI + WebSocket Mobile Companion, Audience Engagement & Live Quiz Sync | **QUEUED** | 0% |
 
@@ -68,26 +68,27 @@
 
 | Slide ID | Speaker | Slide Title / Core Topic | Manim Scene Class | Render Status | Integration Status |
 |---|---|---|---|:---:|:---:|
-| **SLIDE-01** | Person 1 | Title Slide: Shock Response Spectrum & Transient Dynamics | `TitleCardScene` | [x] | [x] |
-| **SLIDE-02** | Person 1 | Harmonic Vibration vs. Shock Loading: Why Statics Fails | `HarmonicVsShockScene` | [ ] | [ ] |
-| **SLIDE-03** | Person 1 | Real-World Shock Environments & Military Testing Standards | `ShockTaxonomyScene` | [ ] | [ ] |
-| **SLIDE-04** | Person 1 | The Motivating Problem: Helicopter Drop-Box Avionics | `HelicopterDropScene` | [ ] | [ ] |
-| **SLIDE-05** | Person 1 | SDOF Idealization: Continuous Cantilever to Lumped Mass | `RayleighSDOFScene` | [ ] | [ ] |
-| **SLIDE-06** | Person 1 | The Circular Design Dilemma: The Need for SRS | `CircularDilemmaScene` | [ ] | [ ] |
-| **SLIDE-07** | Person 2 | Governing Equation & Laplace Transform Transfer Function | `LaplaceTransferScene` | [ ] | [ ] |
-| **SLIDE-08** | Person 2 | Impulse Response Function & The Duhamel Convolution | `DuhamelConvolutionScene` | [ ] | [ ] |
-| **SLIDE-09** | Person 2 | Two Temporal Eras: Forced ($t \le t_0$) vs. Residual ($t > t_0$) | `DualEraPartitionScene` | [ ] | [ ] |
-| **SLIDE-10** | Person 2 | Rectangular Pulse Response & Peak Derivation | `RectangularPulseScene` | [ ] | [ ] |
-| **SLIDE-11** | Person 2 | Half-Sine Shock Pulse: Era 1 & Era 2 Analytical Solution | `HalfSineAnalyticalScene` | [ ] | [ ] |
-| **SLIDE-12** | Person 2 | Constructing the Shock Response Spectrum (SRS) | `SRSConstructionScene` | [ ] | [ ] |
-| **SLIDE-13** | Person 2 | Asymptotic Master Insight: Impulsive vs. Quasi-Static Limits | `AsymptoticLimitsScene` | [ ] | [ ] |
-| **SLIDE-14** | Person 3 | Hand-Off Resolution: Closing the Motivating Problem Loop | `IterativeDesignScene` | [ ] | [ ] |
-| **SLIDE-15** | Person 3 | Bracket Thickness Sizing: Evaluating $d = 0.4'', 0.5'', 0.6''$ | `StressVerificationScene` | [ ] | [ ] |
-| **SLIDE-16** | Person 3 | Case Study 2: Overhead Crane Vertical Seismic Derailment | `CraneSeismicScene` | [ ] | [ ] |
-| **SLIDE-17** | Person 3 | Counter-Intuitive Stiffness: Why Softer Girders Prevent Derailment | `CraneStiffnessLimitScene` | [ ] | [ ] |
-| **SLIDE-18** | Person 3 | Case Study 3: Automotive ECU PCB Resonant Amplification | `ECUResonanceScene` | [ ] | [ ] |
-| **SLIDE-19** | Person 3 | Base Isolator Design: Tuning $(k_{\text{iso}}, c_{\text{iso}})$ for $T_d \le 10\%$ | `ECUIsolatorScene` | [ ] | [ ] |
-| **SLIDE-20** | Person 3 | Master Synthesis, Live Audience Mobile Quiz & Conclusion | `MasterSummaryScene` | [ ] | [ ] |
+| **SLIDE-01** | Person 1 | Title Card: Shock Response Spectrum & Transient Dynamics (Two-Step Entry) | `TitleCardScene` | [x] | [x] |
+| **SLIDE-02** | Person 1 | Presentation Roadmap: Three-Act Curricular Progression | `RoadmapOverviewScene` | [x] | [x] |
+| **SLIDE-03** | Person 1 | Harmonic Vibration vs. Shock Loading: Why Statics Fails | `HarmonicVsShockScene` | [ ] | [ ] |
+| **SLIDE-04** | Person 1 | Real-World Shock Environments & Military Testing Standards | `ShockTaxonomyScene` | [ ] | [ ] |
+| **SLIDE-05** | Person 1 | The Motivating Problem: Helicopter Drop-Box Avionics | `HelicopterDropScene` | [ ] | [ ] |
+| **SLIDE-06** | Person 1 | SDOF Idealization: Continuous Cantilever to Lumped Mass | `RayleighSDOFScene` | [ ] | [ ] |
+| **SLIDE-07** | Person 1 | The Circular Design Dilemma: The Need for SRS | `CircularDilemmaScene` | [ ] | [ ] |
+| **SLIDE-08** | Person 2 | Governing Equation & Laplace Transform Transfer Function | `LaplaceTransferScene` | [ ] | [ ] |
+| **SLIDE-09** | Person 2 | Impulse Response Function & The Duhamel Convolution | `DuhamelConvolutionScene` | [ ] | [ ] |
+| **SLIDE-10** | Person 2 | Two Temporal Eras: Forced ($t \le t_0$) vs. Residual ($t > t_0$) | `DualEraPartitionScene` | [ ] | [ ] |
+| **SLIDE-11** | Person 2 | Rectangular Pulse Response & Peak Derivation | `RectangularPulseScene` | [ ] | [ ] |
+| **SLIDE-12** | Person 2 | Half-Sine Shock Pulse: Era 1 & Era 2 Analytical Solution | `HalfSineAnalyticalScene` | [ ] | [ ] |
+| **SLIDE-13** | Person 2 | Constructing the Shock Response Spectrum (SRS) | `SRSConstructionScene` | [ ] | [ ] |
+| **SLIDE-14** | Person 2 | Asymptotic Master Insight: Impulsive vs. Quasi-Static Limits | `AsymptoticLimitsScene` | [ ] | [ ] |
+| **SLIDE-15** | Person 3 | Hand-Off Resolution: Closing the Motivating Problem Loop | `IterativeDesignScene` | [ ] | [ ] |
+| **SLIDE-16** | Person 3 | Bracket Thickness Sizing: Evaluating $d = 0.4'', 0.5'', 0.6''$ | `StressVerificationScene` | [ ] | [ ] |
+| **SLIDE-17** | Person 3 | Case Study 2: Overhead Crane Vertical Seismic Derailment | `CraneSeismicScene` | [ ] | [ ] |
+| **SLIDE-18** | Person 3 | Counter-Intuitive Stiffness: Why Softer Girders Prevent Derailment | `CraneStiffnessLimitScene` | [ ] | [ ] |
+| **SLIDE-19** | Person 3 | Case Study 3: Automotive ECU PCB Resonant Amplification | `ECUResonanceScene` | [ ] | [ ] |
+| **SLIDE-20** | Person 3 | Base Isolator Design: Tuning $(k_{\text{iso}}, c_{\text{iso}})$ for $T_d \le 10\%$ | `ECUIsolatorScene` | [ ] | [ ] |
+| **SLIDE-21** | Person 3 | Master Synthesis, Live Audience Mobile Quiz & Conclusion | `MasterSummaryScene` | [ ] | [ ] |
 
 ---
 
