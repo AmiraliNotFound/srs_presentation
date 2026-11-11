@@ -12,6 +12,7 @@
 |---|---|---|---|
 | **Phase 0** | Workspace Foundation, Git Setup, PDF Extraction & Syllabus Synthesis | **COMPLETED** | 100% |
 | **Phase 1** | Detailed 3-Speaker Allocation, 45-Min Timing Script & HTML Presentation Shell | **COMPLETED** | 100% |
+| **Phase 1.5** | 3Blue1Brown Fullscreen Refactor: Zero-Chrome Stage & Card Slop Removal | **COMPLETED** | 100% |
 | **Phase 2** | Production of Manim Animation Scenes & Interactive Slide Decks | **READY FOR EXECUTION** | 0% |
 | **Phase 3** | Visual & Aesthetic Polish (TeX Typography, Theme Styling & UI Transitions) | **QUEUED** | 0% |
 | **Phase 4** | FastAPI + WebSocket Mobile Companion, Audience Engagement & Live Quiz Sync | **QUEUED** | 0% |
@@ -48,6 +49,16 @@
   - Implement keyboard navigation (`ArrowRight`, `ArrowLeft`, `Space`, `F` for fullscreen, `L` for laser pointer, `Home`, `End`).
   - Add video synchronization with automatic play/pause, loop controls, next-video background preloading, and wireframe fallback visuals.
   - Create high-contrast dark academic styling (`presentation/css/style.css`) incorporating University of Tehran Mechanical Engineering accent palette (`#0097F1`).
+
+---
+
+### [x] Phase 1.5: 3Blue1Brown Fullscreen Refactor & Card Slop Removal
+- [x] **Strip All Visible Website Chrome:** Completely remove header bar (badges, speaker pill, timer, slide counter) and bottom bar (buttons, progress bars). The default presentation view is 100% pure canvas.
+- [x] **Rehearsal HUD Overlay:** Move slide counter, elapsed timer, and speaker badge to a hidden HUD (`#presenter-hud`) with `display: none` by default, toggled via `H` key.
+- [x] **Eliminate HTML Cards & Split Layouts:** Delete all bordered boxes, cards, glowing borders, and split columns.
+- [x] **16:9 Edge-to-Edge Stage:** Canvas fills viewport (`100vw` x `100vh`) with letterbox/pillarbox centering if aspect ratio varies. Manim scenes occupy 100% of the stage area.
+- [x] **Clean Empty Slide Shells:** Reset all 20 `<section>` tags to minimal shells preserving invisible `data-*` metadata (`data-slide-id`, `data-speaker`, `data-title`, `data-mobile-summary`, etc.), ready for Phase 2 slide-by-slide Manim video insertion.
+- [x] **CMU Serif / Latin Modern Typography:** Any minimalist HTML text floats borderless in native TeX math font.
 
 ---
 

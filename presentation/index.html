@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shock Response Spectrum (SRS) — Mechanical Vibrations | University of Tehran</title>
 
-  <!-- KaTeX for High-Resolution Math Rendering -->
+  <!-- Typography & KaTeX -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
@@ -16,108 +19,29 @@
 <body class="deck-body">
 
   <!-- ========================================================================= -->
-  <!-- TOP STATUS & TELEMETRY HUD BAR                                            -->
-  <!-- ========================================================================= -->
-  <header id="presentation-hud">
-    <div class="hud-left">
-      <div class="university-pill">
-        <span class="ut-logo-badge">UT</span>
-        <span class="course-code">MECH-VIB 403-1</span>
-        <span class="divider">/</span>
-        <span class="topic-tag">Shock Response Spectrum</span>
-      </div>
-    </div>
-
-    <div class="hud-center">
-      <div id="speaker-badge" class="speaker-pill speaker-p1">
-        <span class="speaker-dot"></span>
-        <span id="speaker-name-display">Person 1: Physical Foundations &amp; Problem Framing</span>
-      </div>
-    </div>
-
-    <div class="hud-right">
-      <div class="hud-item timer-card" id="timer-display-container">
-        <span class="timer-icon">&#9201;</span>
-        <span id="slide-timer">01:30</span>
-        <span id="timer-pacing-indicator" class="pacing-dot on-pace" title="Pacing Status"></span>
-      </div>
-      <div class="hud-item counter-card">
-        <span id="current-slide-num">01</span>
-        <span class="counter-sep">/</span>
-        <span id="total-slide-num">20</span>
-      </div>
-      <button id="btn-shortcuts" class="hud-btn" title="Shortcuts &amp; Help [H]">?</button>
-      <button id="btn-fullscreen" class="hud-btn" title="Toggle Fullscreen [F]">&#x26F6;</button>
-    </div>
-  </header>
-
-  <!-- ========================================================================= -->
-  <!-- MAIN PRESENTATION STAGE & SLIDE RUNNER                                   -->
+  <!-- 16:9 FULLSCREEN PRESENTATION STAGE (Zero Website Chrome)                   -->
   <!-- ========================================================================= -->
   <main id="presentation-viewport">
-    <div id="slide-stage" class="stage-container">
-
-      <!-- ===================================================================== -->
-      <!-- SPEAKER 1: SLIDES 01 TO 06 (00:00 - 15:00)                            -->
-      <!-- ===================================================================== -->
-
+    <div id="stage" class="presentation-stage">
       <!-- SLIDE 01 -->
       <section class="slide active" 
                id="slide-01" 
                data-slide-id="SLIDE-01" 
-               data-slide-num="1"
+               data-slide-num="1" 
                data-speaker="person1" 
-               data-speaker-name="Person 1: Physical Foundations &amp; Modeling"
-               data-time-budget="90"
-               data-quiz-trigger=""
-               data-mobile-summary="Title &amp; Academic Scope: Transient shock dynamics, SDOF foundations, and Shock Response Spectrum at University of Tehran."
+               data-speaker-name="Person 1: Physical Foundations &amp; Modeling" 
+               data-time-budget="90" 
+               data-quiz-trigger="" 
+               data-mobile-summary="Title &amp; Academic Scope: Transient shock dynamics, SDOF foundations, and Shock Response Spectrum at University of Tehran." 
                data-manim-scene="TitleCardScene">
-        <div class="slide-grid title-layout">
-          <div class="slide-content title-content">
-            <div class="academic-badge">University of Tehran &bull; School of Mechanical Engineering</div>
-            <h1 class="main-title">Shock Response Spectrum <span class="highlight-blue">(SRS)</span></h1>
-            <h2 class="sub-title">Transient Dynamics, SDOF Spectral Analysis &amp; Base Isolation in Mechanical Systems</h2>
-            
-            <div class="speakers-panel fragment" data-fragment-index="1">
-              <div class="speaker-col active-speaker">
-                <span class="speaker-role">Part 1 &bull; 00:00–15:00</span>
-                <h4>Speaker 1</h4>
-                <p>Physical Intuition, Shock Taxonomy &amp; The Circular Dilemma</p>
-              </div>
-              <div class="speaker-col">
-                <span class="speaker-role">Part 2 &bull; 15:00–30:00</span>
-                <h4>Speaker 2</h4>
-                <p>Laplace Impedance, Duhamel Convolution &amp; Analytical SRS</p>
-              </div>
-              <div class="speaker-col">
-                <span class="speaker-role">Part 3 &bull; 30:00–45:00</span>
-                <h4>Speaker 3</h4>
-                <p>Design Resolution, Crane Derailment &amp; ECU Base Isolation</p>
-              </div>
-            </div>
-
-            <div class="course-meta fragment" data-fragment-index="2">
-              <span><strong>Course:</strong> Mechanical Vibrations (Semester 5)</span>
-              <span><strong>Instructor:</strong> Dr. H. Yousefi</span>
-              <span><strong>Reference:</strong> Rao 6th Ed. Ch. 4 &amp; 9</span>
-            </div>
-          </div>
-
-          <div class="slide-visual">
-            <div class="media-container" data-scene="TitleCardScene">
-              <video class="manim-video" preload="auto" muted playsinline loop
-                     data-src="./assets/videos/slide_01_TitleCardScene.mp4"
-                     poster="./assets/images/poster_slide_01.png">
-              </video>
-              <div class="video-placeholder title-hero-graphic">
-                <div class="pulse-ring"></div>
-                <div class="hero-srs-wave"></div>
-                <div class="wireframe-caption">
-                  <span class="badge-scene">Manim Scene: TitleCardScene</span>
-                  <p>Interactive SRS Spectral Envelope &bull; 60 FPS Render</p>
-                </div>
-              </div>
-            </div>
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_01_TitleCardScene.mp4" type="video/mp4">
+          </video>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">01</span>
+            <h2 class="fallback-title">TitleCardScene</h2>
+            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
           </div>
         </div>
       </section>
@@ -126,53 +50,21 @@
       <section class="slide" 
                id="slide-02" 
                data-slide-id="SLIDE-02" 
-               data-slide-num="2"
+               data-slide-num="2" 
                data-speaker="person1" 
-               data-speaker-name="Person 1: Physical Foundations &amp; Modeling"
-               data-time-budget="150"
-               data-quiz-trigger=""
-               data-mobile-summary="Harmonic Vibration vs. Transient Shock: Why statics fails under shock loading."
+               data-speaker-name="Person 1: Physical Foundations &amp; Modeling" 
+               data-time-budget="150" 
+               data-quiz-trigger="" 
+               data-mobile-summary="Harmonic Vibration vs. Transient Shock: Why statics fails under shock loading." 
                data-manim-scene="HarmonicVsShockScene">
-        <div class="slide-grid">
-          <div class="slide-content">
-            <div class="slide-breadcrumb">Speaker 1 &bull; Physical Characterization</div>
-            <h2 class="slide-title">Harmonic Vibration vs. Transient Shock</h2>
-            <h3 class="slide-subtitle">Why Classical Static Assumptions Fail Catastrophically</h3>
-
-            <div class="concept-card fragment" data-fragment-index="1">
-              <h4>1. Continuous Steady-State Vibration</h4>
-              <p>Governed by infinite harmonic forcing $F(t) = F_0 \sin(\omega t)$. Transient components decay; failure is governed by <strong>high-cycle fatigue</strong> over $10^5 - 10^7$ cycles.</p>
-            </div>
-
-            <div class="concept-card warning-card fragment" data-fragment-index="2">
-              <h4>2. Transient Shock Disturbance</h4>
-              <p>Characterized by short duration $t_0 \lesssim \tau_n = \frac{2\pi}{\omega_n}$. The disturbance terminates before multiple cycles complete. Failure is dictated by <strong>instantaneous peak stress rupture</strong>.</p>
-            </div>
-
-            <div class="formula-box fragment" data-fragment-index="3">
-              <div class="formula-title">The Fundamental Static Fallacy</div>
-              $$\delta_{\text{static}} = \frac{F_0}{k} \quad \ll \quad x_{\max} = \text{DLF} \cdot \frac{F_0}{k}$$
-              <p class="formula-caption">Because the mass possesses inertia, dynamic overshoot creates a <strong>Dynamic Load Factor (DLF)</strong> up to $2.0$.</p>
-            </div>
-          </div>
-
-          <div class="slide-visual">
-            <div class="media-container" data-scene="HarmonicVsShockScene">
-              <video class="manim-video" preload="auto" muted playsinline
-                     data-src="./assets/videos/slide_02_HarmonicVsShockScene.mp4"
-                     poster="./assets/images/poster_slide_02.png">
-              </video>
-              <div class="video-placeholder">
-                <div class="dual-wave-compare">
-                  <div class="wave-box steady"><span class="wave-tag">Harmonic: $t \to \infty$</span></div>
-                  <div class="wave-box shock"><span class="wave-tag">Shock Pulse: $t_0 \lesssim \tau_n$</span></div>
-                </div>
-                <div class="wireframe-caption">
-                  <span class="badge-scene">Manim Scene: HarmonicVsShockScene</span>
-                  <p>Continuous Sinusoid vs. 10 ms Shock Waveform</p>
-                </div>
-              </div>
-            </div>
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_02_HarmonicVsShockScene.mp4" type="video/mp4">
+          </video>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">02</span>
+            <h2 class="fallback-title">HarmonicVsShockScene</h2>
+            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
           </div>
         </div>
       </section>
@@ -181,68 +73,21 @@
       <section class="slide" 
                id="slide-03" 
                data-slide-id="SLIDE-03" 
-               data-slide-num="3"
+               data-slide-num="3" 
                data-speaker="person1" 
-               data-speaker-name="Person 1: Physical Foundations &amp; Modeling"
-               data-time-budget="120"
-               data-quiz-trigger=""
-               data-mobile-summary="Real-World Shock Environments &amp; Military Testing Standards: Velocity shock, pyroshock, and MIL-STD-810H."
+               data-speaker-name="Person 1: Physical Foundations &amp; Modeling" 
+               data-time-budget="120" 
+               data-quiz-trigger="" 
+               data-mobile-summary="Real-World Shock Environments &amp; Military Testing Standards: Velocity shock, pyroshock, and MIL-STD-810H." 
                data-manim-scene="ShockTaxonomyScene">
-        <div class="slide-grid">
-          <div class="slide-content">
-            <div class="slide-breadcrumb">Speaker 1 &bull; Engineering Taxonomy</div>
-            <h2 class="slide-title">Real-World Shock Environments</h2>
-            <h3 class="slide-subtitle">Military Certification &amp; Standardized Pulse Profiles</h3>
-
-            <div class="taxonomy-list">
-              <div class="taxonomy-item fragment" data-fragment-index="1">
-                <span class="tax-badge velocity">Velocity Shock</span>
-                <div>
-                  <strong>Drop Packaging &amp; Hard Landings</strong>
-                  <p>Kinetic impact $v_0 = \sqrt{2gh}$ modeled by half-sine acceleration pulses ($10g - 100g$, $10 - 100\text{ ms}$).</p>
-                </div>
-              </div>
-
-              <div class="taxonomy-item fragment" data-fragment-index="2">
-                <span class="tax-badge pyro">Pyrotechnic Shock</span>
-                <div>
-                  <strong>Aerospace Stage Separation &amp; Explosive Release</strong>
-                  <p>Microsecond explosive detonation; high frequencies ($> 1\text{ kHz}$), acceleration peaks exceeding $1000g$.</p>
-                </div>
-              </div>
-
-              <div class="taxonomy-item fragment" data-fragment-index="3">
-                <span class="tax-badge blast">Ballistic Blast</span>
-                <div>
-                  <strong>Gun Recoil &amp; Explosive Overpressures</strong>
-                  <p>Steep rise time with exponential/triangular pressure decay.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="standard-pill fragment" data-fragment-index="4">
-              <strong>Governing Standards:</strong> MIL-STD-810H (Method 516.8) &bull; NASA-STD-7003A &bull; MIL-E-5400
-            </div>
-          </div>
-
-          <div class="slide-visual">
-            <div class="media-container" data-scene="ShockTaxonomyScene">
-              <video class="manim-video" preload="auto" muted playsinline
-                     data-src="./assets/videos/slide_03_ShockTaxonomyScene.mp4"
-                     poster="./assets/images/poster_slide_03.png">
-              </video>
-              <div class="video-placeholder">
-                <div class="shock-profiles-grid">
-                  <div class="profile-card"><span>Half-Sine (Drop)</span></div>
-                  <div class="profile-card"><span>Triangular (Blast)</span></div>
-                  <div class="profile-card"><span>Step-Dwell (Sustained)</span></div>
-                </div>
-                <div class="wireframe-caption">
-                  <span class="badge-scene">Manim Scene: ShockTaxonomyScene</span>
-                  <p>MIL-STD-810H Standardized Acceleration Profiles</p>
-                </div>
-              </div>
-            </div>
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_03_ShockTaxonomyScene.mp4" type="video/mp4">
+          </video>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">03</span>
+            <h2 class="fallback-title">ShockTaxonomyScene</h2>
+            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
           </div>
         </div>
       </section>
@@ -251,59 +96,21 @@
       <section class="slide" 
                id="slide-04" 
                data-slide-id="SLIDE-04" 
-               data-slide-num="4"
+               data-slide-num="4" 
                data-speaker="person1" 
-               data-speaker-name="Person 1: Physical Foundations &amp; Modeling"
-               data-time-budget="180"
-               data-quiz-trigger=""
-               data-mobile-summary="Motivating Problem: Helicopter drop container avionics PCB cantilever bracket under 100g half-sine shock."
+               data-speaker-name="Person 1: Physical Foundations &amp; Modeling" 
+               data-time-budget="180" 
+               data-quiz-trigger="" 
+               data-mobile-summary="Motivating Problem: Helicopter drop container avionics PCB cantilever bracket under 100g half-sine shock." 
                data-manim-scene="HelicopterDropScene">
-        <div class="slide-grid">
-          <div class="slide-content">
-            <div class="slide-breadcrumb">Speaker 1 &bull; The Motivating Anchor</div>
-            <h2 class="slide-title">The Motivating Problem</h2>
-            <h3 class="slide-subtitle">Helicopter Avionics Drop-Box Cantilever Bracket</h3>
-
-            <div class="callout-box fragment" data-fragment-index="1">
-              <h4>Operational Scenario (Rao Ex. 4.18 &amp; Yousefi Session 19)</h4>
-              <p>An avionics container is dropped from a low-flying helicopter onto packed terrain. Upon impact, the chassis undergoes a severe base deceleration pulse:</p>
-              $$\ddot{y}(t) = a_{\max} \sin\left(\frac{\pi t}{t_0}\right) \quad \text{with } a_{\max} = 100g, \quad t_0 = 0.1\text{ s}$$
-            </div>
-
-            <div class="specs-grid fragment" data-fragment-index="2">
-              <div class="spec-cell"><strong>Cantilever Length ($l$):</strong> $10.0''$ ($25.4\text{ cm}$)</div>
-              <div class="spec-cell"><strong>Width ($b$):</strong> $0.5''$ ($12.7\text{ mm}$)</div>
-              <div class="spec-cell"><strong>PCB Mass ($W_{\text{PCB}}$):</strong> $0.40\text{ lb}$ ($1.78\text{ N}$)</div>
-              <div class="spec-cell"><strong>Modulus ($E$):</strong> $10 \times 10^6\text{ psi}$ ($70\text{ GPa}$)</div>
-              <div class="spec-cell"><strong>Density ($\gamma$):</strong> $0.10\text{ lb/in}^3$ ($3058\text{ kg/m}^3$)</div>
-              <div class="spec-cell highlight"><strong>Allowable Stress ($\sigma_{\text{allow}}$):</strong> $26,000\text{ psi}$ ($26\text{ ksi}$)</div>
-            </div>
-
-            <div class="highlight-bar fragment" data-fragment-index="3">
-              <strong>Objective:</strong> Design bracket thickness $d$ to guarantee structural survival ($\sigma_{\max} \le \sigma_{\text{allow}}$).
-            </div>
-          </div>
-
-          <div class="slide-visual">
-            <div class="media-container" data-scene="HelicopterDropScene">
-              <video class="manim-video" preload="auto" muted playsinline
-                     data-src="./assets/videos/slide_04_HelicopterDropScene.mp4"
-                     poster="./assets/images/poster_slide_04.png">
-              </video>
-              <div class="video-placeholder">
-                <div class="schematic-cutaway">
-                  <div class="drop-box-outline">
-                    <div class="beam-bracket"></div>
-                    <div class="pcb-mass-block">PCB ($0.4\text{ lb}$)</div>
-                  </div>
-                  <div class="ground-impact-indicator">Base Shock: $100g$, $0.1\text{ s}$</div>
-                </div>
-                <div class="wireframe-caption">
-                  <span class="badge-scene">Manim Scene: HelicopterDropScene</span>
-                  <p>Helicopter Container Ground Impact &amp; Beam Deflection</p>
-                </div>
-              </div>
-            </div>
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_04_HelicopterDropScene.mp4" type="video/mp4">
+          </video>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">04</span>
+            <h2 class="fallback-title">HelicopterDropScene</h2>
+            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
           </div>
         </div>
       </section>
@@ -312,54 +119,21 @@
       <section class="slide" 
                id="slide-05" 
                data-slide-id="SLIDE-05" 
-               data-slide-num="5"
+               data-slide-num="5" 
                data-speaker="person1" 
-               data-speaker-name="Person 1: Physical Foundations &amp; Modeling"
-               data-time-budget="180"
-               data-quiz-trigger=""
-               data-mobile-summary="SDOF Idealization: Continuous cantilever beam reduced to lumped SDOF using Rayleigh's energy quotient."
+               data-speaker-name="Person 1: Physical Foundations &amp; Modeling" 
+               data-time-budget="180" 
+               data-quiz-trigger="" 
+               data-mobile-summary="SDOF Idealization: Continuous cantilever beam reduced to lumped SDOF using Rayleigh's energy quotient." 
                data-manim-scene="RayleighSDOFScene">
-        <div class="slide-grid">
-          <div class="slide-content">
-            <div class="slide-breadcrumb">Speaker 1 &bull; Structural Idealization</div>
-            <h2 class="slide-title">SDOF Idealization via Rayleigh's Method</h2>
-            <h3 class="slide-subtitle">Continuous Cantilever to Lumped Parameter System</h3>
-
-            <div class="formula-box fragment" data-fragment-index="1">
-              <div class="formula-title">1. Rayleigh Equivalent Lumped Mass</div>
-              $$m_{\text{beam}} = \rho (l b d) \implies m_{\text{eq}} = m_{\text{PCB}} + \frac{33}{140} m_{\text{beam}} \approx m_{\text{PCB}} + 0.23 \, m_{\text{beam}}$$
-              <p class="formula-caption">Integrating kinetic energy using static shape $\psi(y) = \frac{y^2}{2l^3}(3l - y)$.</p>
-            </div>
-
-            <div class="formula-box fragment" data-fragment-index="2">
-              <div class="formula-title">2. Cantilever Flexural Stiffness &amp; Inertia</div>
-              $$I = \frac{1}{12} b d^3, \quad k = \frac{3EI}{l^3} = \frac{Eb d^3}{4 l^3}$$
-            </div>
-
-            <div class="formula-box fragment" data-fragment-index="3">
-              <div class="formula-title">3. Fundamental Natural Period $\tau_n$</div>
-              $$\tau_n = \frac{2\pi}{\omega_n} = 2\pi \sqrt{\frac{m_{\text{eq}}}{k}} = 2\pi \sqrt{\frac{\delta_{\text{st}}}{g}}$$
-            </div>
-          </div>
-
-          <div class="slide-visual">
-            <div class="media-container" data-scene="RayleighSDOFScene">
-              <video class="manim-video" preload="auto" muted playsinline
-                     data-src="./assets/videos/slide_05_RayleighSDOFScene.mp4"
-                     poster="./assets/images/poster_slide_05.png">
-              </video>
-              <div class="video-placeholder">
-                <div class="rayleigh-morph-diagram">
-                  <div class="cantilever-shape"></div>
-                  <div class="morph-arrow">&rarr;</div>
-                  <div class="sdof-lumped-diagram"></div>
-                </div>
-                <div class="wireframe-caption">
-                  <span class="badge-scene">Manim Scene: RayleighSDOFScene</span>
-                  <p>Continuous Cantilever Morphing to Lumped SDOF ($0.23 m_b$)</p>
-                </div>
-              </div>
-            </div>
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_05_RayleighSDOFScene.mp4" type="video/mp4">
+          </video>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">05</span>
+            <h2 class="fallback-title">RayleighSDOFScene</h2>
+            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
           </div>
         </div>
       </section>
@@ -368,128 +142,44 @@
       <section class="slide" 
                id="slide-06" 
                data-slide-id="SLIDE-06" 
-               data-slide-num="6"
+               data-slide-num="6" 
                data-speaker="person1" 
-               data-speaker-name="Person 1: Physical Foundations &amp; Modeling"
-               data-time-budget="180"
-               data-quiz-trigger="QUIZ-01"
-               data-mobile-summary="The Circular Design Dilemma: Thickness d dictates tau_n, which dictates DLF, which dictates stress."
+               data-speaker-name="Person 1: Physical Foundations &amp; Modeling" 
+               data-time-budget="180" 
+               data-quiz-trigger="QUIZ-01" 
+               data-mobile-summary="The Circular Design Dilemma: Thickness d dictates tau_n, which dictates DLF, which dictates stress." 
                data-manim-scene="CircularDilemmaScene">
-        <div class="slide-grid">
-          <div class="slide-content">
-            <div class="slide-breadcrumb">Speaker 1 &bull; Design Conundrum &amp; Hand-Off</div>
-            <h2 class="slide-title">The Circular Design Dilemma</h2>
-            <h3 class="slide-subtitle">Why Direct Sizing Fails &amp; The SRS is Required</h3>
-
-            <div class="dilemma-flow fragment" data-fragment-index="1">
-              <div class="flow-step">Choose $d$</div>
-              <div class="flow-arrow">&rarr;</div>
-              <div class="flow-step">Stiffness $k \propto d^3$</div>
-              <div class="flow-arrow">&rarr;</div>
-              <div class="flow-step">Period $\tau_n \propto d^{-3/2}$</div>
-              <div class="flow-arrow">&rarr;</div>
-              <div class="flow-step highlight">Ratio $t_0/\tau_n$</div>
-              <div class="flow-arrow">&rarr;</div>
-              <div class="flow-step alert">DLF &amp; $F_{\text{dyn}}$</div>
-              <div class="flow-arrow">&rarr;</div>
-              <div class="flow-step">Stress $\sigma_{\max}$</div>
-            </div>
-
-            <div class="callout-box warning-card fragment" data-fragment-index="2">
-              <h4>The Non-Linear Feedback Catch</h4>
-              <p>In statics, $\sigma \propto 1/d^2$. But under shock, doubling $d$ quadruples stiffness, shifting the natural period into a totally different region of the Shock Response Spectrum, altering DLF simultaneously!</p>
-            </div>
-
-            <div class="quiz-alert fragment" data-fragment-index="3">
-              <span class="quiz-pulse-dot"></span>
-              <strong>Audience Quiz 1 Activated:</strong> Check your mobile screen: <em>"What happens to root stress if we double thickness $d$?"</em>
-            </div>
-
-            <div class="handoff-card fragment" data-fragment-index="4">
-              <strong>Hand-Off to Speaker 2:</strong> To break this loop, we need exact mathematical prediction of peak dynamic response across any $t_0/\tau_n$.
-            </div>
-          </div>
-
-          <div class="slide-visual">
-            <div class="media-container" data-scene="CircularDilemmaScene">
-              <video class="manim-video" preload="auto" muted playsinline loop
-                     data-src="./assets/videos/slide_06_CircularDilemmaScene.mp4"
-                     poster="./assets/images/poster_slide_06.png">
-              </video>
-              <div class="video-placeholder">
-                <div class="circular-dilemma-loop">
-                  <div class="circle-node n1">$d$</div>
-                  <div class="circle-node n2">$k, I$</div>
-                  <div class="circle-node n3">$\tau_n$</div>
-                  <div class="circle-node n4">$\text{DLF}$</div>
-                  <div class="circle-node n5">$\sigma_{\max}$</div>
-                </div>
-                <div class="wireframe-caption">
-                  <span class="badge-scene">Manim Scene: CircularDilemmaScene</span>
-                  <p>Feedback Loop: $d \to k \to \tau_n \to \text{DLF} \to \sigma_{\max}$</p>
-                </div>
-              </div>
-            </div>
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_06_CircularDilemmaScene.mp4" type="video/mp4">
+          </video>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">06</span>
+            <h2 class="fallback-title">CircularDilemmaScene</h2>
+            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
           </div>
         </div>
       </section>
-
-      <!-- ===================================================================== -->
-      <!-- SPEAKER 2: SLIDES 07 TO 13 (15:00 - 30:00)                            -->
-      <!-- ===================================================================== -->
 
       <!-- SLIDE 07 -->
       <section class="slide" 
                id="slide-07" 
                data-slide-id="SLIDE-07" 
-               data-slide-num="7"
+               data-slide-num="7" 
                data-speaker="person2" 
-               data-speaker-name="Person 2: Mathematical Theory &amp; Derivations"
-               data-time-budget="120"
-               data-quiz-trigger=""
-               data-mobile-summary="Dynamic Governing Equations &amp; Transfer Function: Laplace transform and generalized impedance Z(s)."
+               data-speaker-name="Person 2: Mathematical Theory &amp; Derivations" 
+               data-time-budget="120" 
+               data-quiz-trigger="" 
+               data-mobile-summary="Dynamic Governing Equations &amp; Transfer Function: Laplace transform and generalized impedance Z(s)." 
                data-manim-scene="LaplaceTransferScene">
-        <div class="slide-grid">
-          <div class="slide-content">
-            <div class="slide-breadcrumb">Speaker 2 &bull; Mathematical Formulation</div>
-            <h2 class="slide-title">SDOF Dynamic Equations &amp; Transfer Function</h2>
-            <h3 class="slide-subtitle">Laplace Transform &amp; Generalized Dynamic Impedance</h3>
-
-            <div class="formula-box fragment" data-fragment-index="1">
-              <div class="formula-title">1. Time-Domain Canonical Equation</div>
-              $$m \ddot{x}(t) + c \dot{x}(t) + k x(t) = F(t) \implies \ddot{x} + 2\zeta\omega_n \dot{x} + \omega_n^2 x = \frac{F(t)}{m}$$
-            </div>
-
-            <div class="formula-box fragment" data-fragment-index="2">
-              <div class="formula-title">2. Laplace Domain Transformation</div>
-              $$(m s^2 + c s + k) X(s) - m s x(0) - m \dot{x}(0) - c x(0) = F(s)$$
-            </div>
-
-            <div class="formula-box fragment" data-fragment-index="3">
-              <div class="formula-title">3. System Transfer Function $H(s)$ &amp; Impedance $Z(s)$</div>
-              $$H(s) = \frac{X(s)}{F(s)} = \frac{1}{m(s^2 + 2\zeta\omega_n s + \omega_n^2)}, \quad Z(s) = \frac{1}{H(s)} = m s^2 + c s + k$$
-            </div>
-          </div>
-
-          <div class="slide-visual">
-            <div class="media-container" data-scene="LaplaceTransferScene">
-              <video class="manim-video" preload="auto" muted playsinline
-                     data-src="./assets/videos/slide_07_LaplaceTransferScene.mp4"
-                     poster="./assets/images/poster_slide_07.png">
-              </video>
-              <div class="video-placeholder">
-                <div class="s-plane-schematic">
-                  <div class="axis real"></div>
-                  <div class="axis imag"></div>
-                  <div class="pole p1">&times;</div>
-                  <div class="pole p2">&times;</div>
-                </div>
-                <div class="wireframe-caption">
-                  <span class="badge-scene">Manim Scene: LaplaceTransferScene</span>
-                  <p>ODE Morphing to Transfer Function $H(s)$ in $s$-Plane</p>
-                </div>
-              </div>
-            </div>
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_07_LaplaceTransferScene.mp4" type="video/mp4">
+          </video>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">07</span>
+            <h2 class="fallback-title">LaplaceTransferScene</h2>
+            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
           </div>
         </div>
       </section>
@@ -498,55 +188,21 @@
       <section class="slide" 
                id="slide-08" 
                data-slide-id="SLIDE-08" 
-               data-slide-num="8"
+               data-slide-num="8" 
                data-speaker="person2" 
-               data-speaker-name="Person 2: Mathematical Theory &amp; Derivations"
-               data-time-budget="150"
-               data-quiz-trigger=""
-               data-mobile-summary="Impulse Response Function &amp; The Duhamel Convolution Integral: Superposition of infinitesimal impulses."
+               data-speaker-name="Person 2: Mathematical Theory &amp; Derivations" 
+               data-time-budget="150" 
+               data-quiz-trigger="" 
+               data-mobile-summary="Impulse Response Function &amp; The Duhamel Convolution Integral: Superposition of infinitesimal impulses." 
                data-manim-scene="DuhamelConvolutionScene">
-        <div class="slide-grid">
-          <div class="slide-content">
-            <div class="slide-breadcrumb">Speaker 2 &bull; Convolution Mechanics</div>
-            <h2 class="slide-title">Impulse Response &amp; Duhamel Integral</h2>
-            <h3 class="slide-subtitle">Superposition of Infinitesimal Impulses $F(\tau) d\tau$</h3>
-
-            <div class="formula-box fragment" data-fragment-index="1">
-              <div class="formula-title">1. Unit Impulse Response Function $g(t)$</div>
-              $$g(t) = \mathcal{L}^{-1}\{H(s)\} = \frac{1}{m\omega_d} e^{-\zeta\omega_n t} \sin(\omega_d t) \cdot u(t)$$
-              $$\text{For } \zeta = 0: \quad g(t) = \frac{1}{m\omega_n} \sin(\omega_n t)$$
-            </div>
-
-            <div class="formula-box fragment" data-fragment-index="2">
-              <div class="formula-title">2. Duhamel (Convolution) Integral</div>
-              $$x(t) = \int_0^t F(\tau) g(t - \tau) d\tau = \frac{1}{m\omega_n} \int_0^t F(\tau) \sin\omega_n(t - \tau) \, d\tau$$
-            </div>
-
-            <div class="formula-box fragment" data-fragment-index="3">
-              <div class="formula-title">3. SDOF Under Base Acceleration Shock $\ddot{y}(t)$</div>
-              $$z(t) = x(t) - y(t) = -\frac{1}{\omega_n} \int_0^t \ddot{y}(\tau) \sin\omega_n(t - \tau) \, d\tau$$
-            </div>
-          </div>
-
-          <div class="slide-visual">
-            <div class="media-container" data-scene="DuhamelConvolutionScene">
-              <video class="manim-video" preload="auto" muted playsinline
-                     data-src="./assets/videos/slide_08_DuhamelConvolutionScene.mp4"
-                     poster="./assets/images/poster_slide_08.png">
-              </video>
-              <div class="video-placeholder">
-                <div class="convolution-slicing">
-                  <div class="pulse-strip s1"></div>
-                  <div class="pulse-strip s2"></div>
-                  <div class="pulse-strip s3"></div>
-                  <div class="response-ripple"></div>
-                </div>
-                <div class="wireframe-caption">
-                  <span class="badge-scene">Manim Scene: DuhamelConvolutionScene</span>
-                  <p>Continuous Riemann Slicing into Impulses $F(\tau) d\tau$</p>
-                </div>
-              </div>
-            </div>
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_08_DuhamelConvolutionScene.mp4" type="video/mp4">
+          </video>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">08</span>
+            <h2 class="fallback-title">DuhamelConvolutionScene</h2>
+            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
           </div>
         </div>
       </section>
@@ -555,58 +211,21 @@
       <section class="slide" 
                id="slide-09" 
                data-slide-id="SLIDE-09" 
-               data-slide-num="9"
+               data-slide-num="9" 
                data-speaker="person2" 
-               data-speaker-name="Person 2: Mathematical Theory &amp; Derivations"
-               data-time-budget="120"
-               data-quiz-trigger=""
-               data-mobile-summary="Temporal Partitioning: Era 1 Forced Phase (0 &le; t &le; t0) vs. Era 2 Residual Free Ringdown (t &gt; t0)."
+               data-speaker-name="Person 2: Mathematical Theory &amp; Derivations" 
+               data-time-budget="120" 
+               data-quiz-trigger="" 
+               data-mobile-summary="Temporal Partitioning: Era 1 Forced Phase (0 &le; t &le; t0) vs. Era 2 Residual Free Ringdown (t &gt; t0)." 
                data-manim-scene="DualEraPartitionScene">
-        <div class="slide-grid">
-          <div class="slide-content">
-            <div class="slide-breadcrumb">Speaker 2 &bull; Time-Domain Partitioning</div>
-            <h2 class="slide-title">The Two Temporal Eras</h2>
-            <h3 class="slide-subtitle">Forced Phase ($t \le t_0$) vs. Residual Free Ringdown ($t > t_0$)</h3>
-
-            <div class="dual-era-cards">
-              <div class="era-card forced fragment" data-fragment-index="1">
-                <h4>Era 1: Forced Phase ($0 \le t \le t_0$)</h4>
-                <p>Shock force is actively pumping energy into the system:</p>
-                $$x_1(t) = \frac{1}{m\omega_n} \int_0^t F(\tau) \sin\omega_n(t - \tau) \, d\tau$$
-                <span class="peak-label">Yields Primary SRS: $\max_{0 \le t \le t_0} |x(t)|$</span>
-              </div>
-
-              <div class="era-card residual fragment" data-fragment-index="2">
-                <h4>Era 2: Residual Phase ($t > t_0$)</h4>
-                <p>External force vanishes ($F(\tau) = 0$ for $\tau > t_0$); integral freezes at $t_0$:</p>
-                $$x_2(t) = \frac{1}{m\omega_n} \int_0^{t_0} F(\tau) \sin\omega_n(t - \tau) \, d\tau$$
-                <span class="peak-label">Yields Residual SRS: $\max_{t > t_0} |x(t)|$</span>
-              </div>
-            </div>
-
-            <div class="continuity-rule fragment" data-fragment-index="3">
-              <strong>Boundary Matching at $t = t_0$:</strong> $x_1(t_0) = x_2(t_0)$ and $\dot{x}_1(t_0) = \dot{x}_2(t_0)$ determine pure free vibration ringdown.
-            </div>
-          </div>
-
-          <div class="slide-visual">
-            <div class="media-container" data-scene="DualEraPartitionScene">
-              <video class="manim-video" preload="auto" muted playsinline
-                     data-src="./assets/videos/slide_09_DualEraPartitionScene.mp4"
-                     poster="./assets/images/poster_slide_09.png">
-              </video>
-              <div class="video-placeholder">
-                <div class="era-timeline-split">
-                  <div class="timeline-era era1">Era 1 (Forced)</div>
-                  <div class="boundary-line">$t = t_0$</div>
-                  <div class="timeline-era era2">Era 2 (Residual)</div>
-                </div>
-                <div class="wireframe-caption">
-                  <span class="badge-scene">Manim Scene: DualEraPartitionScene</span>
-                  <p>Temporal Partitioning Across Pulse Boundary $t = t_0$</p>
-                </div>
-              </div>
-            </div>
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_09_DualEraPartitionScene.mp4" type="video/mp4">
+          </video>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">09</span>
+            <h2 class="fallback-title">DualEraPartitionScene</h2>
+            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
           </div>
         </div>
       </section>
@@ -615,52 +234,21 @@
       <section class="slide" 
                id="slide-10" 
                data-slide-id="SLIDE-10" 
-               data-slide-num="10"
+               data-slide-num="10" 
                data-speaker="person2" 
-               data-speaker-name="Person 2: Mathematical Theory &amp; Derivations"
-               data-time-budget="150"
-               data-quiz-trigger=""
-               data-mobile-summary="Rectangular Shock Pulse: DLF = 2.0 dynamic doubling and complete residual cancellation at integer periods."
+               data-speaker-name="Person 2: Mathematical Theory &amp; Derivations" 
+               data-time-budget="150" 
+               data-quiz-trigger="" 
+               data-mobile-summary="Rectangular Shock Pulse: DLF = 2.0 dynamic doubling and complete residual cancellation at integer periods." 
                data-manim-scene="RectangularPulseScene">
-        <div class="slide-grid">
-          <div class="slide-content">
-            <div class="slide-breadcrumb">Speaker 2 &bull; Canonical Derivation 1</div>
-            <h2 class="slide-title">Rectangular Shock Pulse Response</h2>
-            <h3 class="slide-subtitle">Dynamic Doubling ($\text{DLF}=2.0$) &amp; Residual Cancellation</h3>
-
-            <div class="formula-box fragment" data-fragment-index="1">
-              <div class="formula-title">Era 1 ($0 \le t \le t_0$): Step Excitation</div>
-              $$\frac{x(t)}{\delta_{\text{st}}} = 1 - \cos\omega_n t \implies \text{DLF}_{\text{primary}} = \begin{cases} 1 - \cos\left(\frac{2\pi t_0}{\tau_n}\right), & t_0/\tau_n < 0.5 \\ 2.0, & t_0/\tau_n \ge 0.5 \end{cases}$$
-            </div>
-
-            <div class="formula-box fragment" data-fragment-index="2">
-              <div class="formula-title">Era 2 ($t > t_0$): Residual Free Vibration</div>
-              $$\frac{x(t)}{\delta_{\text{st}}} = \cos\omega_n(t - t_0) - \cos\omega_n t \implies \mathbf{\text{DLF}_{\text{residual}} = 2 \left| \sin\left(\frac{\pi t_0}{\tau_n}\right) \right|}$$
-            </div>
-
-            <div class="callout-box alert-box fragment" data-fragment-index="3">
-              <h4>The Residual Cancellation Phenomenon</h4>
-              <p>At integer ratios $t_0/\tau_n = 1, 2, 3\dots$, $\sin(\pi t_0/\tau_n) = 0$. Residual vibration is <strong>identically zero</strong>! The system completes full cycles and halts dead at $t_0$.</p>
-            </div>
-          </div>
-
-          <div class="slide-visual">
-            <div class="media-container" data-scene="RectangularPulseScene">
-              <video class="manim-video" preload="auto" muted playsinline
-                     data-src="./assets/videos/slide_10_RectangularPulseScene.mp4"
-                     poster="./assets/images/poster_slide_10.png">
-              </video>
-              <div class="video-placeholder">
-                <div class="pulse-response-plot">
-                  <div class="curve-crest">Peak DLF = 2.0</div>
-                  <div class="zero-node">Zero Residual Node ($t_0 = \tau_n$)</div>
-                </div>
-                <div class="wireframe-caption">
-                  <span class="badge-scene">Manim Scene: RectangularPulseScene</span>
-                  <p>Step-Dwell Response Curve &amp; DLF = 2.0 Plateau</p>
-                </div>
-              </div>
-            </div>
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_10_RectangularPulseScene.mp4" type="video/mp4">
+          </video>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">10</span>
+            <h2 class="fallback-title">RectangularPulseScene</h2>
+            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
           </div>
         </div>
       </section>
@@ -669,51 +257,21 @@
       <section class="slide" 
                id="slide-11" 
                data-slide-id="SLIDE-11" 
-               data-slide-num="11"
+               data-slide-num="11" 
                data-speaker="person2" 
-               data-speaker-name="Person 2: Mathematical Theory &amp; Derivations"
-               data-time-budget="150"
-               data-quiz-trigger=""
-               data-mobile-summary="Half-Sine Shock Pulse: Exact analytical solution, DLF = 1.76 peak resonance at t0/tau_n = 0.8."
+               data-speaker-name="Person 2: Mathematical Theory &amp; Derivations" 
+               data-time-budget="150" 
+               data-quiz-trigger="" 
+               data-mobile-summary="Half-Sine Shock Pulse: Exact analytical solution, DLF = 1.76 peak resonance at t0/tau_n = 0.8." 
                data-manim-scene="HalfSineAnalyticalScene">
-        <div class="slide-grid">
-          <div class="slide-content">
-            <div class="slide-breadcrumb">Speaker 2 &bull; Canonical Derivation 2</div>
-            <h2 class="slide-title">Half-Sine Shock Pulse Response</h2>
-            <h3 class="slide-subtitle">Analytical Formulation for Ground Impact Pulse</h3>
-
-            <div class="formula-box fragment" data-fragment-index="1">
-              <div class="formula-title">Era 1 ($0 \le t \le t_0$): Forced Wave Interaction</div>
-              $$\frac{x(t)}{\delta_{\text{st}}} = \frac{1}{1 - (\frac{\tau_n}{2t_0})^2} \left[ \sin\left(\frac{\pi t}{t_0}\right) - \left(\frac{\tau_n}{2t_0}\right) \sin\left(\frac{2\pi t}{\tau_n}\right) \right]$$
-            </div>
-
-            <div class="formula-box highlight fragment" data-fragment-index="2">
-              <div class="formula-title">Primary SRS Peak Maximization</div>
-              $$\text{DLF}_{\text{primary}} = \left| \frac{1}{1 - \frac{\tau_n}{2t_0}} \sin\left( \frac{2\pi \frac{\tau_n}{2t_0}}{1 + \frac{\tau_n}{2t_0}} \right) \right| \quad \Longrightarrow \mathbf{\text{Peak DLF} \approx 1.76 \text{ at } \frac{t_0}{\tau_n} \approx 0.80}$$
-            </div>
-
-            <div class="formula-box fragment" data-fragment-index="3">
-              <div class="formula-title">Era 2 ($t > t_0$): Residual SRS Formulation</div>
-              $$\text{DLF}_{\text{residual}} = \left| \frac{2 \cos\left(\frac{\pi t_0}{\tau_n}\right)}{1 - \left(\frac{2t_0}{\tau_n}\right)^2} \right| \quad (\text{Zeros at } t_0/\tau_n = 0.5, 1.5, 2.5\dots)$$
-            </div>
-          </div>
-
-          <div class="slide-visual">
-            <div class="media-container" data-scene="HalfSineAnalyticalScene">
-              <video class="manim-video" preload="auto" muted playsinline
-                     data-src="./assets/videos/slide_11_HalfSineAnalyticalScene.mp4"
-                     poster="./assets/images/poster_slide_11.png">
-              </video>
-              <div class="video-placeholder">
-                <div class="half-sine-curve-plot">
-                  <div class="peak-marker">Peak DLF = 1.76 ($t_0/\tau_n = 0.8$)</div>
-                </div>
-                <div class="wireframe-caption">
-                  <span class="badge-scene">Manim Scene: HalfSineAnalyticalScene</span>
-                  <p>Half-Sine Forced vs. Free Response &amp; DLF = 1.76</p>
-                </div>
-              </div>
-            </div>
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_11_HalfSineAnalyticalScene.mp4" type="video/mp4">
+          </video>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">11</span>
+            <h2 class="fallback-title">HalfSineAnalyticalScene</h2>
+            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
           </div>
         </div>
       </section>
@@ -722,58 +280,21 @@
       <section class="slide" 
                id="slide-12" 
                data-slide-id="SLIDE-12" 
-               data-slide-num="12"
+               data-slide-num="12" 
                data-speaker="person2" 
-               data-speaker-name="Person 2: Mathematical Theory &amp; Derivations"
-               data-time-budget="120"
-               data-quiz-trigger=""
-               data-mobile-summary="Constructing the SRS: Primary, Residual, and Maximax envelopes across an SDOF oscillator ensemble."
+               data-speaker-name="Person 2: Mathematical Theory &amp; Derivations" 
+               data-time-budget="120" 
+               data-quiz-trigger="" 
+               data-mobile-summary="Constructing the SRS: Primary, Residual, and Maximax envelopes across an SDOF oscillator ensemble." 
                data-manim-scene="SRSConstructionScene">
-        <div class="slide-grid">
-          <div class="slide-content">
-            <div class="slide-breadcrumb">Speaker 2 &bull; Spectral Construction</div>
-            <h2 class="slide-title">Constructing the Shock Response Spectrum</h2>
-            <h3 class="slide-subtitle">Mapping Peak Time Responses into the Frequency Domain</h3>
-
-            <div class="spectrum-steps">
-              <div class="step-card fragment" data-fragment-index="1">
-                <strong>1. SDOF Oscillator Bank:</strong> Deploy an ensemble of independent oscillators sweeping natural frequency $\omega_n \in (0, \infty)$ with fixed damping $\zeta$.
-              </div>
-              <div class="step-card fragment" data-fragment-index="2">
-                <strong>2. Peak Response Extraction:</strong> Subject all oscillators to identical base shock and record maximum absolute displacement $|x(t)|_{\max}$.
-              </div>
-              <div class="step-card fragment" data-fragment-index="3">
-                <strong>3. Spectrum Envelopes:</strong>
-                <ul>
-                  <li><strong>Primary SRS:</strong> Peak occurring during the pulse ($t \le t_0$).</li>
-                  <li><strong>Residual SRS:</strong> Peak occurring after pulse expiry ($t > t_0$).</li>
-                  <li><strong>Maximax SRS:</strong> $\text{SRS}_{\max} = \max(\text{Primary}, \text{Residual})$.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="slide-visual">
-            <div class="media-container" data-scene="SRSConstructionScene">
-              <video class="manim-video" preload="auto" muted playsinline
-                     data-src="./assets/videos/slide_12_SRSConstructionScene.mp4"
-                     poster="./assets/images/poster_slide_12.png">
-              </video>
-              <div class="video-placeholder">
-                <div class="oscillator-bank-visual">
-                  <div class="oscillator o1"></div>
-                  <div class="oscillator o2"></div>
-                  <div class="oscillator o3"></div>
-                  <div class="oscillator o4"></div>
-                  <div class="srs-projection-arrow">&darr;</div>
-                  <div class="spectral-curve-preview"></div>
-                </div>
-                <div class="wireframe-caption">
-                  <span class="badge-scene">Manim Scene: SRSConstructionScene</span>
-                  <p>Bank of SDOF Oscillators Projecting into 2D SRS Curve</p>
-                </div>
-              </div>
-            </div>
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_12_SRSConstructionScene.mp4" type="video/mp4">
+          </video>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">12</span>
+            <h2 class="fallback-title">SRSConstructionScene</h2>
+            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
           </div>
         </div>
       </section>
@@ -782,122 +303,44 @@
       <section class="slide" 
                id="slide-13" 
                data-slide-id="SLIDE-13" 
-               data-slide-num="13"
+               data-slide-num="13" 
                data-speaker="person2" 
-               data-speaker-name="Person 2: Mathematical Theory &amp; Derivations"
-               data-time-budget="90"
-               data-quiz-trigger="QUIZ-02"
-               data-mobile-summary="Asymptotic Limits: Impulsive limit (t0 &ll; tau_n) vs. Quasi-static limit (t0 &gg; tau_n) &amp; Hand-Off."
+               data-speaker-name="Person 2: Mathematical Theory &amp; Derivations" 
+               data-time-budget="90" 
+               data-quiz-trigger="QUIZ-02" 
+               data-mobile-summary="Asymptotic Limits: Impulsive limit (t0 &ll; tau_n) vs. Quasi-static limit (t0 &gg; tau_n) &amp; Hand-Off." 
                data-manim-scene="AsymptoticLimitsScene">
-        <div class="slide-grid">
-          <div class="slide-content">
-            <div class="slide-breadcrumb">Speaker 2 &bull; Asymptotic Insights &amp; Hand-Off</div>
-            <h2 class="slide-title">Asymptotic Master Insights</h2>
-            <h3 class="slide-subtitle">Impulsive Limit vs. Quasi-Static Limit &amp; Hand-Off</h3>
-
-            <div class="asymptote-grid">
-              <div class="asymptote-box impulsive fragment" data-fragment-index="1">
-                <h4>Impulsive Limit ($t_0 \ll \tau_n$)</h4>
-                <p>Pulse finishes before mass moves. Response depends <strong>only on net impulse $\mathcal{I} = \int F dt$</strong>:</p>
-                $$\text{DLF} = 2\pi \left(\frac{\mathcal{I}}{F_0 t_0}\right) \left(\frac{t_0}{\tau_n}\right)$$
-                <span class="regime-tag">Waveform shape is irrelevant!</span>
-              </div>
-
-              <div class="asymptote-box static fragment" data-fragment-index="2">
-                <h4>Quasi-Static Limit ($t_0 \gg \tau_n$)</h4>
-                <p>Force changes so slowly that inertia forces vanish:</p>
-                $$\text{DLF}_{\text{primary}} \to 1.0, \quad \text{DLF}_{\text{residual}} \to 0$$
-                <span class="regime-tag">Pure static equilibrium</span>
-              </div>
-            </div>
-
-            <div class="quiz-alert fragment" data-fragment-index="3">
-              <span class="quiz-pulse-dot"></span>
-              <strong>Audience Quiz 2 Activated:</strong> <em>"At what $t_0/\tau_n$ does a rectangular pulse produce zero residual vibration?"</em>
-            </div>
-
-            <div class="handoff-card fragment" data-fragment-index="4">
-              <strong>Hand-Off to Speaker 3:</strong> With the SRS formula fully derived, let us break the circular dilemma and size the helicopter bracket!
-            </div>
-          </div>
-
-          <div class="slide-visual">
-            <div class="media-container" data-scene="AsymptoticLimitsScene">
-              <video class="manim-video" preload="auto" muted playsinline
-                     data-src="./assets/videos/slide_13_AsymptoticLimitsScene.mp4"
-                     poster="./assets/images/poster_slide_13.png">
-              </video>
-              <div class="video-placeholder">
-                <div class="asymptotes-diagram">
-                  <div class="slope-line">Impulsive Slope $\propto \mathcal{I}$</div>
-                  <div class="plateau-line">Quasi-Static $\text{DLF} \to 1.0$</div>
-                </div>
-                <div class="wireframe-caption">
-                  <span class="badge-scene">Manim Scene: AsymptoticLimitsScene</span>
-                  <p>Universal Asymptotic Boundaries of Canonical SRS Curves</p>
-                </div>
-              </div>
-            </div>
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_13_AsymptoticLimitsScene.mp4" type="video/mp4">
+          </video>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">13</span>
+            <h2 class="fallback-title">AsymptoticLimitsScene</h2>
+            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
           </div>
         </div>
       </section>
-
-      <!-- ===================================================================== -->
-      <!-- SPEAKER 3: SLIDES 14 TO 20 (30:00 - 45:00)                            -->
-      <!-- ===================================================================== -->
 
       <!-- SLIDE 14 -->
       <section class="slide" 
                id="slide-14" 
                data-slide-id="SLIDE-14" 
-               data-slide-num="14"
+               data-slide-num="14" 
                data-speaker="person3" 
-               data-speaker-name="Person 3: Design Resolution &amp; Applications"
-               data-time-budget="150"
-               data-quiz-trigger=""
-               data-mobile-summary="Closing the Dilemma Loop: Formulation of bracket stiffness, natural period, dynamic load, and root stress."
+               data-speaker-name="Person 3: Design Resolution &amp; Applications" 
+               data-time-budget="150" 
+               data-quiz-trigger="" 
+               data-mobile-summary="Closing the Dilemma Loop: Formulation of bracket stiffness, natural period, dynamic load, and root stress." 
                data-manim-scene="IterativeDesignScene">
-        <div class="slide-grid">
-          <div class="slide-content">
-            <div class="slide-breadcrumb">Speaker 3 &bull; Design Resolution</div>
-            <h2 class="slide-title">Closing the Dilemma Loop</h2>
-            <h3 class="slide-subtitle">Deterministic Formulation for Helicopter Drop-Box</h3>
-
-            <div class="formula-box fragment" data-fragment-index="1">
-              <div class="formula-title">1. Structural Parameters ($b = 0.5'', l = 10.0''$)</div>
-              $$k = \frac{E b d^3}{4 l^3} = 1250 \, d^3 \text{ [lb/in]}, \quad W_{\text{eq}} = 0.40 + 0.115 \, d \text{ [lb]}$$
-            </div>
-
-            <div class="formula-box fragment" data-fragment-index="2">
-              <div class="formula-title">2. Natural Period &amp; Half-Sine DLF</div>
-              $$\tau_n = 2\pi \sqrt{\frac{W_{\text{eq}}}{g \cdot k}}, \quad \text{DLF} = \text{DLF}\left(\frac{t_0}{\tau_n}\right) \text{ from Half-Sine SRS}$$
-            </div>
-
-            <div class="formula-box highlight fragment" data-fragment-index="3">
-              <div class="formula-title">3. Dynamic Force &amp; Root Bending Stress</div>
-              $$F_{\text{dyn}} = 100 \cdot \text{DLF} \cdot W_{\text{eq}}, \quad \sigma_{\max} = \frac{6 F_{\text{dyn}} l}{b d^2} \le 26,000\text{ psi}$$
-            </div>
-          </div>
-
-          <div class="slide-visual">
-            <div class="media-container" data-scene="IterativeDesignScene">
-              <video class="manim-video" preload="auto" muted playsinline
-                     data-src="./assets/videos/slide_14_IterativeDesignScene.mp4"
-                     poster="./assets/images/poster_slide_14.png">
-              </video>
-              <div class="video-placeholder">
-                <div class="unrolled-pipeline">
-                  <div class="pipe-node active">$d$ Candidate</div>
-                  <div class="pipe-node active">$\tau_n$ Period</div>
-                  <div class="pipe-node active">SRS DLF</div>
-                  <div class="pipe-node active">$\sigma_{\max}$ Check</div>
-                </div>
-                <div class="wireframe-caption">
-                  <span class="badge-scene">Manim Scene: IterativeDesignScene</span>
-                  <p>Unrolled Deterministic Iteration Architecture</p>
-                </div>
-              </div>
-            </div>
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_14_IterativeDesignScene.mp4" type="video/mp4">
+          </video>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">14</span>
+            <h2 class="fallback-title">IterativeDesignScene</h2>
+            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
           </div>
         </div>
       </section>
@@ -906,92 +349,21 @@
       <section class="slide" 
                id="slide-15" 
                data-slide-id="SLIDE-15" 
-               data-slide-num="15"
+               data-slide-num="15" 
                data-speaker="person3" 
-               data-speaker-name="Person 3: Design Resolution &amp; Applications"
-               data-time-budget="150"
-               data-quiz-trigger=""
-               data-mobile-summary="Sizing the Cantilever Bracket: Evaluating d = 0.4, 0.5, 0.6 inches against allowable stress of 26 ksi."
+               data-speaker-name="Person 3: Design Resolution &amp; Applications" 
+               data-time-budget="150" 
+               data-quiz-trigger="" 
+               data-mobile-summary="Sizing the Cantilever Bracket: Evaluating d = 0.4, 0.5, 0.6 inches against allowable stress of 26 ksi." 
                data-manim-scene="StressVerificationScene">
-        <div class="slide-grid">
-          <div class="slide-content">
-            <div class="slide-breadcrumb">Speaker 3 &bull; Numerical Verification</div>
-            <h2 class="slide-title">Bracket Thickness Sizing &amp; Verification</h2>
-            <h3 class="slide-subtitle">Numerical Iterations (Rao Ex. 4.18 &amp; Yousefi pp. 75–76)</h3>
-
-            <div class="table-container fragment" data-fragment-index="1">
-              <table class="iteration-table">
-                <thead>
-                  <tr>
-                    <th>Trial</th>
-                    <th>$d$</th>
-                    <th>$k$</th>
-                    <th>$\tau_n$</th>
-                    <th>$t_0/\tau_n$</th>
-                    <th>DLF</th>
-                    <th>$\sigma_{\max}$</th>
-                    <th>Verdict</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="fail-row">
-                    <td>1</td>
-                    <td>$0.40''$</td>
-                    <td>$160$</td>
-                    <td>$0.0177\text{ s}$</td>
-                    <td>$5.65$</td>
-                    <td>$1.12$</td>
-                    <td>$41,328\text{ psi}$</td>
-                    <td><span class="status-badge fail">FAILS</span></td>
-                  </tr>
-                  <tr class="fail-row">
-                    <td>2</td>
-                    <td>$0.50''$</td>
-                    <td>$312.5$</td>
-                    <td>$0.0130\text{ s}$</td>
-                    <td>$7.70$</td>
-                    <td>$1.11$</td>
-                    <td>$34,315\text{ psi}$</td>
-                    <td><span class="status-badge fail">FAILS</span></td>
-                  </tr>
-                  <tr class="pass-row">
-                    <td>3</td>
-                    <td>$0.60''$</td>
-                    <td>$540$</td>
-                    <td>$0.0101\text{ s}$</td>
-                    <td>$9.91$</td>
-                    <td>$1.07$</td>
-                    <td>$25,664\text{ psi}$</td>
-                    <td><span class="status-badge pass">PASSES</span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="certification-badge fragment" data-fragment-index="2">
-              <span class="cert-check">&#10004;</span>
-              <strong>Certified Design:</strong> Thickness $d = 0.60''$ ($15.24\text{ mm}$) satisfies $\sigma_{\max} = 25,664\text{ psi} \le 26,000\text{ psi}$ with Safety Factor $1.013$.
-            </div>
-          </div>
-
-          <div class="slide-visual">
-            <div class="media-container" data-scene="StressVerificationScene">
-              <video class="manim-video" preload="auto" muted playsinline
-                     data-src="./assets/videos/slide_15_StressVerificationScene.mp4"
-                     poster="./assets/images/poster_slide_15.png">
-              </video>
-              <div class="video-placeholder">
-                <div class="stress-gauges-compare">
-                  <div class="gauge g1 fail"><span>0.4": 41.3 ksi</span></div>
-                  <div class="gauge g2 fail"><span>0.5": 34.3 ksi</span></div>
-                  <div class="gauge g3 pass"><span>0.6": 25.7 ksi</span></div>
-                </div>
-                <div class="wireframe-caption">
-                  <span class="badge-scene">Manim Scene: StressVerificationScene</span>
-                  <p>Dynamic Stress vs. 26 ksi Yield Limit</p>
-                </div>
-              </div>
-            </div>
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_15_StressVerificationScene.mp4" type="video/mp4">
+          </video>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">15</span>
+            <h2 class="fallback-title">StressVerificationScene</h2>
+            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
           </div>
         </div>
       </section>
@@ -1000,56 +372,21 @@
       <section class="slide" 
                id="slide-16" 
                data-slide-id="SLIDE-16" 
-               data-slide-num="16"
+               data-slide-num="16" 
                data-speaker="person3" 
-               data-speaker-name="Person 3: Design Resolution &amp; Applications"
-               data-time-budget="150"
-               data-quiz-trigger=""
-               data-mobile-summary="Case Study 2: EOT Overhead Crane vertical seismic derailment condition (Sa &ge; 1.0g)."
+               data-speaker-name="Person 3: Design Resolution &amp; Applications" 
+               data-time-budget="150" 
+               data-quiz-trigger="" 
+               data-mobile-summary="Case Study 2: EOT Overhead Crane vertical seismic derailment condition (Sa &ge; 1.0g)." 
                data-manim-scene="CraneSeismicScene">
-        <div class="slide-grid">
-          <div class="slide-content">
-            <div class="slide-breadcrumb">Speaker 3 &bull; Case Study 2</div>
-            <h2 class="slide-title">Overhead Crane Vertical Earthquake Derailment</h2>
-            <h3 class="slide-subtitle">Seismic Acceleration Spectrum &amp; Rail Lift-Off Criterion</h3>
-
-            <div class="concept-card fragment" data-fragment-index="1">
-              <h4>The Rail Contact Mechanics (Rao Ex. 4.17)</h4>
-              <p>Crane trolley of mass $m = 2500\text{ kg}$ rests on runway rails purely via gravity. Dynamic normal force:</p>
-              $$N(t) = m[g - \ddot{x}_{\text{abs}}(t)] \implies N_{\min} = m(g - S_a)$$
-            </div>
-
-            <div class="formula-box alert-box fragment" data-fragment-index="2">
-              <div class="formula-title">Derailment Threshold</div>
-              $$N_{\min} \le 0 \iff S_a(\tau_n, \zeta) \ge 1.0g \quad (9.81\text{ m/s}^2)$$
-              <p class="formula-caption">When upward ground acceleration exceeds $1.0g$, wheels jump off the rails!</p>
-            </div>
-
-            <div class="concept-card fragment" data-fragment-index="3">
-              <h4>Flexible Crane Evaluation ($\tau_n = 2.0\text{ s}$, $\zeta = 0.02$)</h4>
-              <p>Reading Tripartite Earthquake Design Spectrum: $S_a = 0.25g$. Minimum normal force $N_{\min} = 0.75 mg > 0 \implies$ <strong>SAFE AGAINST DERAILMENT</strong>.</p>
-            </div>
-          </div>
-
-          <div class="slide-visual">
-            <div class="media-container" data-scene="CraneSeismicScene">
-              <video class="manim-video" preload="auto" muted playsinline
-                     data-src="./assets/videos/slide_16_CraneSeismicScene.mp4"
-                     poster="./assets/images/poster_slide_16.png">
-              </video>
-              <div class="video-placeholder">
-                <div class="crane-schematic-visual">
-                  <div class="crane-girder"></div>
-                  <div class="trolley-wheel-contact">
-                    <span class="force-vector">N(t)</span>
-                  </div>
-                </div>
-                <div class="wireframe-caption">
-                  <span class="badge-scene">Manim Scene: CraneSeismicScene</span>
-                  <p>Overhead Crane Trolley Normal Force under Vertical Earthquake</p>
-                </div>
-              </div>
-            </div>
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_16_CraneSeismicScene.mp4" type="video/mp4">
+          </video>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">16</span>
+            <h2 class="fallback-title">CraneSeismicScene</h2>
+            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
           </div>
         </div>
       </section>
@@ -1058,58 +395,21 @@
       <section class="slide" 
                id="slide-17" 
                data-slide-id="SLIDE-17" 
-               data-slide-num="17"
+               data-slide-num="17" 
                data-speaker="person3" 
-               data-speaker-name="Person 3: Design Resolution &amp; Applications"
-               data-time-budget="150"
-               data-quiz-trigger="QUIZ-03"
-               data-mobile-summary="Counter-Intuitive Stiffness: Why softer crane girders (k &lt; 365 kN/m) prevent earthquake derailment."
+               data-speaker-name="Person 3: Design Resolution &amp; Applications" 
+               data-time-budget="150" 
+               data-quiz-trigger="QUIZ-03" 
+               data-mobile-summary="Counter-Intuitive Stiffness: Why softer crane girders (k &lt; 365 kN/m) prevent earthquake derailment." 
                data-manim-scene="CraneStiffnessLimitScene">
-        <div class="slide-grid">
-          <div class="slide-content">
-            <div class="slide-breadcrumb">Speaker 3 &bull; Counter-Intuitive Principle</div>
-            <h2 class="slide-title">Counter-Intuitive Stiffness in Seismic Design</h2>
-            <h3 class="slide-subtitle">Why Making Girders Stiffer Causes Derailment (Rao Prob. 4.57)</h3>
-
-            <div class="formula-box fragment" data-fragment-index="1">
-              <div class="formula-title">The Earthquake Spectrum Plateau</div>
-              $$\text{Danger Zone } (S_a \ge 1.0g) \quad \text{for } \tau_n \le 0.52\text{ s}$$
-              <p class="formula-caption">Short natural periods amplify seismic ground acceleration beyond $1.0g$.</p>
-            </div>
-
-            <div class="formula-box highlight fragment" data-fragment-index="2">
-              <div class="formula-title">Maximum Safe Girder Stiffness Limit</div>
-              $$\tau_n = 2\pi \sqrt{\frac{m}{k}} > 0.52\text{ s} \implies k < \frac{4\pi^2 m}{(0.52)^2} = \frac{4\pi^2 (2500)}{(0.52)^2} = \mathbf{365\text{ kN/m}}$$
-            </div>
-
-            <div class="callout-box warning-card fragment" data-fragment-index="3">
-              <h4>Counter-Intuitive Design Principle</h4>
-              <p>A stiffer girder ($k > 365\text{ kN/m}$) drives the structure directly into the earthquake resonance plateau, causing derailment! Flexibility isolates the trolley.</p>
-            </div>
-
-            <div class="quiz-alert fragment" data-fragment-index="4">
-              <span class="quiz-pulse-dot"></span>
-              <strong>Audience Quiz 3 Activated:</strong> <em>"Why does stiffening the girder increase derailment danger?"</em>
-            </div>
-          </div>
-
-          <div class="slide-visual">
-            <div class="media-container" data-scene="CraneStiffnessLimitScene">
-              <video class="manim-video" preload="auto" muted playsinline
-                     data-src="./assets/videos/slide_17_CraneStiffnessLimitScene.mp4"
-                     poster="./assets/images/poster_slide_17.png">
-              </video>
-              <div class="video-placeholder">
-                <div class="tripartite-spectrum-plot">
-                  <div class="plateau-danger-zone">$S_a \ge 1.0g$ Danger Zone ($\tau_n \le 0.52\text{ s}$)</div>
-                  <div class="safe-flexible-zone">Safe Zone: $k < 365\text{ kN/m}$</div>
-                </div>
-                <div class="wireframe-caption">
-                  <span class="badge-scene">Manim Scene: CraneStiffnessLimitScene</span>
-                  <p>Tripartite Earthquake Spectrum &amp; $k < 365\text{ kN/m}$ Ceiling</p>
-                </div>
-              </div>
-            </div>
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_17_CraneStiffnessLimitScene.mp4" type="video/mp4">
+          </video>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">17</span>
+            <h2 class="fallback-title">CraneStiffnessLimitScene</h2>
+            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
           </div>
         </div>
       </section>
@@ -1118,54 +418,21 @@
       <section class="slide" 
                id="slide-18" 
                data-slide-id="SLIDE-18" 
-               data-slide-num="18"
+               data-slide-num="18" 
                data-speaker="person3" 
-               data-speaker-name="Person 3: Design Resolution &amp; Applications"
-               data-time-budget="120"
-               data-quiz-trigger=""
-               data-mobile-summary="Case Study 3: Automotive ECU PCB resonant amplification (351%) under 3600 rpm engine excitation."
+               data-speaker-name="Person 3: Design Resolution &amp; Applications" 
+               data-time-budget="120" 
+               data-quiz-trigger="" 
+               data-mobile-summary="Case Study 3: Automotive ECU PCB resonant amplification (351%) under 3600 rpm engine excitation." 
                data-manim-scene="ECUResonanceScene">
-        <div class="slide-grid">
-          <div class="slide-content">
-            <div class="slide-breadcrumb">Speaker 3 &bull; Case Study 3</div>
-            <h2 class="slide-title">Automotive ECU PCB Resonant Amplification</h2>
-            <h3 class="slide-subtitle">Base Excitation Dynamics Inside the Engine Bay (Rao Ex. 9.10)</h3>
-
-            <div class="specs-grid fragment" data-fragment-index="1">
-              <div class="spec-cell"><strong>PCB Dimensions:</strong> $0.25 \times 0.20 \times 0.003\text{ m}$</div>
-              <div class="spec-cell"><strong>Modulus ($E$):</strong> $15\text{ GPa}$ (Glass-Epoxy)</div>
-              <div class="spec-cell"><strong>Inertia ($I$):</strong> $4.50 \times 10^{-10}\text{ m}^4$</div>
-              <div class="spec-cell"><strong>PCB Mass ($m$):</strong> $1.5\text{ kg}$ ($m_{\text{eff}} = 0.75\text{ kg}$)</div>
-            </div>
-
-            <div class="formula-box fragment" data-fragment-index="2">
-              <div class="formula-title">Clamped PCB Stiffness &amp; Natural Frequency</div>
-              $$k_{\text{PCB}} = \frac{192EI}{l^3} = 82,944\text{ N/m} \implies \omega_n = \sqrt{\frac{82,944}{0.75}} = 332.55\text{ rad/s} \quad (52.9\text{ Hz})$$
-            </div>
-
-            <div class="formula-box alert-box fragment" data-fragment-index="3">
-              <div class="formula-title">Resonant Amplification at 3600 rpm ($60\text{ Hz}$)</div>
-              $$\omega = 376.99\text{ rad/s} \implies r = \frac{\omega}{\omega_n} = 1.1336 \implies T_d = \frac{1}{|1 - r^2|} = \mathbf{3.508 \quad (351\% \text{ Amplification!})}$$
-            </div>
-          </div>
-
-          <div class="slide-visual">
-            <div class="media-container" data-scene="ECUResonanceScene">
-              <video class="manim-video" preload="auto" muted playsinline
-                     data-src="./assets/videos/slide_18_ECUResonanceScene.mp4"
-                     poster="./assets/images/poster_slide_18.png">
-              </video>
-              <div class="video-placeholder">
-                <div class="ecu-resonance-visual">
-                  <div class="engine-block-pulse">Engine: 3600 rpm</div>
-                  <div class="pcb-flex-vibration">PCB Transmissibility: 351%</div>
-                </div>
-                <div class="wireframe-caption">
-                  <span class="badge-scene">Manim Scene: ECUResonanceScene</span>
-                  <p>Engine Bay Base Excitation &amp; Solder Fatigue Risk</p>
-                </div>
-              </div>
-            </div>
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_18_ECUResonanceScene.mp4" type="video/mp4">
+          </video>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">18</span>
+            <h2 class="fallback-title">ECUResonanceScene</h2>
+            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
           </div>
         </div>
       </section>
@@ -1174,54 +441,21 @@
       <section class="slide" 
                id="slide-19" 
                data-slide-id="SLIDE-19" 
-               data-slide-num="19"
+               data-slide-num="19" 
                data-speaker="person3" 
-               data-speaker-name="Person 3: Design Resolution &amp; Applications"
-               data-time-budget="120"
-               data-quiz-trigger=""
-               data-mobile-summary="Base Isolator Sizing: Tuning k_iso = 24.66 kN/m, c_iso = 5.21 N s/m for 90% vibration reduction."
+               data-speaker-name="Person 3: Design Resolution &amp; Applications" 
+               data-time-budget="120" 
+               data-quiz-trigger="" 
+               data-mobile-summary="Base Isolator Sizing: Tuning k_iso = 24.66 kN/m, c_iso = 5.21 N s/m for 90% vibration reduction." 
                data-manim-scene="ECUIsolatorScene">
-        <div class="slide-grid">
-          <div class="slide-content">
-            <div class="slide-breadcrumb">Speaker 3 &bull; Vibration Mitigation</div>
-            <h2 class="slide-title">Base Isolator Sizing &amp; Attenuation</h2>
-            <h3 class="slide-subtitle">Tuning $(k_{\text{iso}}, c_{\text{iso}})$ for $T_d \le 10\%$ (Rao Ex. 9.11)</h3>
-
-            <div class="formula-box fragment" data-fragment-index="1">
-              <div class="formula-title">1. Isolation Criterion ($T_d \le 0.10$ at $3000\text{ rpm}$)</div>
-              $$T_d \approx \frac{1}{r^2 - 1} \le 0.10 \implies r = \sqrt{11} \approx 3.3175 > \sqrt{2}$$
-              $$\omega_{n,\text{iso}} = \frac{\omega}{r} = \frac{314.16}{3.3175} = 94.70\text{ rad/s} \quad (15.07\text{ Hz})$$
-            </div>
-
-            <div class="formula-box highlight fragment" data-fragment-index="2">
-              <div class="formula-title">2. Required Isolator Spring Stiffness ($m_{\text{total}} = 2.75\text{ kg}$)</div>
-              $$k_{\text{iso}} = m_{\text{total}} \cdot \omega_{n,\text{iso}}^2 = (2.75)(94.70)^2 = \mathbf{24.66\text{ kN/m}} \quad (6.16\text{ kN/m per mount})$$
-            </div>
-
-            <div class="formula-box fragment" data-fragment-index="3">
-              <div class="formula-title">3. Required Damping Constant ($\zeta_{\text{iso}} = 0.01$)</div>
-              $$c_{\text{iso}} = 2 \zeta m_{\text{total}} \omega_{n,\text{iso}} = 2(0.01)(2.75)(94.70) = \mathbf{5.21\text{ N}\cdot\text{s/m}}$$
-            </div>
-          </div>
-
-          <div class="slide-visual">
-            <div class="media-container" data-scene="ECUIsolatorScene">
-              <video class="manim-video" preload="auto" muted playsinline
-                     data-src="./assets/videos/slide_19_ECUIsolatorScene.mp4"
-                     poster="./assets/images/poster_slide_19.png">
-              </video>
-              <div class="video-placeholder">
-                <div class="transmissibility-curve">
-                  <div class="resonance-peak">$r = 1$</div>
-                  <div class="isolation-threshold">$r = \sqrt{2}$</div>
-                  <div class="operating-point-iso">$r = \sqrt{11} \to T_d = 0.10$</div>
-                </div>
-                <div class="wireframe-caption">
-                  <span class="badge-scene">Manim Scene: ECUIsolatorScene</span>
-                  <p>Elastomer Base Mount Tuning &amp; 90% Attenuation</p>
-                </div>
-              </div>
-            </div>
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_19_ECUIsolatorScene.mp4" type="video/mp4">
+          </video>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">19</span>
+            <h2 class="fallback-title">ECUIsolatorScene</h2>
+            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
           </div>
         </div>
       </section>
@@ -1230,111 +464,37 @@
       <section class="slide" 
                id="slide-20" 
                data-slide-id="SLIDE-20" 
-               data-slide-num="20"
+               data-slide-num="20" 
                data-speaker="person3" 
-               data-speaker-name="Person 3: Design Resolution &amp; Applications"
-               data-time-budget="60"
-               data-quiz-trigger=""
-               data-mobile-summary="Master Synthesis &amp; Conclusion: 3-speaker integration, live audience mobile quiz review, and open Q&amp;A."
+               data-speaker-name="Person 3: Design Resolution &amp; Applications" 
+               data-time-budget="60" 
+               data-quiz-trigger="" 
+               data-mobile-summary="Master Synthesis &amp; Conclusion: 3-speaker integration, live audience mobile quiz review, and open Q&amp;A." 
                data-manim-scene="MasterSummaryScene">
-        <div class="slide-grid">
-          <div class="slide-content">
-            <div class="slide-breadcrumb">All Speakers &bull; Synthesis &amp; Conclusion</div>
-            <h2 class="slide-title">Master Synthesis &amp; Open Q&amp;A</h2>
-            <h3 class="slide-subtitle">Three Speakers &bull; Three Pillars of Transient Dynamics</h3>
-
-            <div class="summary-pillars fragment" data-fragment-index="1">
-              <div class="pillar-card p1">
-                <h4>Pillar 1: Physics</h4>
-                <p>Shock vs. harmonic vibrations; Rayleigh reduction ($0.23m_b$); the circular sizing dilemma.</p>
-              </div>
-              <div class="pillar-card p2">
-                <h4>Pillar 2: Mathematics</h4>
-                <p>Duhamel convolution; dual eras; $\text{DLF}=2.0$ &amp; $1.76$; residual cancellation at integer cycles.</p>
-              </div>
-              <div class="pillar-card p3">
-                <h4>Pillar 3: Design</h4>
-                <p>Bracket certification ($d=0.6''$); crane derailment ceiling ($k < 365\text{ kN/m}$); ECU isolation ($T_d \le 10\%$).</p>
-              </div>
-            </div>
-
-            <div class="qa-banner fragment" data-fragment-index="2">
-              <h3>Thank You &bull; Questions &amp; Discussion</h3>
-              <p>Mobile Quiz Leaderboard is now displayed on your companion devices.</p>
-            </div>
-          </div>
-
-          <div class="slide-visual">
-            <div class="media-container" data-scene="MasterSummaryScene">
-              <video class="manim-video" preload="auto" muted playsinline loop
-                     data-src="./assets/videos/slide_20_MasterSummaryScene.mp4"
-                     poster="./assets/images/poster_slide_20.png">
-              </video>
-              <div class="video-placeholder summary-dashboard">
-                <div class="qr-code-box">
-                  <div class="qr-matrix"></div>
-                  <span>Scan for Slides &amp; Quiz Code</span>
-                </div>
-                <div class="wireframe-caption">
-                  <span class="badge-scene">Manim Scene: MasterSummaryScene</span>
-                  <p>Comprehensive 3-Pillar Synthesis Dashboard</p>
-                </div>
-              </div>
-            </div>
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_20_MasterSummaryScene.mp4" type="video/mp4">
+          </video>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">20</span>
+            <h2 class="fallback-title">MasterSummaryScene</h2>
+            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
           </div>
         </div>
       </section>
-
     </div>
   </main>
 
   <!-- ========================================================================= -->
-  <!-- BOTTOM PROGRESS TRACKER & NAVIGATION BAR                                  -->
+  <!-- REHEARSAL PRESENTER HUD (Hidden by default, toggled via 'H')              -->
   <!-- ========================================================================= -->
-  <footer id="presentation-footer">
-    <div class="nav-btn-group">
-      <button id="btn-prev" class="nav-btn" title="Previous Fragment/Slide [Left Arrow]">&#x25C0; Prev</button>
-      <button id="btn-next" class="nav-btn primary-btn" title="Next Fragment/Slide [Right Arrow / Space]">Next &#x25B6;</button>
-    </div>
-
-    <div class="progress-container">
-      <div class="progress-track" id="progress-segments">
-        <!-- 20 Segment ticks generated by main.js -->
-      </div>
-      <div class="progress-bar-fill" id="progress-bar"></div>
-    </div>
-
-    <div class="footer-telemetry">
-      <span class="badge-speaker-tag" id="footer-speaker-badge">P1: 00:00 - 15:00</span>
-      <span class="separator">&bull;</span>
-      <span id="footer-elapsed-time">00:00 / 45:00</span>
-    </div>
-  </footer>
-
-  <!-- ========================================================================= -->
-  <!-- PRESENTER HELP & KEYBOARD SHORTCUTS MODAL                                 -->
-  <!-- ========================================================================= -->
-  <div id="shortcuts-modal" class="modal-backdrop hidden">
-    <div class="modal-card">
-      <div class="modal-header">
-        <h3>Presentation Controller Shortcuts</h3>
-        <button id="btn-close-modal" class="btn-close">&times;</button>
-      </div>
-      <div class="modal-body">
-        <div class="shortcut-row"><kbd>&rarr;</kbd> / <kbd>Space</kbd> / <kbd>PgDn</kbd> <span>Next fragment / Advance slide</span></div>
-        <div class="shortcut-row"><kbd>&larr;</kbd> / <kbd>PgUp</kbd> <span>Previous fragment / Reverse slide</span></div>
-        <div class="shortcut-row"><kbd>Home</kbd> <span>Jump to Slide 1 (Person 1)</span></div>
-        <div class="shortcut-row"><kbd>End</kbd> <span>Jump to Slide 20 (Q&amp;A)</span></div>
-        <div class="shortcut-row"><kbd>F</kbd> <span>Toggle Fullscreen</span></div>
-        <div class="shortcut-row"><kbd>L</kbd> <span>Toggle Laser Pointer</span></div>
-        <div class="shortcut-row"><kbd>T</kbd> <span>Pause / Resume Slide Timer</span></div>
-        <div class="shortcut-row"><kbd>H</kbd> / <kbd>?</kbd> <span>Toggle this help window</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Interactive Laser Pointer Canvas Overlay -->
-  <canvas id="laser-canvas" class="laser-canvas hidden"></canvas>
+  <aside id="presenter-hud" class="hud-hidden" aria-hidden="true">
+    <div class="hud-row"><span class="hud-label">SLIDE</span><span id="hud-slide-num" class="hud-val">01</span> / <span id="hud-total-slides" class="hud-val">20</span></div>
+    <div class="hud-row"><span class="hud-label">SPEAKER</span><span id="hud-speaker" class="hud-val">Person 1</span></div>
+    <div class="hud-row"><span class="hud-label">ELAPSED</span><span id="hud-elapsed" class="hud-val">00:00</span> / 45:00</div>
+    <div class="hud-row"><span class="hud-label">REMAIN</span><span id="hud-slide-timer" class="hud-val">01:30</span> (<span id="hud-budget" class="hud-val">90</span>s)</div>
+    <div class="hud-row"><span class="hud-label">SCENE</span><span id="hud-scene" class="hud-val">TitleCardScene</span></div>
+  </aside>
 
   <!-- Presentation Controller Script -->
   <script src="./js/main.js"></script>
