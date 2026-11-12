@@ -65,8 +65,14 @@
 ### [ ] Phase 2: Iterative Slide & Manim Scene Production
 
 > [!IMPORTANT]
-> **Mandatory Global Step-Control Invariant:**  
-> Never dump an entire slide on screen at once. All slides must enforce controllable progressive disclosure (`class="step"` elements and frame-accurate video cuepoints `data-cuepoints="..."`) tied to keyboard navigation (`Space` / `ArrowRight` / `ArrowLeft`). Pressing `Next` must step through every hidden milestone on the active slide before advancing to the next slide.
+> **The 4 Hard Visual Rules (Strict 3Blue1Brown Fullscreen Aesthetic):**
+> 1. **NO Top Header Banner:** Absolutely NO recurring top headers (`Category • Subcategory` + Title + Blue Line + Subtitle). A slide must have either NO title at all (pure fullscreen visual/equation) or at most a single minimalist 2–4 word title.
+> 2. **Spoken Script Goes in `data-mobile-notes`, NEVER on Screen:** Never render explanatory labels ("Primary Driver:", "Failure Mode:", "Motivating Problem:", "MIL-STD-810H", bullet explanations) on the canvas. Place all spoken background context, case numbers, and standards into HTML `<section data-mobile-notes="...">` for the mobile companion.
+> 3. **The 10-Word Rule:** A slide canvas may contain at most **10–15 words of English text total**, dedicating >90% of screen area to 1–2 dominant, high-impact visuals or equations.
+> 4. **One Visual Idea Per Screen (Replace, Don't Stack):** Never divide a slide into top/bottom halves with dividing lines. When progressing from a physical setup to a conclusion, animate the first visual fading out/morphing or cleanly split into consecutive sub-slides.
+>
+> **Global Step-Control Invariant:**  
+> All progressive revelations must use frame-accurate video cuepoints (`data-cuepoints="..."` and `class="step"`) tied to keyboard navigation (`Space` / `ArrowRight` / `ArrowLeft`).
 
 #### Slide & Scene Production Matrix
 
