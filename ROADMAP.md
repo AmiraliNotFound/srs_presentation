@@ -13,8 +13,11 @@
 | **Phase 0** | Workspace Foundation, Git Setup, PDF Extraction & Syllabus Synthesis | **COMPLETED** | 100% |
 | **Phase 1** | Detailed 3-Speaker Allocation, 45-Min Timing Script & HTML Presentation Shell | **COMPLETED** | 100% |
 | **Phase 1.5** | 3Blue1Brown Fullscreen Refactor: Zero-Chrome Stage & Card Slop Removal | **COMPLETED** | 100% |
-| **Phase 2** | Production of Manim Animation Scenes & Interactive Slide Decks | **IN PROGRESS** | 42% (10/24) |
-| **Phase 3** | Visual & Aesthetic Polish (TeX Typography, Theme Styling & UI Transitions) | **QUEUED** | 0% |
+| **Phase 2 (Part 1)** | Speaker 1 Slides (01–07: Foundations, Rayleigh SDOF, Circular Dilemma) | **COMPLETED** | 100% (10/10) |
+| **Phase 2 (Milestone)** | GitHub Remote Deployment & Multi-Speaker Workspace Isolation | **READY FOR EXECUTION** | 0% |
+| **Phase 2 (Part 2)** | Speaker 2 Slides (08–14: Duhamel Convolution, Canonical Pulses & SRS) | **QUEUED (Main)** | 0% |
+| **Phase 2 (Part 3)** | Speaker 3 Slides (15–21: Design Resolution, Crane Seismic & ECU Isolation) | **QUEUED (Parallel Colleague)** | 0% |
+| **Phase 3** | Visual & Aesthetic Polish (TeX Typography, Theme Styling & UI Transitions) | **QUEUED (Parallel Colleague)** | 0% |
 | **Phase 4** | FastAPI + WebSocket Mobile Companion, Audience Engagement & Live Quiz Sync | **QUEUED** | 0% |
 
 ---
