@@ -15,9 +15,9 @@
 | **Phase 1.5** | 3Blue1Brown Fullscreen Refactor: Zero-Chrome Stage & Card Slop Removal | **COMPLETED** | 100% |
 | **Phase 2 (Part 1)** | Speaker 1 Slides (01–07: Foundations, Rayleigh SDOF, Circular Dilemma) | **COMPLETED** | 100% (10/10) |
 | **Phase 2 (Milestone)** | GitHub Remote Deployment & Multi-Speaker Workspace Isolation | **COMPLETED** | 100% |
-| **Phase 2 (Part 2)** | Speaker 2 Slides (08–14: Duhamel Convolution, Canonical Pulses & SRS) | **QUEUED (Main)** | 0% |
-| **Phase 2 (Part 3)** | Speaker 3 Slides (15–21: Design Resolution, Crane Seismic & ECU Isolation) | **QUEUED (Parallel Colleague)** | 0% |
-| **Phase 3** | Visual & Aesthetic Polish (TeX Typography, Theme Styling & UI Transitions) | **QUEUED (Parallel Colleague)** | 0% |
+| **Phase 2 (Part 2)** | Speaker 2 Slides (08–14: Duhamel Convolution, Canonical Pulses & SRS) | **QUEUED (Lead)** | 0% |
+| **Phase 2 (Part 3)** | Speaker 3 Slides (15–21: Design Resolution, Crane Seismic & ECU Isolation) | **QUEUED (Colleague via PR)** | 0% |
+| **Phase 3** | Visual & Aesthetic Polish (Unified TeX Typography & Full-Deck Transitions) | **QUEUED (Lead / Post-Merge)** | 0% |
 | **Phase 4** | FastAPI + WebSocket Mobile Companion, Audience Engagement & Live Quiz Sync | **QUEUED** | 0% |
 
 ---
