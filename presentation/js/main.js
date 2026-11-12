@@ -75,12 +75,12 @@ class PresentationController {
    */
   initVideos() {
     this.slides.forEach((slide) => {
-      const video = slide.querySelector('video.stage-video');
-      if (video) {
+      const videos = slide.querySelectorAll('video');
+      videos.forEach((video) => {
         video.addEventListener('canplay', () => video.classList.add('loaded'));
         video.addEventListener('playing', () => video.classList.add('playing'));
         video.addEventListener('error', () => video.classList.remove('playing', 'loaded'));
-      }
+      });
     });
   }
 
@@ -235,13 +235,26 @@ class PresentationController {
    */
   revealFragment(fragments, index) {
     const fragment = fragments[index];
-    if (fragment) {
-      fragment.classList.add('visible');
-      const slide = this.slides[this.currentSlideIndex];
-      const video = slide.querySelector('video.stage-video') || slide.querySelector('video');
-      if (video && fragment.dataset.videoAction === 'resume') {
-        video.play();
+    if (!fragment) return;
+
+    fragment.classList.add('visible');
+    const slide = this.slides[this.currentSlideIndex];
+
+    if (fragment.dataset.videoAction === 'next-segment') {
+      const seg1 = slide.querySelector('.stage-video-seg1');
+      const seg2 = slide.querySelector('.stage-video-seg2');
+      if (seg1 && seg2) {
+        seg1.pause();
+        seg1.style.opacity = '0';
+        seg1.style.pointerEvents = 'none';
+        seg2.style.opacity = '1';
+        seg2.style.pointerEvents = 'auto';
+        seg2.currentTime = 0;
+        seg2.play().catch(() => {});
       }
+    } else if (fragment.dataset.videoAction === 'resume') {
+      const video = slide.querySelector('video.stage-video') || slide.querySelector('video');
+      if (video) video.play();
     }
   }
 
@@ -250,11 +263,25 @@ class PresentationController {
    */
   hideFragment(fragments, index) {
     const fragment = fragments[index];
-    if (fragment) {
-      fragment.classList.remove('visible');
-      const slide = this.slides[this.currentSlideIndex];
+    if (!fragment) return;
+
+    fragment.classList.remove('visible');
+    const slide = this.slides[this.currentSlideIndex];
+
+    if (fragment.dataset.videoAction === 'next-segment') {
+      const seg1 = slide.querySelector('.stage-video-seg1');
+      const seg2 = slide.querySelector('.stage-video-seg2');
+      if (seg1 && seg2) {
+        seg2.pause();
+        seg2.currentTime = 0;
+        seg2.style.opacity = '0';
+        seg2.style.pointerEvents = 'none';
+        seg1.style.opacity = '1';
+        seg1.style.pointerEvents = 'auto';
+      }
+    } else if (fragment.dataset.videoAction === 'resume') {
       const video = slide.querySelector('video.stage-video') || slide.querySelector('video');
-      if (video && fragment.dataset.videoAction === 'resume') {
+      if (video) {
         video.currentTime = 0;
         video.pause();
       }
@@ -380,12 +407,44 @@ class PresentationController {
    * Video Playback Manager: smooth playback on slide entry.
    */
   handleVideoEnter(slide) {
+    // Multi-segment video slide (e.g. Slide 1: Seg 1 then Seg 2)
+    if (slide.dataset.multiSegment === 'true') {
+      const seg1 = slide.querySelector('.stage-video-seg1');
+      const seg2 = slide.querySelector('.stage-video-seg2');
+      if (seg1 && seg2) {
+        if (this.currentFragmentIndex < 0) {
+          seg2.pause();
+          seg2.currentTime = 0;
+          seg2.style.opacity = '0';
+          seg2.style.pointerEvents = 'none';
+          seg1.style.opacity = '1';
+          seg1.style.pointerEvents = 'auto';
+          seg1.currentTime = 0;
+          const playPromise = seg1.play();
+          if (playPromise !== undefined) {
+            playPromise.then(() => seg1.classList.add('playing')).catch(() => {});
+          }
+        } else {
+          seg1.pause();
+          seg1.style.opacity = '0';
+          seg1.style.pointerEvents = 'none';
+          seg2.style.opacity = '1';
+          seg2.style.pointerEvents = 'auto';
+          const playPromise = seg2.play();
+          if (playPromise !== undefined) {
+            playPromise.then(() => seg2.classList.add('playing')).catch(() => {});
+          }
+        }
+      }
+      return;
+    }
+
     const video = slide.querySelector('video.stage-video') || slide.querySelector('video');
     if (!video) return;
 
     video.currentTime = 0;
 
-    // Support slides that start in a paused initial state (e.g. Slide 1 Step 0)
+    // Support slides that start in a paused initial state
     if (slide.dataset.pauseOnEntry === 'true' && this.currentFragmentIndex < 0) {
       video.pause();
       video.classList.add('loaded', 'playing');
@@ -409,10 +468,8 @@ class PresentationController {
    * Video Pause on slide exit.
    */
   handleVideoExit(slide) {
-    const video = slide.querySelector('video.stage-video') || slide.querySelector('video');
-    if (video) {
-      video.pause();
-    }
+    const videos = slide.querySelectorAll('video');
+    videos.forEach(v => v.pause());
   }
 
   /**

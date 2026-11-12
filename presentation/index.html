@@ -32,18 +32,21 @@
                data-speaker-name="Person 1: Physical Foundations &amp; Modeling" 
                data-time-budget="60" 
                data-quiz-trigger="" 
-               data-pause-on-entry="true"
+               data-multi-segment="true"
                data-mobile-summary="Title Card: Shock Response Spectrum (SRS), Transient Shock Dynamics, SDOF Foundations &amp; Base Isolation Design." 
                data-manim-scene="TitleCardScene">
         <div class="slide-stage">
-          <video class="stage-video" preload="auto" playsinline muted>
-            <source src="assets/videos/SLIDE_01_TitleCardScene.mp4" type="video/mp4">
+          <video id="slide-01-seg1" class="stage-video stage-video-seg1" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_01_Title_Seg1.mp4" type="video/mp4">
           </video>
-          <div class="fragment video-step" data-video-action="resume"></div>
+          <video id="slide-01-seg2" class="stage-video stage-video-seg2" preload="auto" playsinline muted style="opacity: 0; pointer-events: none;">
+            <source src="assets/videos/SLIDE_01_Title_Seg2.mp4" type="video/mp4">
+          </video>
+          <div class="fragment video-step" data-video-action="next-segment"></div>
           <div class="stage-fallback">
             <span class="slide-num-watermark">01</span>
-            <h2 class="fallback-title">TitleCardScene</h2>
-            <p class="fallback-sub">Shock Response Spectrum (SRS)</p>
+            <h2 class="fallback-title">Shock Response Spectrum (SRS)</h2>
+            <p class="fallback-sub">Transient Shock Dynamics, SDOF Foundations &amp; Base Isolation Design</p>
           </div>
         </div>
       </section>

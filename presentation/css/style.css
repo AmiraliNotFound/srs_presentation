@@ -86,17 +86,22 @@ body.cursor-hidden * {
    4. Slide Containers & 16:9 Edge-to-Edge Media Stage
    -------------------------------------------------------------------------- */
 .slide {
-  display: none;
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
   background-color: var(--bg-pure-black);
+  opacity: 0;
+  transform: translateY(15px) scale(0.99);
+  pointer-events: none;
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
 }
 
 .slide.active {
-  display: block;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
 }
 
 .slide-stage {
