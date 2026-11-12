@@ -1,10 +1,18 @@
-# Video and Media binaries
+# Video and Media binaries (ignore general video files)
 *.mp4
 *.webm
 *.mov
 *.avi
 *.mkv
 *.gif
+
+# Track production slide videos, but ignore raw rendering caches
+!presentation/assets/videos/*.mp4
+!presentation/assets/videos/.gitkeep
+
+# PDF documents (ignore heavy textbook PDFs, keep course sample problems tracked)
+*.pdf
+!Mechanical_Vibrations_Sample_Problems.pdf
 
 # Manim rendering artifacts & caches
 media/
@@ -40,7 +48,3 @@ node_modules/
 dist/
 build/
 .npm/
-
-# Presentation video assets (stored locally, rendered on demand)
-presentation/assets/videos/*
-!presentation/assets/videos/.gitkeep
