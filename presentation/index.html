@@ -220,16 +220,21 @@
                data-speaker-name="Person 1: Physical Foundations &amp; Modeling" 
                data-time-budget="180" 
                data-quiz-trigger="" 
+               data-cuepoints="3.0, 7.5, 13.0"
                data-mobile-summary="Motivating Problem: Helicopter drop container avionics PCB cantilever bracket under 100g half-sine shock." 
+               data-mobile-notes="Helicopter drops an avionics container onto packed soil. Base experiences a 100g half-sine deceleration pulse of duration t0 = 100 ms. An internal aluminum cantilever bracket (l = 10 in, b = 0.5 in, thickness d) carries a tip PCB mass of 0.40 lb. Material: E = 10 Mpsi, gamma = 0.10 lb/in^3. Allowable root bending stress is 26 ksi (180 MPa). Objective: Determine required thickness d to survive shock."
                data-manim-scene="HelicopterDropScene">
         <div class="slide-stage">
           <video class="stage-video" preload="auto" playsinline muted>
             <source src="assets/videos/SLIDE_05_HelicopterDropScene.mp4" type="video/mp4">
           </video>
+          <!-- Controllable Step Triggers -->
+          <div class="step" data-step="1" data-cuepoint="7.5" data-step-name="Base Impact Shock"></div>
+          <div class="step" data-step="2" data-cuepoint="13.0" data-step-name="Root Bending Constraint"></div>
           <div class="stage-fallback">
             <span class="slide-num-watermark">05</span>
             <h2 class="fallback-title">HelicopterDropScene</h2>
-            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
+            <p class="fallback-sub">The Motivating Problem: Helicopter Drop-Box Avionics</p>
           </div>
         </div>
       </section>
