@@ -248,16 +248,21 @@
                data-speaker-name="Person 1: Physical Foundations &amp; Modeling" 
                data-time-budget="180" 
                data-quiz-trigger="" 
+               data-cuepoints="3.0, 7.5, 13.0"
                data-mobile-summary="SDOF Idealization: Continuous cantilever beam reduced to lumped SDOF using Rayleigh's energy quotient." 
+               data-mobile-notes="SDOF reduction of continuous cantilever with tip PCB: Rayleigh's quotient uses the static deflection curve psi(y) to equate kinetic energy, yielding m_eq = m_PCB + (33/140)*m_beam approx m_PCB + 0.23*m_beam. Flexural stiffness is k = 3EI/l^3 = E*b*d^3 / (4*l^3). Natural period is tau_n = 2*pi*sqrt(m_eq / k). Notice both m_eq and k depend on unknown thickness d."
                data-manim-scene="RayleighSDOFScene">
         <div class="slide-stage">
           <video class="stage-video" preload="auto" playsinline muted>
             <source src="assets/videos/SLIDE_06_RayleighSDOFScene.mp4" type="video/mp4">
           </video>
+          <!-- Controllable Step Triggers -->
+          <div class="step" data-step="1" data-cuepoint="7.5" data-step-name="Lumped Mass Morph"></div>
+          <div class="step" data-step="2" data-cuepoint="13.0" data-step-name="Equivalent Stiffness and Period"></div>
           <div class="stage-fallback">
             <span class="slide-num-watermark">06</span>
             <h2 class="fallback-title">RayleighSDOFScene</h2>
-            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
+            <p class="fallback-sub">Continuous Cantilever to Lumped SDOF</p>
           </div>
         </div>
       </section>
