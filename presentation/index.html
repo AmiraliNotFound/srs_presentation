@@ -276,16 +276,21 @@
                data-speaker-name="Person 1: Physical Foundations &amp; Modeling" 
                data-time-budget="180" 
                data-quiz-trigger="QUIZ-01" 
+               data-cuepoints="3.0, 7.5, 13.0"
                data-mobile-summary="The Circular Design Dilemma: Thickness d dictates tau_n, which dictates DLF, which dictates stress." 
+               data-mobile-notes="The Circular Design Dilemma: Root bending stress requires DLF; DLF requires t0/tau_n; tau_n requires stiffness k; k requires thickness d. Under shock, doubling d increases stiffness (k prop d^3), shortening tau_n and changing DLF! Live Quiz 1: If thickness d is doubled, does root stress drop by 4x? Hand-off to Person 2 for Duhamel convolution and SRS derivation."
                data-manim-scene="CircularDilemmaScene">
         <div class="slide-stage">
           <video class="stage-video" preload="auto" playsinline muted>
             <source src="assets/videos/SLIDE_07_CircularDilemmaScene.mp4" type="video/mp4">
           </video>
+          <!-- Controllable Step Triggers -->
+          <div class="step" data-step="1" data-cuepoint="7.5" data-step-name="Circular Feedback Loop"></div>
+          <div class="step" data-step="2" data-cuepoint="13.0" data-step-name="DLF Barrier and Hand-Off"></div>
           <div class="stage-fallback">
             <span class="slide-num-watermark">07</span>
             <h2 class="fallback-title">CircularDilemmaScene</h2>
-            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
+            <p class="fallback-sub">The Circular Design Dilemma &amp; Hand-Off to Person 2</p>
           </div>
         </div>
       </section>
