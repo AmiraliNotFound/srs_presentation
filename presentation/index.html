@@ -192,21 +192,21 @@
                data-speaker-name="Person 1: Physical Foundations &amp; Modeling" 
                data-time-budget="60" 
                data-quiz-trigger="" 
-               data-cuepoints="2.0, 6.0, 10.5"
-               data-mobile-summary="The Peak-g Paradox: Why 5000g can be harmless while 50g causes catastrophic failure, necessitating the Shock Response Spectrum (SRS)." 
-               data-mobile-notes="The Peak-g Paradox: A 5000g microsecond pulse causes negligible damage because t0 << tau_n (DLF -> 0), whereas a 50g pulse matching tau_n causes catastrophic resonance. Military standards (MIL-STD-810H Method 516.8 & MIL-E-5400) mandate the Shock Response Spectrum Sa(omega_n, zeta) to evaluate peak response across all structural frequencies."
+               data-cuepoints="2.0, 7.5, 12.0"
+               data-mobile-summary="Structural Period Intuition: How identical shock pulses create vastly different peak deflections depending on natural period (Delta t vs tau_n), setting up the core design challenge." 
+               data-mobile-notes="Physical Intuition: Two SDOF systems (stiff vs. flexible) undergo the exact same input shock pulse. The stiff system (tau_n << Delta t) experiences negligible dynamic amplification, while the flexible/tuned structure (tau_n ~ Delta t) surges into massive dynamic overshoot and yield. Key lesson: Structural damage depends on natural period tau_n, not peak-g alone. How do we predict peak response for any structure? This directly motivates our real-world problem."
                data-manim-scene="PeakGParadoxScene">
         <div class="slide-stage">
           <video class="stage-video" preload="auto" playsinline muted>
             <source src="assets/videos/SLIDE_04B_PeakGParadoxScene.mp4" type="video/mp4">
           </video>
           <!-- Controllable Step Triggers -->
-          <div class="step" data-step="1" data-cuepoint="6.0" data-step-name="Pulse Duration Neglect"></div>
-          <div class="step" data-step="2" data-cuepoint="10.5" data-step-name="Shock Response Spectrum Mandate"></div>
+          <div class="step" data-step="1" data-cuepoint="7.5" data-step-name="Different Peak Deflections"></div>
+          <div class="step" data-step="2" data-cuepoint="12.0" data-step-name="Motivating Challenge Question"></div>
           <div class="stage-fallback">
             <span class="slide-num-watermark">04B</span>
             <h2 class="fallback-title">PeakGParadoxScene</h2>
-            <p class="fallback-sub">The Peak-g Paradox &amp; SRS Mandate</p>
+            <p class="fallback-sub">Structural Period Intuition &amp; Motivating Question</p>
           </div>
         </div>
       </section>

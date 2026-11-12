@@ -84,7 +84,7 @@
 | **SLIDE-03B** | Person 1 | Transient Dynamic Shock Pulse: Short-Duration Pulse, DLF = 2.0 & Peak Stress Rupture | `TransientShockScene` | [x] | [x] |
 | **SLIDE-03C** | Person 1 | Why Classical Statics Fails: Dynamic Inertial Lag & Energy Quadrupling | `StaticsFailureScene` | [x] | [x] |
 | **SLIDE-04A** | Person 1 | Two Extremes of Mechanical Shock: Pure Visual Graph Comparison | `ShockComparisonScene` | [x] | [x] |
-| **SLIDE-04B** | Person 1 | The Peak-g Paradox: Pulse Duration Neglect & Centerpiece SRS Mandate | `PeakGParadoxScene` | [x] | [x] |
+| **SLIDE-04B** | Person 1 | Structural Period Intuition: SDOF Spring-Mass Comparison & Motivating Challenge | `PeakGParadoxScene` | [x] | [x] |
 | **SLIDE-05** | Person 1 | The Motivating Problem: Helicopter Drop-Box Avionics | `HelicopterDropScene` | [x] | [x] |
 | **SLIDE-06** | Person 1 | SDOF Idealization: Continuous Cantilever to Lumped Mass | `RayleighSDOFScene` | [ ] | [ ] |
 | **SLIDE-07** | Person 1 | The Circular Design Dilemma: The Need for SRS | `CircularDilemmaScene` | [ ] | [ ] |
