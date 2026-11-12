@@ -159,21 +159,26 @@
       <section class="slide" 
                id="slide-04" 
                data-slide-id="SLIDE-04" 
-               data-slide-num="4" 
+               data-slide-num="04" 
                data-speaker="person1" 
                data-speaker-name="Person 1: Physical Foundations &amp; Modeling" 
                data-time-budget="120" 
                data-quiz-trigger="" 
+               data-cuepoints="2.0, 7.0, 12.0, 17.5"
                data-mobile-summary="Real-World Shock Environments &amp; Military Testing Standards: Velocity shock, pyroshock, and MIL-STD-810H." 
                data-manim-scene="ShockTaxonomyScene">
         <div class="slide-stage">
           <video class="stage-video" preload="auto" playsinline muted>
             <source src="assets/videos/SLIDE_04_ShockTaxonomyScene.mp4" type="video/mp4">
           </video>
+          <!-- Controllable Step Triggers -->
+          <div class="step" data-step="1" data-cuepoint="7.0" data-step-name="Velocity Shock (Drop / Impact)"></div>
+          <div class="step" data-step="2" data-cuepoint="12.0" data-step-name="Pyrotechnic Shock (Pyroshock)"></div>
+          <div class="step" data-step="3" data-cuepoint="17.5" data-step-name="MIL-STD-810H &amp; SRS Mandate"></div>
           <div class="stage-fallback">
             <span class="slide-num-watermark">04</span>
             <h2 class="fallback-title">ShockTaxonomyScene</h2>
-            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
+            <p class="fallback-sub">Real-World Shock Environments &amp; Military Testing Standards</p>
           </div>
         </div>
       </section>
