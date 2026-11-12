@@ -1,13 +1,13 @@
 """
-SLIDE-03B: StaticsFailureScene
+SLIDE-03C: StaticsFailureScene
 Presentation: Shock Response Spectrum (SRS)
 Academic Context: Mechanical Vibrations (Semester 5) — University of Tehran
 Speaker: Person 1 (Physical Intuition & Modeling)
 
-Step-Controlled Mathematical Insight:
-  - Step 0 (0.0s - 1.4s): Minimal header + Naive static assumption (x_static = F_0 / k).
-  - Step 1 (1.4s - 4.2s): Dynamic Inertial Lag transition arrow -> Transient reality (x_max = DLF * (F_0/k), DLF <= 2.0).
-  - Step 2 (4.2s - 11.0s): Unboxed key takeaway: U_dyn = 4 * U_static => Up to 100% deflection overshoot!
+Clean Presentation-Grade Slide (Zero Bulky Captions / Large Typography):
+  - Step 0 (0.0s - 2.0s): Minimal header + Naive static assumption (x_static = F_0 / k).
+  - Step 1 (2.0s - 6.0s): Perfectly centered equidistant Dynamic Inertial Lag arrow -> Transient reality (DLF <= 2.0).
+  - Step 2 (6.0s - 11.0s): Large, bold takeaway: U_dyn = 4 * U_static => Quadrupled stored energy!
 """
 
 from manim import *
@@ -36,174 +36,140 @@ class StaticsFailureScene(Scene):
         # ------------------------------------------------------------------
         header_tag = Tex(
             r"\textsc{Physical Foundations} \quad $\bullet$ \quad \textsc{The Static Analysis Dilemma}",
-            font_size=21,
+            font_size=22,
             color=TEHRAN_BLUE
-        ).move_to([0, 3.32, 0])
+        ).move_to([0, 3.42, 0])
 
         main_title = Tex(
             r"\textbf{Why Classical Statics Fails}",
-            font_size=44,
+            font_size=46,
             color=TEXT_WHITE
-        ).next_to(header_tag, DOWN, buff=0.15)
+        ).next_to(header_tag, DOWN, buff=0.14)
 
         header_rule = Line(
-            start=LEFT * 5.8,
-            end=RIGHT * 5.8,
+            start=LEFT * 6.0,
+            end=RIGHT * 6.0,
             color=TEHRAN_BLUE,
             stroke_width=1.6
-        ).next_to(main_title, DOWN, buff=0.18)
+        ).next_to(main_title, DOWN, buff=0.15)
 
         # ------------------------------------------------------------------
-        # 3. Center Stage: The Dynamic Transformation
+        # 3. Center Stage: The Dynamic Transformation (Perfect Equidistant Spacing)
         # ------------------------------------------------------------------
-        center_y = 0.55
+        center_y = 0.70
 
         # --- Left: Naive Static Assumption ---
         f_static_title = Tex(
-            r"\textsc{Naive Static Assumption}",
-            font_size=22,
+            r"\textsc{Static Sizing}",
+            font_size=24,
             color=TEXT_MUTED
         )
         f_static_math = MathTex(
             r"x_{\text{static}} = \frac{F_0}{k}",
-            font_size=40,
+            font_size=46,
             color=FORCE_GOLD
         )
-        f_static_sub = Tex(
-            r"Assumes instantaneous equilibrium",
-            font_size=16,
-            color=TEXT_DIM
-        )
-        f_static_grp = VGroup(f_static_title, f_static_math, f_static_sub).arrange(DOWN, buff=0.16).move_to([-4.15, center_y, 0])
-
-        # --- Center: Transition Arrow with Inertial Lag ---
-        arrow_dyn = Arrow(
-            start=[-1.35, center_y, 0],
-            end=[1.35, center_y, 0],
-            color=FORCE_GOLD,
-            stroke_width=3.2,
-            tip_length=0.18
-        )
-        arrow_lbl = Tex(
-            r"\textbf{Dynamic Inertial Lag}",
-            font_size=20,
-            color=FORCE_GOLD
-        ).next_to(arrow_dyn, UP, buff=0.12)
-        arrow_sub = Tex(
-            r"$t_0 \lesssim \tau_n$ \ (Mass cannot accelerate instantly)",
-            font_size=15,
-            color=TEXT_MUTED
-        ).next_to(arrow_dyn, DOWN, buff=0.12)
-        arrow_grp = VGroup(arrow_dyn, arrow_lbl, arrow_sub)
+        f_static_grp = VGroup(f_static_title, f_static_math).arrange(DOWN, buff=0.22).move_to([-4.40, center_y, 0])
 
         # --- Right: Transient Dynamic Reality ---
         f_dyn_title = Tex(
-            r"\textsc{Transient Dynamic Reality}",
-            font_size=22,
+            r"\textsc{Dynamic Shock Reality}",
+            font_size=24,
             color=DANGER_RED
         )
         f_dyn_math = MathTex(
             r"x_{\max} = \textbf{DLF} \cdot \left(\frac{F_0}{k}\right), \quad \textbf{DLF} \le 2.0",
-            font_size=34,
+            font_size=38,
             color=DANGER_RED
         )
-        f_dyn_sub = Tex(
-            r"Dynamic kinetic energy drives $+100\%$ overshoot",
-            font_size=16,
-            color=TEXT_MUTED
+        f_dyn_grp = VGroup(f_dyn_title, f_dyn_math).arrange(DOWN, buff=0.22).move_to([3.40, center_y, 0])
+
+        # --- Center: Perfectly Centered Transition Arrow (Equidistant from both formulas) ---
+        # Right edge of static math is at approx -3.25; Left edge of dynamic math is at approx 0.85.
+        # Center of gap = (-3.25 + 0.85)/2 = -1.20. Arrow span = [-2.20, -0.20].
+        # Distance to static = 1.05; Distance to dynamic = 1.05! Perfectly balanced!
+        arrow_dyn = Arrow(
+            start=[-2.20, center_y - 0.10, 0],
+            end=[-0.20, center_y - 0.10, 0],
+            color=FORCE_GOLD,
+            stroke_width=3.6,
+            tip_length=0.20
         )
-        f_dyn_grp = VGroup(f_dyn_title, f_dyn_math, f_dyn_sub).arrange(DOWN, buff=0.16).move_to([4.15, center_y, 0])
+        arrow_lbl = Tex(
+            r"\textbf{Dynamic Inertial Lag}",
+            font_size=22,
+            color=FORCE_GOLD
+        ).next_to(arrow_dyn, UP, buff=0.16)
+        arrow_grp = VGroup(arrow_dyn, arrow_lbl)
 
         # ------------------------------------------------------------------
-        # 4. Bottom Stage: Master Takeaway (Unboxed, large, clean typography)
+        # 4. Bottom Stage: Master Takeaway (Large, Presentation-Grade, Zero Bulky Text)
         # ------------------------------------------------------------------
         takeaway_math = MathTex(
-            r"U_{\text{dyn}} = \tfrac{1}{2} k x_{\max}^2 = 4 \times U_{\text{static}}",
-            font_size=28,
+            r"U_{\text{dyn}} = \tfrac{1}{2} k (2\delta_{\text{st}})^2 = 4 \times U_{\text{static}}",
+            font_size=36,
             color=DANGER_RED
         )
         takeaway_arrow = Tex(
             r"$\implies$",
-            font_size=28,
+            font_size=34,
             color=TEXT_WHITE
         )
         takeaway_txt = Tex(
-            r"\textbf{Up to 100\% Deflection \& Stress Overshoot!}",
-            font_size=26,
+            r"\textbf{Doubling Deflection Quadruples Stored Energy!}",
+            font_size=28,
             color=FORCE_GOLD
         )
-        takeaway_row = VGroup(takeaway_math, takeaway_arrow, takeaway_txt).arrange(RIGHT, buff=0.25).move_to([0, -1.75, 0])
-
-        takeaway_sub = Tex(
-            r"Because strain energy scales quadratically ($U = \frac{1}{2} k x^2$), doubling deflection quadruples stored internal energy.",
-            font_size=18,
-            color=TEXT_OFFWH
-        ).next_to(takeaway_row, DOWN, buff=0.28)
+        takeaway_row = VGroup(takeaway_math, takeaway_arrow, takeaway_txt).arrange(RIGHT, buff=0.30).move_to([0, -1.65, 0])
 
         takeaway_warn = Tex(
-            r"\textbf{Result: Classical static sizing guarantees catastrophic yield or rupture under shock!}",
-            font_size=19,
+            r"\textbf{Classical Static Sizing Guarantees Catastrophic Shock Rupture!}",
+            font_size=26,
             color=DANGER_RED
-        ).next_to(takeaway_sub, DOWN, buff=0.24)
+        ).next_to(takeaway_row, DOWN, buff=0.35)
 
-        takeaway_grp = VGroup(takeaway_row, takeaway_sub, takeaway_warn)
+        takeaway_grp = VGroup(takeaway_row, takeaway_warn)
 
         # ------------------------------------------------------------------
-        # 5. Step-Controlled Timeline & Cuepoint Milestones
+        # 5. Step-Controlled Timeline with Exact Runtimes & Rest Holds
         # ------------------------------------------------------------------
-        # --- Step 0: Initial Load (0.0s - 1.4s) ---
+        # --- Step 0: Initial Load (Total: 2.0s -> Cuepoint 0 = 2.0s) ---
         self.play(
-            FadeIn(header_tag, shift=DOWN * 0.20),
+            FadeIn(header_tag, shift=DOWN * 0.15),
             Write(main_title),
             GrowFromCenter(header_rule),
-            run_time=1.2
-        )
-        self.play(
-            FadeIn(f_static_grp, shift=RIGHT * 0.25),
             run_time=0.8
         )
-        self.wait(0.2)  # Pause point: Step 0 completes at 1.4s
+        self.play(
+            FadeIn(f_static_grp, shift=UP * 0.15),
+            run_time=0.6
+        )
+        self.wait(0.6)  # Stably resting at t = 2.0s
 
-        # --- Step 1: Transition Arrow & Transient Reality (1.4s - 4.2s) ---
+        # --- Step 1: Centered Inertial Lag Arrow & Dynamic Reality (Total: 4.0s -> Cuepoint 1 = 6.0s) ---
         self.play(
             GrowArrow(arrow_dyn),
-            FadeIn(arrow_lbl, shift=DOWN * 0.1),
-            FadeIn(arrow_sub, shift=UP * 0.1),
-            run_time=1.2
+            FadeIn(arrow_lbl, shift=UP * 0.1),
+            FadeIn(f_dyn_grp, shift=UP * 0.15),
+            run_time=1.4
         )
         self.play(
-            FadeIn(f_dyn_grp, shift=LEFT * 0.25),
+            f_dyn_math[0][17:23].animate.scale(1.15),
+            run_time=0.4
+        )
+        self.play(
+            f_dyn_math[0][17:23].animate.scale(1 / 1.15),
+            run_time=0.4
+        )
+        self.wait(1.8)  # Stably resting at t = 6.0s
+
+        # --- Step 2: Bold Energy Takeaway (Total: 5.0s -> Cuepoint 2 = 11.0s) ---
+        self.play(
+            FadeIn(takeaway_row, shift=UP * 0.2),
             run_time=1.0
         )
-        # Emphasis pulse on DLF term
         self.play(
-            f_dyn_math.animate.scale(1.08),
-            run_time=0.4
-        )
-        self.play(
-            f_dyn_math.animate.scale(1 / 1.08),
-            run_time=0.4
-        )
-        self.wait(0.2)  # Pause point: Step 1 completes at 4.2s
-
-        # --- Step 2: Key Takeaway & Quadratic Energy Scaling (4.2s - 11.0s) ---
-        self.play(
-            FadeIn(takeaway_row, shift=UP * 0.25),
-            run_time=1.2
-        )
-        self.play(
-            FadeIn(takeaway_sub, shift=UP * 0.15),
             FadeIn(takeaway_warn, shift=UP * 0.15),
-            run_time=1.2
+            run_time=0.8
         )
-        # Subtle pulse on warning
-        self.play(
-            takeaway_warn.animate.scale(1.05),
-            run_time=0.4
-        )
-        self.play(
-            takeaway_warn.animate.scale(1 / 1.05),
-            run_time=0.4
-        )
-        # Resting hold frame for speaker commentary
-        self.wait(3.5)
+        self.wait(3.2)  # Stable resting hold until t = 11.0s
