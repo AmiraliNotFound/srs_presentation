@@ -197,15 +197,15 @@ class PresentationController {
   }
 
   /**
-   * Advances forward: either reveals next fragment, or advances to next slide.
+   * Advances forward: either reveals next fragment/step, or advances to next slide.
    */
   next() {
     const currentSlide = this.slides[this.currentSlideIndex];
-    const fragments = Array.from(currentSlide.querySelectorAll('.fragment'));
+    const steps = Array.from(currentSlide.querySelectorAll('.fragment, .step'));
 
-    if (this.currentFragmentIndex < fragments.length - 1) {
+    if (this.currentFragmentIndex < steps.length - 1) {
       this.currentFragmentIndex++;
-      this.revealFragment(fragments, this.currentFragmentIndex);
+      this.revealFragment(steps, this.currentFragmentIndex);
     } else {
       if (this.currentSlideIndex < this.totalSlides - 1) {
         this.goToSlide(this.currentSlideIndex + 1);
@@ -214,14 +214,14 @@ class PresentationController {
   }
 
   /**
-   * Reverses backward: either hides previous fragment, or jumps to previous slide.
+   * Reverses backward: either hides previous fragment/step, or jumps to previous slide.
    */
   prev() {
     const currentSlide = this.slides[this.currentSlideIndex];
-    const fragments = Array.from(currentSlide.querySelectorAll('.fragment'));
+    const steps = Array.from(currentSlide.querySelectorAll('.fragment, .step'));
 
     if (this.currentFragmentIndex >= 0) {
-      this.hideFragment(fragments, this.currentFragmentIndex);
+      this.hideFragment(steps, this.currentFragmentIndex);
       this.currentFragmentIndex--;
     } else {
       if (this.currentSlideIndex > 0) {
@@ -231,16 +231,26 @@ class PresentationController {
   }
 
   /**
-   * Reveals a specific fragment.
+   * Reveals a specific fragment or controllable step.
    */
-  revealFragment(fragments, index) {
-    const fragment = fragments[index];
-    if (!fragment) return;
+  revealFragment(steps, index) {
+    const step = steps[index];
+    if (!step) return;
 
-    fragment.classList.add('visible');
+    step.classList.add('visible');
     const slide = this.slides[this.currentSlideIndex];
 
-    if (fragment.dataset.videoAction === 'next-segment') {
+    // Cuepoint video stepping
+    if (slide.dataset.cuepoints) {
+      const cuepoints = slide.dataset.cuepoints.split(',').map(s => parseFloat(s.trim()));
+      const targetTime = cuepoints[index + 1];
+      const video = slide.querySelector('video.stage-video') || slide.querySelector('video');
+      if (video && targetTime !== undefined) {
+        this.playVideoToCuepoint(video, targetTime);
+      }
+    }
+
+    if (step.dataset.videoAction === 'next-segment') {
       const seg1 = slide.querySelector('.stage-video-seg1');
       const seg2 = slide.querySelector('.stage-video-seg2');
       if (seg1 && seg2) {
@@ -252,23 +262,33 @@ class PresentationController {
         seg2.currentTime = 0;
         seg2.play().catch(() => {});
       }
-    } else if (fragment.dataset.videoAction === 'resume') {
+    } else if (step.dataset.videoAction === 'resume') {
       const video = slide.querySelector('video.stage-video') || slide.querySelector('video');
       if (video) video.play();
     }
   }
 
   /**
-   * Hides a specific fragment.
+   * Hides a specific fragment or controllable step.
    */
-  hideFragment(fragments, index) {
-    const fragment = fragments[index];
-    if (!fragment) return;
+  hideFragment(steps, index) {
+    const step = steps[index];
+    if (!step) return;
 
-    fragment.classList.remove('visible');
+    step.classList.remove('visible');
     const slide = this.slides[this.currentSlideIndex];
 
-    if (fragment.dataset.videoAction === 'next-segment') {
+    // Cuepoint video reversing
+    if (slide.dataset.cuepoints) {
+      const cuepoints = slide.dataset.cuepoints.split(',').map(s => parseFloat(s.trim()));
+      const targetTime = cuepoints[index];
+      const video = slide.querySelector('video.stage-video') || slide.querySelector('video');
+      if (video && targetTime !== undefined) {
+        this.seekVideoTo(video, targetTime);
+      }
+    }
+
+    if (step.dataset.videoAction === 'next-segment') {
       const seg1 = slide.querySelector('.stage-video-seg1');
       const seg2 = slide.querySelector('.stage-video-seg2');
       if (seg1 && seg2) {
@@ -279,7 +299,7 @@ class PresentationController {
         seg1.style.opacity = '1';
         seg1.style.pointerEvents = 'auto';
       }
-    } else if (fragment.dataset.videoAction === 'resume') {
+    } else if (step.dataset.videoAction === 'resume') {
       const video = slide.querySelector('video.stage-video') || slide.querySelector('video');
       if (video) {
         video.currentTime = 0;
@@ -306,24 +326,24 @@ class PresentationController {
     const newSlide = this.slides[targetIndex];
     newSlide.classList.add('active');
 
-    // Manage fragments
-    const fragments = Array.from(newSlide.querySelectorAll('.fragment'));
+    // Manage fragments and steps
+    const steps = Array.from(newSlide.querySelectorAll('.fragment, .step'));
     if (showAllFragments) {
-      fragments.forEach(f => f.classList.add('visible'));
-      this.currentFragmentIndex = fragments.length - 1;
+      steps.forEach(f => f.classList.add('visible'));
+      this.currentFragmentIndex = steps.length - 1;
     } else {
-      fragments.forEach(f => f.classList.remove('visible'));
+      steps.forEach(f => f.classList.remove('visible'));
       this.currentFragmentIndex = -1;
     }
 
     // Update telemetry, timers, and HUD
     this.updateHUD(newSlide);
     this.resetSlideTimer(newSlide);
-    this.handleVideoEnter(newSlide);
+    this.handleVideoEnter(newSlide, showAllFragments);
     this.preloadNextVideo(targetIndex + 1);
 
     // Dispatch Phase 4 Companion Hook
-    this.dispatchSlideChangeEvent(newSlide, fragments.length);
+    this.dispatchSlideChangeEvent(newSlide, steps.length);
   }
 
   /**
@@ -332,7 +352,7 @@ class PresentationController {
   updateHUD(slide) {
     if (!this.hud) return;
 
-    const slideNum = parseInt(slide.dataset.slideNum, 10);
+    const slideNum = slide.dataset.slideNum || String(this.currentSlideIndex + 1);
     const speaker = slide.dataset.speaker || 'person1';
     const speakerName = slide.dataset.speakerName || 'Speaker';
     const budget = parseInt(slide.dataset.timeBudget, 10) || 90;
@@ -406,7 +426,7 @@ class PresentationController {
   /**
    * Video Playback Manager: smooth playback on slide entry.
    */
-  handleVideoEnter(slide) {
+  handleVideoEnter(slide, isBackward = false) {
     // Multi-segment video slide (e.g. Slide 1: Seg 1 then Seg 2)
     if (slide.dataset.multiSegment === 'true') {
       const seg1 = slide.querySelector('.stage-video-seg1');
@@ -442,6 +462,21 @@ class PresentationController {
     const video = slide.querySelector('video.stage-video') || slide.querySelector('video');
     if (!video) return;
 
+    // Slide with frame-accurate cuepoints
+    if (slide.dataset.cuepoints) {
+      const cuepoints = slide.dataset.cuepoints.split(',').map(s => parseFloat(s.trim()));
+      if (isBackward) {
+        const lastCue = cuepoints[cuepoints.length - 1];
+        this.seekVideoTo(video, lastCue);
+        video.classList.add('loaded', 'playing');
+      } else {
+        video.currentTime = 0;
+        video.classList.add('loaded', 'playing');
+        this.playVideoToCuepoint(video, cuepoints[0]);
+      }
+      return;
+    }
+
     video.currentTime = 0;
 
     // Support slides that start in a paused initial state
@@ -465,11 +500,83 @@ class PresentationController {
   }
 
   /**
+   * Play video up to a target cuepoint time and pause exactly there.
+   */
+  playVideoToCuepoint(video, targetTime) {
+    if (!video) return;
+
+    if (video._rafId) {
+      if ('cancelVideoFrameCallback' in video) {
+        video.cancelVideoFrameCallback(video._rafId);
+      } else {
+        cancelAnimationFrame(video._rafId);
+      }
+      video._rafId = null;
+    }
+
+    const checkTime = () => {
+      if (video.paused) return;
+      if (video.currentTime >= targetTime - 0.02) {
+        video.pause();
+        video.currentTime = targetTime;
+        video._rafId = null;
+        return;
+      }
+      if ('requestVideoFrameCallback' in video) {
+        video._rafId = video.requestVideoFrameCallback(checkTime);
+      } else {
+        video._rafId = requestAnimationFrame(checkTime);
+      }
+    };
+
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          video.classList.add('playing');
+          if ('requestVideoFrameCallback' in video) {
+            video._rafId = video.requestVideoFrameCallback(checkTime);
+          } else {
+            video._rafId = requestAnimationFrame(checkTime);
+          }
+        })
+        .catch(console.warn);
+    }
+  }
+
+  /**
+   * Seek video immediately to a specific timestamp and pause.
+   */
+  seekVideoTo(video, targetTime) {
+    if (!video) return;
+    if (video._rafId) {
+      if ('cancelVideoFrameCallback' in video) {
+        video.cancelVideoFrameCallback(video._rafId);
+      } else {
+        cancelAnimationFrame(video._rafId);
+      }
+      video._rafId = null;
+    }
+    video.pause();
+    video.currentTime = targetTime;
+  }
+
+  /**
    * Video Pause on slide exit.
    */
   handleVideoExit(slide) {
     const videos = slide.querySelectorAll('video');
-    videos.forEach(v => v.pause());
+    videos.forEach(v => {
+      if (v._rafId) {
+        if ('cancelVideoFrameCallback' in v) {
+          v.cancelVideoFrameCallback(v._rafId);
+        } else {
+          cancelAnimationFrame(v._rafId);
+        }
+        v._rafId = null;
+      }
+      v.pause();
+    });
   }
 
   /**

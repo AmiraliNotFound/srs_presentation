@@ -74,25 +74,57 @@
         </div>
       </section>
 
-      <!-- SLIDE 03 -->
+      <!-- SLIDE 03A -->
       <section class="slide" 
-               id="slide-03" 
-               data-slide-id="SLIDE-03" 
-               data-slide-num="3" 
+               id="slide-03a" 
+               data-slide-id="SLIDE-03A" 
+               data-slide-num="03A" 
                data-speaker="person1" 
                data-speaker-name="Person 1: Physical Foundations &amp; Modeling" 
-               data-time-budget="150" 
+               data-time-budget="90" 
                data-quiz-trigger="" 
-               data-mobile-summary="Harmonic Vibration vs. Transient Shock: Why statics fails under shock loading." 
+               data-cuepoints="1.4, 5.2, 9.4, 15.0"
+               data-mobile-summary="Harmonic Vibration vs. Transient Shock: Visual comparison of continuous cyclic excitation vs. short-duration pulse overshoot." 
                data-manim-scene="HarmonicVsShockScene">
         <div class="slide-stage">
           <video class="stage-video" preload="auto" playsinline muted>
-            <source src="assets/videos/SLIDE_03_HarmonicVsShockScene.mp4" type="video/mp4">
+            <source src="assets/videos/SLIDE_03A_HarmonicVsShockScene.mp4" type="video/mp4">
           </video>
+          <!-- Controllable Step Triggers -->
+          <div class="step" data-step="1" data-cuepoint="5.2" data-step-name="Harmonic Waveform"></div>
+          <div class="step" data-step="2" data-cuepoint="9.4" data-step-name="Shock Pulse &amp; Overshoot"></div>
+          <div class="step" data-step="3" data-cuepoint="15.0" data-step-name="Governing Metrics"></div>
           <div class="stage-fallback">
-            <span class="slide-num-watermark">03</span>
+            <span class="slide-num-watermark">03A</span>
             <h2 class="fallback-title">HarmonicVsShockScene</h2>
             <p class="fallback-sub">Harmonic Vibration vs. Transient Shock</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 03B -->
+      <section class="slide" 
+               id="slide-03b" 
+               data-slide-id="SLIDE-03B" 
+               data-slide-num="03B" 
+               data-speaker="person1" 
+               data-speaker-name="Person 1: Physical Foundations &amp; Modeling" 
+               data-time-budget="60" 
+               data-quiz-trigger="" 
+               data-cuepoints="1.4, 4.2, 11.0"
+               data-mobile-summary="Why Classical Statics Fails: Dynamic inertial lag produces Dynamic Load Factor (DLF) up to 2.0 and quadruples strain energy." 
+               data-manim-scene="StaticsFailureScene">
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_03B_StaticsFailureScene.mp4" type="video/mp4">
+          </video>
+          <!-- Controllable Step Triggers -->
+          <div class="step" data-step="1" data-cuepoint="4.2" data-step-name="Dynamic Inertial Lag"></div>
+          <div class="step" data-step="2" data-cuepoint="11.0" data-step-name="Strain Energy Takeaway"></div>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">03B</span>
+            <h2 class="fallback-title">StaticsFailureScene</h2>
+            <p class="fallback-sub">Why Classical Statics Fails</p>
           </div>
         </div>
       </section>

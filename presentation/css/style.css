@@ -193,6 +193,22 @@ body.cursor-hidden * {
 }
 
 /* --------------------------------------------------------------------------
+   5b. Global Step-Control & Fragments
+   -------------------------------------------------------------------------- */
+.fragment,
+.step {
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.fragment.visible,
+.step.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* --------------------------------------------------------------------------
    6. Hidden Presenter Rehearsal HUD (Strictly display: none by default)
    -------------------------------------------------------------------------- */
 #presenter-hud {
