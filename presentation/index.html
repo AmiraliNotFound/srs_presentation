@@ -155,30 +155,58 @@
         </div>
       </section>
 
-      <!-- SLIDE 04 -->
+      <!-- SLIDE 04A -->
       <section class="slide" 
-               id="slide-04" 
-               data-slide-id="SLIDE-04" 
-               data-slide-num="04" 
+               id="slide-04a" 
+               data-slide-id="SLIDE-04A" 
+               data-slide-num="04A" 
                data-speaker="person1" 
                data-speaker-name="Person 1: Physical Foundations &amp; Modeling" 
-               data-time-budget="120" 
+               data-time-budget="60" 
                data-quiz-trigger="" 
-               data-cuepoints="2.0, 7.0, 12.0, 17.5"
-               data-mobile-summary="Real-World Shock Environments &amp; Military Testing Standards: Velocity shock, pyroshock, and MIL-STD-810H." 
-               data-manim-scene="ShockTaxonomyScene">
+               data-cuepoints="1.8, 5.5, 9.5"
+               data-mobile-summary="Two Extremes of Mechanical Shock: Drop Impact half-sine pulse vs. Pyrotechnic high-frequency ringing burst." 
+               data-mobile-notes="Velocity Shocks (Drop/Impact): Kinetic transfer v0=sqrt(2gh), t0~50ms, a_max~50g, primary driver of structural flexure and yield (e.g. helicopter drop container). Pyrotechnic Shocks: Explosive staging, t0<1ms, ringing >1kHz, a_max~5000g, primary driver of PCB solder joint and crystal fracture."
+               data-manim-scene="ShockComparisonScene">
         <div class="slide-stage">
           <video class="stage-video" preload="auto" playsinline muted>
-            <source src="assets/videos/SLIDE_04_ShockTaxonomyScene.mp4" type="video/mp4">
+            <source src="assets/videos/SLIDE_04A_ShockComparisonScene.mp4" type="video/mp4">
           </video>
           <!-- Controllable Step Triggers -->
-          <div class="step" data-step="1" data-cuepoint="7.0" data-step-name="Velocity Shock (Drop / Impact)"></div>
-          <div class="step" data-step="2" data-cuepoint="12.0" data-step-name="Pyrotechnic Shock (Pyroshock)"></div>
-          <div class="step" data-step="3" data-cuepoint="17.5" data-step-name="MIL-STD-810H &amp; SRS Mandate"></div>
+          <div class="step" data-step="1" data-cuepoint="5.5" data-step-name="Drop Impact Pulse"></div>
+          <div class="step" data-step="2" data-cuepoint="9.5" data-step-name="Pyroshock Ringing Burst"></div>
           <div class="stage-fallback">
-            <span class="slide-num-watermark">04</span>
-            <h2 class="fallback-title">ShockTaxonomyScene</h2>
-            <p class="fallback-sub">Real-World Shock Environments &amp; Military Testing Standards</p>
+            <span class="slide-num-watermark">04A</span>
+            <h2 class="fallback-title">ShockComparisonScene</h2>
+            <p class="fallback-sub">Two Extremes of Mechanical Shock</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 04B -->
+      <section class="slide" 
+               id="slide-04b" 
+               data-slide-id="SLIDE-04B" 
+               data-slide-num="04B" 
+               data-speaker="person1" 
+               data-speaker-name="Person 1: Physical Foundations &amp; Modeling" 
+               data-time-budget="60" 
+               data-quiz-trigger="" 
+               data-cuepoints="2.0, 6.0, 10.5"
+               data-mobile-summary="The Peak-g Paradox: Why 5000g can be harmless while 50g causes catastrophic failure, necessitating the Shock Response Spectrum (SRS)." 
+               data-mobile-notes="The Peak-g Paradox: A 5000g microsecond pulse causes negligible damage because t0 << tau_n (DLF -> 0), whereas a 50g pulse matching tau_n causes catastrophic resonance. Military standards (MIL-STD-810H Method 516.8 & MIL-E-5400) mandate the Shock Response Spectrum Sa(omega_n, zeta) to evaluate peak response across all structural frequencies."
+               data-manim-scene="PeakGParadoxScene">
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_04B_PeakGParadoxScene.mp4" type="video/mp4">
+          </video>
+          <!-- Controllable Step Triggers -->
+          <div class="step" data-step="1" data-cuepoint="6.0" data-step-name="Pulse Duration Neglect"></div>
+          <div class="step" data-step="2" data-cuepoint="10.5" data-step-name="Shock Response Spectrum Mandate"></div>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">04B</span>
+            <h2 class="fallback-title">PeakGParadoxScene</h2>
+            <p class="fallback-sub">The Peak-g Paradox &amp; SRS Mandate</p>
           </div>
         </div>
       </section>

@@ -13,7 +13,7 @@
 | **Phase 0** | Workspace Foundation, Git Setup, PDF Extraction & Syllabus Synthesis | **COMPLETED** | 100% |
 | **Phase 1** | Detailed 3-Speaker Allocation, 45-Min Timing Script & HTML Presentation Shell | **COMPLETED** | 100% |
 | **Phase 1.5** | 3Blue1Brown Fullscreen Refactor: Zero-Chrome Stage & Card Slop Removal | **COMPLETED** | 100% |
-| **Phase 2** | Production of Manim Animation Scenes & Interactive Slide Decks | **IN PROGRESS** | 26% (6/23) |
+| **Phase 2** | Production of Manim Animation Scenes & Interactive Slide Decks | **IN PROGRESS** | 29% (7/24) |
 | **Phase 3** | Visual & Aesthetic Polish (TeX Typography, Theme Styling & UI Transitions) | **QUEUED** | 0% |
 | **Phase 4** | FastAPI + WebSocket Mobile Companion, Audience Engagement & Live Quiz Sync | **QUEUED** | 0% |
 
@@ -77,7 +77,8 @@
 | **SLIDE-03A** | Person 1 | Steady-State Harmonic Vibration: Continuous Sinusoid & High-Cycle Fatigue | `HarmonicVibrationScene` | [x] | [x] |
 | **SLIDE-03B** | Person 1 | Transient Dynamic Shock Pulse: Short-Duration Pulse, DLF = 2.0 & Peak Stress Rupture | `TransientShockScene` | [x] | [x] |
 | **SLIDE-03C** | Person 1 | Why Classical Statics Fails: Dynamic Inertial Lag & Energy Quadrupling | `StaticsFailureScene` | [x] | [x] |
-| **SLIDE-04** | Person 1 | Real-World Shock Environments & Military Testing Standards | `ShockTaxonomyScene` | [x] | [x] |
+| **SLIDE-04A** | Person 1 | Two Extremes of Mechanical Shock: Pure Visual Graph Comparison | `ShockComparisonScene` | [x] | [x] |
+| **SLIDE-04B** | Person 1 | The Peak-g Paradox: Pulse Duration Neglect & Centerpiece SRS Mandate | `PeakGParadoxScene` | [x] | [x] |
 | **SLIDE-05** | Person 1 | The Motivating Problem: Helicopter Drop-Box Avionics | `HelicopterDropScene` | [ ] | [ ] |
 | **SLIDE-06** | Person 1 | SDOF Idealization: Continuous Cantilever to Lumped Mass | `RayleighSDOFScene` | [ ] | [ ] |
 | **SLIDE-07** | Person 1 | The Circular Design Dilemma: The Need for SRS | `CircularDilemmaScene` | [ ] | [ ] |
