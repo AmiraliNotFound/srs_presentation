@@ -11,10 +11,11 @@ Strict 3Blue1Brown Fullscreen Aesthetic:
   - Under 10 English words total on canvas (Strict 10-Word Rule: Exactly 5 English words total)
       "Duhamel Convolution" (2 words)
       "Base Shock Acceleration" (3 words)
-  - Frame-Accurate Step Cuepoints:
+  - Frame-Accurate Step Cuepoints (4 Steps / 3 Pauses):
       Step 0 (0.0s - 3.5s): Minimal title & Unit impulse response g(t) harmonic ripple
       Step 1 (3.5s - 8.5s): Slicing pulse F(tau) into dI = F(tau) dtau & launching wave dx(t)
-      Step 2 (8.5s - 16.5s): Riemann integration -> Master Duhamel Integral x(t) & Base shock z(t)
+      Step 2 (8.5s - 11.5s): Riemann superposition wave x(t) across pulse envelope (PAUSES HERE)
+      Step 3 (11.5s - 17.0s): Master Duhamel Integral x(t) & Base shock z(t) center focus
 """
 
 from manim import *
@@ -69,7 +70,7 @@ class DuhamelConvolutionScene(Scene):
         eq1.set_color_by_tex(r"d\mathcal{I} = F(\tau) d\tau", CORAL)
         eq1.set_color_by_tex(r"dx(t) = F(\tau) g(t - \tau) d\tau", CYAN)
 
-        # Step 2: Master Duhamel Integral
+        # Step 3: Master Duhamel Integral
         eq_duhamel = MathTex(
             r"x(t)", r"=", r"\frac{1}{m\omega_n}", r"\int_0^t", r"F(\tau)", r"\sin\omega_n(t - \tau)", r"\, d\tau",
             font_size=42
@@ -197,7 +198,7 @@ class DuhamelConvolutionScene(Scene):
         lbl_conv = MathTex(r"x(t)", font_size=24, color=BLUE).move_to(axes.c2p(3.2, 1.15))
 
         # ------------------------------------------------------------------
-        # 5. Animation Sequence (3 Steps, 2 Cuepoint Pauses)
+        # 5. Animation Sequence (4 Steps, 3 Cuepoint Pauses)
         # ------------------------------------------------------------------
 
         # --- STEP 0: Impulse Response Building Block (0.0s - 3.5s) ---
@@ -242,7 +243,8 @@ class DuhamelConvolutionScene(Scene):
         )
         self.wait(0.6)  # Exact Cuepoint 1 = 8.5s
 
-        # --- STEP 2: Continuous Integration & Master Duhamel Integral (8.5s - 16.5s) ---
+        # --- STEP 2: Riemann Superposition Wave x(t) (8.5s - 11.5s) ---
+        # User requested pause point: Presenter explains continuous superposition
         self.play(
             FadeIn(riemann_strips, lag_ratio=0.08),
             run_time=0.8
@@ -253,9 +255,12 @@ class DuhamelConvolutionScene(Scene):
             FadeOut(wave_dx),
             FadeOut(lbl_wave_dx),
             FadeOut(delay_group),
-            run_time=1.0
+            run_time=1.2
         )
-        self.wait(0.6)
+        self.wait(1.0)  # Exact Cuepoint 2 = 11.5s (Pauses here for audience explanation)
+
+        # --- STEP 3: Master Duhamel Integral & Base Shock (11.5s - 17.0s) ---
+        # Triggered by presenter advancing to resolve derivation
         self.play(
             FadeOut(VGroup(
                 axes, lbl_t, lbl_y, f_curve, f_area, lbl_f,
@@ -266,11 +271,11 @@ class DuhamelConvolutionScene(Scene):
         self.play(
             Write(eq_duhamel),
             Create(box_duhamel),
-            run_time=1.2
+            run_time=1.3
         )
         self.play(
             FadeIn(eq_base, shift=UP * 0.15),
             FadeIn(lbl_base, shift=UP * 0.15),
-            run_time=0.8
+            run_time=0.9
         )
-        self.wait(2.4)  # Exact Cuepoint 2 = 16.5s (Calm resting state for Person 2)
+        self.wait(2.5)  # Exact Cuepoint 3 = 17.0s (Calm resting state for Person 2)
