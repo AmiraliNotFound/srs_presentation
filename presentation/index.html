@@ -336,16 +336,21 @@
                data-speaker-name="Person 2: Mathematical Theory &amp; Derivations" 
                data-time-budget="150" 
                data-quiz-trigger="" 
+               data-cuepoints="3.5, 8.5, 16.1"
                data-mobile-summary="Impulse Response Function &amp; The Duhamel Convolution Integral: Superposition of infinitesimal impulses." 
+               data-mobile-notes="The Duhamel Convolution Integral: Grounded in linear superposition. Any arbitrary transient pulse F(t) is sliced into infinitesimal impulses dI = F(tau)*dtau, each producing an impulse response dx(t) = F(tau)*g(t - tau)*dtau. Integrating from 0 to t sums all past impulse responses. For base shock y''(t), the relative displacement z(t) is given by the Duhamel convolution with ground acceleration."
                data-manim-scene="DuhamelConvolutionScene">
         <div class="slide-stage">
           <video class="stage-video" preload="auto" playsinline muted>
             <source src="assets/videos/SLIDE_09_DuhamelConvolutionScene.mp4" type="video/mp4">
           </video>
+          <!-- Controllable Step Triggers -->
+          <div class="step" data-step="1" data-cuepoint="8.5" data-step-name="Infinitesimal Impulse Slicing"></div>
+          <div class="step" data-step="2" data-cuepoint="16.1" data-step-name="Duhamel Convolution Integral"></div>
           <div class="stage-fallback">
             <span class="slide-num-watermark">09</span>
             <h2 class="fallback-title">DuhamelConvolutionScene</h2>
-            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
+            <p class="fallback-sub">Impulse Response &amp; The Duhamel Convolution</p>
           </div>
         </div>
       </section>
