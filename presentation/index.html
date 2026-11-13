@@ -472,17 +472,22 @@
                data-speaker="person3" 
                data-speaker-name="Person 3: Design Resolution &amp; Applications" 
                data-time-budget="150" 
-               data-quiz-trigger="" 
-               data-mobile-summary="Closing the Dilemma Loop: Formulation of bracket stiffness, natural period, dynamic load, and root stress." 
+               data-cuepoints="3.5, 8.5, 14.2"
+               data-mobile-summary="Closing the Dilemma Loop: Half-Sine SRS unlocks the missing link between pulse duration ratio and dynamic load factor, completing the design formulation." 
+               data-mobile-notes="Colleagues, Person 2 has provided our missing key. In Slide 07 we were paralyzed because dynamic load factor DLF was an unknown function of stiffness. Now, with the Half-Sine Shock Response Spectrum derived, the loop closes completely: selecting candidate thickness d determines stiffness k and period tau_n. The ratio t0/tau_n indexes directly into the SRS curve to read DLF. Multiplying by 100g gives dynamic load F_dyn, which yields peak root stress sigma_max. If stress exceeds 26 ksi, we iterate d. Let us now execute the sizing iterations."
                data-manim-scene="IterativeDesignScene">
         <div class="slide-stage">
           <video class="stage-video" preload="auto" playsinline muted>
             <source src="assets/videos/SLIDE_15_IterativeDesignScene.mp4" type="video/mp4">
           </video>
+          <!-- Discrete Step Triggers -->
+          <div class="step" data-step="1" data-cuepoint="3.5" data-step-name="Recall Circular Dilemma"></div>
+          <div class="step" data-step="2" data-cuepoint="8.5" data-step-name="SRS Curve Bridges the Gap"></div>
+          <div class="step" data-step="3" data-cuepoint="14.2" data-step-name="Loop Closed: Dynamic Stress &amp; Iteration"></div>
           <div class="stage-fallback">
             <span class="slide-num-watermark">15</span>
             <h2 class="fallback-title">IterativeDesignScene</h2>
-            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
+            <p class="fallback-sub">Closing the Motivating Dilemma Loop</p>
           </div>
         </div>
       </section>
@@ -495,17 +500,22 @@
                data-speaker="person3" 
                data-speaker-name="Person 3: Design Resolution &amp; Applications" 
                data-time-budget="150" 
-               data-quiz-trigger="" 
-               data-mobile-summary="Sizing the Cantilever Bracket: Evaluating d = 0.4, 0.5, 0.6 inches against allowable stress of 26 ksi." 
+               data-cuepoints="3.5, 8.0, 14.2"
+               data-mobile-summary="Evaluating bracket thickness d = 0.4, 0.5, 0.6 inches against 26 ksi allowable stress: d = 0.6 in certified." 
+               data-mobile-notes="Look at the results in our Master Iteration Table. In Trial 1, we test a 0.4-inch plate. With stiffness k = 160 lb/in and period tau_n = 0.0177 s, the pulse ratio is 5.65 and DLF is 1.12. The resulting dynamic load of 55.1 lb produces root stress of 41,328 psi—far exceeding our 26,000 psi limit. Trial 1 yields catastrophically. In Trial 2, thickening to 0.5 inches yields stiffness 312.5 lb/in and stress of 34,315 psi, still 32% over allowable stress. Finally, in Trial 3, stepping to d = 0.60 inches drives stiffness to 540 lb/in and period down to 0.0101 seconds. Here t0/tau_n = 9.91, placing the bracket deep in the quasi-static regime where DLF drops to 1.07. Peak flexural stress drops to 25,664 psi. Because 25,664 psi <= 26,000 psi, d = 0.6 inches is certified!"
                data-manim-scene="StressVerificationScene">
         <div class="slide-stage">
           <video class="stage-video" preload="auto" playsinline muted>
             <source src="assets/videos/SLIDE_16_StressVerificationScene.mp4" type="video/mp4">
           </video>
+          <!-- Discrete Step Triggers -->
+          <div class="step" data-step="1" data-cuepoint="3.5" data-step-name="Trial 1 (d = 0.4 in: 41.3 ksi FAILS)"></div>
+          <div class="step" data-step="2" data-cuepoint="8.0" data-step-name="Trial 2 (d = 0.5 in: 34.3 ksi FAILS)"></div>
+          <div class="step" data-step="3" data-cuepoint="14.2" data-step-name="Trial 3 (d = 0.6 in: 25.7 ksi CERTIFIED)"></div>
           <div class="stage-fallback">
             <span class="slide-num-watermark">16</span>
             <h2 class="fallback-title">StressVerificationScene</h2>
-            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
+            <p class="fallback-sub">Evaluating Cantilever Bracket Sizing</p>
           </div>
         </div>
       </section>
@@ -518,17 +528,22 @@
                data-speaker="person3" 
                data-speaker-name="Person 3: Design Resolution &amp; Applications" 
                data-time-budget="150" 
-               data-quiz-trigger="" 
-               data-mobile-summary="Case Study 2: EOT Overhead Crane vertical seismic derailment condition (Sa &ge; 1.0g)." 
+               data-cuepoints="3.5, 8.5, 14.2"
+               data-mobile-summary="Case Study 2: EOT Overhead Crane vertical seismic derailment condition (Sa &ge; 1.0g) and safety evaluation for flexible girder (tau_n = 2.0s)." 
+               data-mobile-notes="Now let us examine a completely different industrial shock environment: vertical earthquake ground excitation acting on an Electric Overhead Traveling (EOT) crane, from Rao Example 4.17. In heavy manufacturing plants, overhead cranes carry multi-ton ladles across runway bridge girders. Notice the unique mechanical vulnerability: the crane trolley is not bolted to the rails! It sits on the runway purely under gravity. During an earthquake, vertical ground motion accelerates the rails. The dynamic normal contact force is N(t) = m(g - x_ddot). If vertical spectral acceleration equals or exceeds gravity (Sa >= 1.0g), the contact force drops to zero! The wheels float, jump off the rails, and derail—causing catastrophic collapse. In Rao Example 4.17, a flexible crane has a natural period of tau_n = 2.0 seconds and 2% damping. Consulting the Tripartite Earthquake Design Spectrum at tau_n = 2.0 s and zeta = 0.02, we read Sa = 0.25g. The minimum contact force is N_min = 0.75 mg > 0. The wheels remain firmly seated by gravity. The crane will not derail."
                data-manim-scene="CraneSeismicScene">
         <div class="slide-stage">
           <video class="stage-video" preload="auto" playsinline muted>
             <source src="assets/videos/SLIDE_17_CraneSeismicScene.mp4" type="video/mp4">
           </video>
+          <!-- Discrete Step Triggers -->
+          <div class="step" data-step="1" data-cuepoint="3.5" data-step-name="Unbolted Gravity Contact Vulnerability"></div>
+          <div class="step" data-step="2" data-cuepoint="8.5" data-step-name="Derailment Threshold (Sa &ge; 1.0g)"></div>
+          <div class="step" data-step="3" data-cuepoint="14.2" data-step-name="Flexible Crane Evaluation (Sa = 0.25g: SAFE)"></div>
           <div class="stage-fallback">
             <span class="slide-num-watermark">17</span>
             <h2 class="fallback-title">CraneSeismicScene</h2>
-            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
+            <p class="fallback-sub">Vertical Earthquake Derailment Analysis</p>
           </div>
         </div>
       </section>
@@ -542,16 +557,22 @@
                data-speaker-name="Person 3: Design Resolution &amp; Applications" 
                data-time-budget="150" 
                data-quiz-trigger="QUIZ-03" 
-               data-mobile-summary="Counter-Intuitive Stiffness: Why softer crane girders (k &lt; 365 kN/m) prevent earthquake derailment." 
+               data-cuepoints="3.5, 8.5, 14.2"
+               data-mobile-summary="Counter-Intuitive Stiffness: Why softer crane girders (k &lt; 365 kN/m) prevent earthquake derailment by staying below the Sa &ge; 1.0g acceleration threshold." 
+               data-mobile-notes="Now consider Rao Problem 4.57: Suppose a structural consultant recommends reinforcing the crane girder with heavy steel gussets to make it stiffer. What happens? In earthquakes, ground motion creates an acceleration danger zone where Sa exceeds 1.0g whenever the period is below 0.52 seconds! To guarantee the crane never derails, we must stay out of this lethal zone: tau_n > 0.52 seconds. Inverting the period equation yields a strict stiffness ceiling: k < 4*pi^2*m / (0.52)^2 = 365 kN/m! This demonstrates one of the most profound principles in structural vibrations: stiffening the girder beyond 365 kN/m drives its period directly into the danger zone, boosting Sa above 1.0g and triggering derailment! Keeping the girder compliant isolates it from earthquake energy. Flexibility is survival. I trigger Quiz 3 to test your intuition."
                data-manim-scene="CraneStiffnessLimitScene">
         <div class="slide-stage">
           <video class="stage-video" preload="auto" playsinline muted>
             <source src="assets/videos/SLIDE_18_CraneStiffnessLimitScene.mp4" type="video/mp4">
           </video>
+          <!-- Discrete Step Triggers -->
+          <div class="step" data-step="1" data-cuepoint="3.5" data-step-name="Acceleration Danger Zone (&tau;n &le; 0.52s)"></div>
+          <div class="step" data-step="2" data-cuepoint="8.5" data-step-name="Stiffness Ceiling Derivation (k &lt; 365 kN/m)"></div>
+          <div class="step" data-step="3" data-cuepoint="14.2" data-step-name="Stiff Derails vs Compliant Survives (QUIZ-03)"></div>
           <div class="stage-fallback">
             <span class="slide-num-watermark">18</span>
             <h2 class="fallback-title">CraneStiffnessLimitScene</h2>
-            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
+            <p class="fallback-sub">Maximum Permissible Girder Stiffness</p>
           </div>
         </div>
       </section>
@@ -564,17 +585,22 @@
                data-speaker="person3" 
                data-speaker-name="Person 3: Design Resolution &amp; Applications" 
                data-time-budget="120" 
-               data-quiz-trigger="" 
-               data-mobile-summary="Case Study 3: Automotive ECU PCB resonant amplification (351%) under 3600 rpm engine excitation." 
+               data-cuepoints="3.5, 8.5, 14.2"
+               data-mobile-summary="Case Study 3: Automotive ECU PCB resonant amplification (351%) under 3600 rpm engine excitation due to r = 1.13 near-unity resonance." 
+               data-mobile-notes="Our third and final case study addresses automotive electronics packaging: an Engine Control Unit (ECU) printed circuit board under engine base excitation, from Rao Example 9.10. Modern vehicles house microcontrollers inside rigid aluminum enclosures bolted near the engine bay. The engine operates at speeds up to 3600 rpm, generating continuous harmonic base vibration. For a fixed-fixed PCB, plate bending yields stiffness k = 82,944 N/m and effective mass 0.75 kg, giving natural frequency omega_n = 332.55 rad/s (52.9 Hz). When the engine hits 3600 rpm, excitation frequency is omega = 376.99 rad/s (60 Hz). The frequency ratio is r = 1.1336—dangerously close to unity resonance! Evaluating displacement transmissibility yields T_d = 1 / |1 - r^2| = 3.508. The PCB experiences 351% resonant amplification of engine vibration, inducing rapid solder joint fatigue and failure. In the next slide, we design a base isolator to cure this."
                data-manim-scene="ECUResonanceScene">
         <div class="slide-stage">
           <video class="stage-video" preload="auto" playsinline muted>
             <source src="assets/videos/SLIDE_19_ECUResonanceScene.mp4" type="video/mp4">
           </video>
+          <!-- Discrete Step Triggers -->
+          <div class="step" data-step="1" data-cuepoint="3.5" data-step-name="Clamped PCB Natural Frequency (&omega;n = 52.9 Hz)"></div>
+          <div class="step" data-step="2" data-cuepoint="8.5" data-step-name="Engine Excitation at 3600 rpm (r = 1.134)"></div>
+          <div class="step" data-step="3" data-cuepoint="14.2" data-step-name="Resonant Amplification (Td = 3.51: Severe Fatigue)"></div>
           <div class="stage-fallback">
             <span class="slide-num-watermark">19</span>
             <h2 class="fallback-title">ECUResonanceScene</h2>
-            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
+            <p class="fallback-sub">Automotive ECU Resonant Amplification</p>
           </div>
         </div>
       </section>
@@ -587,17 +613,25 @@
                data-speaker="person3" 
                data-speaker-name="Person 3: Design Resolution &amp; Applications" 
                data-time-budget="120" 
-               data-quiz-trigger="" 
-               data-mobile-summary="Base Isolator Sizing: Tuning k_iso = 24.66 kN/m, c_iso = 5.21 N s/m for 90% vibration reduction." 
+               data-cuepoints="3.5, 6.5, 9.5, 12.5, 15.5, 19.0"
+               data-mobile-summary="Base Isolator Sizing: Tuning k_iso = 24.66 kN/m, c_iso = 5.21 N s/m for 90% vibration reduction (Td &le; 10%) under 3000 rpm excitation."
+               data-mobile-notes="To rescue the ECU, Rao Example 9.11 introduces an engineered base isolation system: placing four elastomeric isolator bushings between the chassis and vehicle frame. The total isolated mass is 2.75 kg. Under continuous cruising at 3000 rpm, engine frequency is omega = 314.16 rad/s. Our design objective is strict: we demand 90% vibration reduction, meaning transmissibility cannot exceed 10%: Td <= 0.10. Vibration isolation is physically impossible unless the frequency ratio exceeds the square root of 2: r > sqrt(2). Setting Td <= 0.10 requires r >= sqrt(11) = 3.3175. We must soften the mount to push the isolated natural frequency far below engine speed: omega_n,iso = 94.70 rad/s (15.07 Hz). Multiplying by system mass yields our required isolator stiffness: k_iso = 24.66 kN/m, or 6.16 kN/m per bushing. Adding 1% damping gives c_iso = 5.21 N s/m. Over 90% of engine vibration is eliminated, protecting sensitive solder joints and providing robust structural durability."
                data-manim-scene="ECUIsolatorScene">
         <div class="slide-stage">
           <video class="stage-video" preload="auto" playsinline muted>
             <source src="assets/videos/SLIDE_20_ECUIsolatorScene.mp4" type="video/mp4">
           </video>
+          <!-- Discrete Step Triggers -->
+          <div class="step" data-step="1" data-cuepoint="3.5" data-step-name="Isolation Threshold (r &gt; &radic;2, Td &le; 0.10)"></div>
+          <div class="step" data-step="2" data-cuepoint="6.5" data-step-name="Natural Frequency Softening (&omega;n,iso = 94.7 rad/s)"></div>
+          <div class="step" data-step="3" data-cuepoint="9.5" data-step-name="Total Stiffness Sizing (k_iso = 24.66 kN/m)"></div>
+          <div class="step" data-step="4" data-cuepoint="12.5" data-step-name="Corner Bushings (k_each = 6.17 kN/m)"></div>
+          <div class="step" data-step="5" data-cuepoint="15.5" data-step-name="Isolator Damping Tuning (c_iso = 5.21 N s/m)"></div>
+          <div class="step" data-step="6" data-cuepoint="19.0" data-step-name="Vibration Shielded (90% Attenuation Certified)"></div>
           <div class="stage-fallback">
             <span class="slide-num-watermark">20</span>
             <h2 class="fallback-title">ECUIsolatorScene</h2>
-            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
+            <p class="fallback-sub">Base Isolator Parameter Tuning</p>
           </div>
         </div>
       </section>
@@ -610,17 +644,23 @@
                data-speaker="person3" 
                data-speaker-name="Person 3: Design Resolution &amp; Applications" 
                data-time-budget="60" 
-               data-quiz-trigger="" 
-               data-mobile-summary="Master Synthesis &amp; Conclusion: 3-speaker integration, live audience mobile quiz review, and open Q&amp;A." 
+               data-cuepoints="3.0, 6.0, 9.0, 12.5"
+               data-mobile-summary="Master Synthesis &amp; Conclusion: 3 certified engineering case studies, triad certification, and open Q&amp;A."
+               data-mobile-notes="To synthesize our engineering solutions for Person 3: First, we resolved our motivating helicopter drop problem by certifying a 0.6-inch cantilever bracket against 26 ksi allowable stress. Second, we proved why flexible crane girders survive earthquakes where stiff ones derail by enforcing the 365 kN/m stiffness ceiling. Third, we engineered elastomeric base isolators to eliminate ECU resonant fatigue with 90% vibration reduction. All three engineering systems are certified safe. On behalf of our entire group, thank you for your attention. We now welcome questions from Professor Yousefi and the audience."
                data-manim-scene="MasterSummaryScene">
         <div class="slide-stage">
           <video class="stage-video" preload="auto" playsinline muted>
             <source src="assets/videos/SLIDE_21_MasterSummaryScene.mp4" type="video/mp4">
           </video>
+          <!-- Discrete Step Triggers -->
+          <div class="step" data-step="1" data-cuepoint="3.0" data-step-name="Case 1: Helicopter Drop-Box (Certified Safe)"></div>
+          <div class="step" data-step="2" data-cuepoint="6.0" data-step-name="Case 2: Crane Derailment (No Derailment)"></div>
+          <div class="step" data-step="3" data-cuepoint="9.0" data-step-name="Case 3: ECU Base Isolation (90% Attenuation)"></div>
+          <div class="step" data-step="4" data-cuepoint="12.5" data-step-name="Triad Certified &amp; Open for Questions"></div>
           <div class="stage-fallback">
             <span class="slide-num-watermark">21</span>
             <h2 class="fallback-title">MasterSummaryScene</h2>
-            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
+            <p class="fallback-sub">Three Certified Case Studies &amp; Open Q&amp;A</p>
           </div>
         </div>
       </section>
