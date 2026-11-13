@@ -15,9 +15,10 @@
 | **Phase 1.5** | 3Blue1Brown Fullscreen Refactor: Zero-Chrome Stage & Card Slop Removal | **COMPLETED** | 100% |
 | **Phase 2 (Part 1)** | Speaker 1 Slides (01–07: Foundations, Rayleigh SDOF, Circular Dilemma) | **COMPLETED** | 100% (10/10) |
 | **Phase 2 (Milestone)** | GitHub Remote Deployment & Multi-Speaker Workspace Isolation | **COMPLETED** | 100% |
-| **Phase 2 (Part 2)** | Speaker 2 Slides (08–14: Duhamel Convolution, Canonical Pulses & SRS) | **IN PROGRESS (Lead)** | 71% (5/7) |
-| **Phase 2 (Part 3)** | Speaker 3 Slides (15–21: Design Resolution, Crane Seismic & ECU Isolation) | **QUEUED (Colleague via PR)** | 0% |
-| **Phase 3** | Visual & Aesthetic Polish (Unified TeX Typography & Full-Deck Transitions) | **QUEUED (Lead / Post-Merge)** | 0% |
+| **Phase 2 (Part 2)** | Speaker 2 Slides (08–14: Duhamel Convolution, Canonical Pulses & SRS) | **COMPLETED** | 100% (7/7) |
+| **Phase 2 (Part 3)** | Speaker 3 Slides (15–21: Design Resolution, Crane Seismic & ECU Isolation) | **COMPLETED** | 100% (7/7) |
+| **Phase 2 Overall** | Complete 24-Slide Deck: Manim Scenes, 1080p Renders & HTML Video Integration | **COMPLETED** | 100% (24/24) |
+| **Phase 3** | Visual & Aesthetic Polish (Unified TeX Typography & Full-Deck Transitions) | **READY FOR EXECUTION** | 0% |
 | **Phase 4** | FastAPI + WebSocket Mobile Companion, Audience Engagement & Live Quiz Sync | **QUEUED** | 0% |
 
 ---
@@ -99,13 +100,13 @@
 | **SLIDE-12** | Person 2 | Half-Sine Shock Pulse: Era 1 & Era 2 Analytical Solution | `HalfSineAnalyticalScene` | [x] | [x] |
 | **SLIDE-13** | Person 2 | Constructing the Shock Response Spectrum (SRS) | `SRSConstructionScene` | [x] | [x] |
 | **SLIDE-14** | Person 2 | Asymptotic Master Insight: Impulsive vs. Quasi-Static Limits | `AsymptoticLimitsScene` | [x] | [x] |
-| **SLIDE-15** | Person 3 | Hand-Off Resolution: Closing the Motivating Problem Loop | `IterativeDesignScene` | [ ] | [ ] |
-| **SLIDE-16** | Person 3 | Bracket Thickness Sizing: Evaluating $d = 0.4'', 0.5'', 0.6''$ | `StressVerificationScene` | [ ] | [ ] |
-| **SLIDE-17** | Person 3 | Case Study 2: Overhead Crane Vertical Seismic Derailment | `CraneSeismicScene` | [ ] | [ ] |
-| **SLIDE-18** | Person 3 | Counter-Intuitive Stiffness: Why Softer Girders Prevent Derailment | `CraneStiffnessLimitScene` | [ ] | [ ] |
-| **SLIDE-19** | Person 3 | Case Study 3: Automotive ECU PCB Resonant Amplification | `ECUResonanceScene` | [ ] | [ ] |
-| **SLIDE-20** | Person 3 | Base Isolator Design: Tuning $(k_{\text{iso}}, c_{\text{iso}})$ for $T_d \le 10\%$ | `ECUIsolatorScene` | [ ] | [ ] |
-| **SLIDE-21** | Person 3 | Master Synthesis, Live Audience Mobile Quiz & Conclusion | `MasterSummaryScene` | [ ] | [ ] |
+| **SLIDE-15** | Person 3 | Hand-Off Resolution: Closing the Motivating Problem Loop | `IterativeDesignScene` | [x] | [x] |
+| **SLIDE-16** | Person 3 | Bracket Thickness Sizing: Evaluating $d = 0.4'', 0.5'', 0.6''$ | `StressVerificationScene` | [x] | [x] |
+| **SLIDE-17** | Person 3 | Case Study 2: Overhead Crane Vertical Seismic Derailment | `CraneSeismicScene` | [x] | [x] |
+| **SLIDE-18** | Person 3 | Counter-Intuitive Stiffness: Why Softer Girders Prevent Derailment | `CraneStiffnessLimitScene` | [x] | [x] |
+| **SLIDE-19** | Person 3 | Case Study 3: Automotive ECU PCB Resonant Amplification | `ECUResonanceScene` | [x] | [x] |
+| **SLIDE-20** | Person 3 | Base Isolator Design: Tuning $(k_{\text{iso}}, c_{\text{iso}})$ for $T_d \le 10\%$ | `ECUIsolatorScene` | [x] | [x] |
+| **SLIDE-21** | Person 3 | Master Synthesis, Live Audience Mobile Quiz & Conclusion | `MasterSummaryScene` | [x] | [x] |
 
 ---
 
