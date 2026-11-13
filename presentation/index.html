@@ -308,16 +308,21 @@
                data-speaker-name="Person 2: Mathematical Theory &amp; Derivations" 
                data-time-budget="120" 
                data-quiz-trigger="" 
+               data-cuepoints="3.0, 7.5, 14.0"
                data-mobile-summary="Dynamic Governing Equations &amp; Transfer Function: Laplace transform and generalized impedance Z(s)." 
+               data-mobile-notes="Speaker 2 opens mathematical foundations: SDOF ODE m*x'' + c*x' + k*x = F(t) converts to algebraic polynomial via unilateral Laplace transform. Factoring yields system transfer function H(s) = 1 / [m(s^2 + 2*zeta*omega_n*s + omega_n^2)]. Generalized dynamic impedance Z(s) = 1/H(s) defines resistance to dynamic motion in the complex frequency domain."
                data-manim-scene="LaplaceTransferScene">
         <div class="slide-stage">
           <video class="stage-video" preload="auto" playsinline muted>
             <source src="assets/videos/SLIDE_08_LaplaceTransferScene.mp4" type="video/mp4">
           </video>
+          <!-- Controllable Step Triggers -->
+          <div class="step" data-step="1" data-cuepoint="7.5" data-step-name="Laplace Transform Morph"></div>
+          <div class="step" data-step="2" data-cuepoint="14.0" data-step-name="Transfer Function and Impedance"></div>
           <div class="stage-fallback">
             <span class="slide-num-watermark">08</span>
             <h2 class="fallback-title">LaplaceTransferScene</h2>
-            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
+            <p class="fallback-sub">Laplace Formulation &amp; Transfer Function</p>
           </div>
         </div>
       </section>
