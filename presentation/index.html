@@ -477,16 +477,21 @@
                data-speaker-name="Person 2: Mathematical Theory &amp; Derivations" 
                data-time-budget="90" 
                data-quiz-trigger="QUIZ-02" 
+               data-cuepoints="4.0, 8.5, 15.0"
                data-mobile-summary="Asymptotic Limits: Impulsive limit (t0 &ll; tau_n) vs. Quasi-static limit (t0 &gg; tau_n) &amp; Hand-Off." 
+               data-mobile-notes="Asymptotic Limits of the SRS: In the impulsive regime (t0 &lt;&lt; tau_n), response is governed strictly by net impulse I = int(F dt) independent of pulse shape (DLF -&gt; 0). In the quasi-static regime (t0 &gt;&gt; tau_n), DLF -&gt; 1.0 and residual motion vanishes. The dynamic resonance zone occurs where t0 ~ tau_n (DLF up to 2.0). Live Quiz 2: At what pulse-to-period ratio does a rectangular pulse leave zero residual vibration? Hand-off to Person 3 for design resolution."
                data-manim-scene="AsymptoticLimitsScene">
         <div class="slide-stage">
           <video class="stage-video" preload="auto" playsinline muted>
             <source src="assets/videos/SLIDE_14_AsymptoticLimitsScene.mp4" type="video/mp4">
           </video>
+          <!-- Controllable Step Triggers -->
+          <div class="step" data-step="1" data-cuepoint="8.5" data-step-name="Quasi-Static Limit"></div>
+          <div class="step" data-step="2" data-cuepoint="15.0" data-step-name="Dynamic Zone and Hand-Off"></div>
           <div class="stage-fallback">
             <span class="slide-num-watermark">14</span>
             <h2 class="fallback-title">AsymptoticLimitsScene</h2>
-            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
+            <p class="fallback-sub">Asymptotic Master Insight: Impulsive vs. Quasi-Static Limits &amp; Hand-Off</p>
           </div>
         </div>
       </section>

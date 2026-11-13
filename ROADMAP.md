@@ -66,6 +66,7 @@
 ---
 
 ### [ ] Phase 2: Iterative Slide & Manim Scene Production
+> **Status:** Part 1 (Slides 01–07) & Part 2 (Slides 08–14) **COMPLETED** on `main`. Part 3 (Slides 15–21) in progress on branch `part-3`.
 
 > [!IMPORTANT]
 > **The 4 Hard Visual Rules (Strict 3Blue1Brown Fullscreen Aesthetic):**
@@ -97,7 +98,7 @@
 | **SLIDE-11** | Person 2 | Rectangular Pulse Response & Peak Derivation | `RectangularPulseScene` | [x] | [x] |
 | **SLIDE-12** | Person 2 | Half-Sine Shock Pulse: Era 1 & Era 2 Analytical Solution | `HalfSineAnalyticalScene` | [x] | [x] |
 | **SLIDE-13** | Person 2 | Constructing the Shock Response Spectrum (SRS) | `SRSConstructionScene` | [x] | [x] |
-| **SLIDE-14** | Person 2 | Asymptotic Master Insight: Impulsive vs. Quasi-Static Limits | `AsymptoticLimitsScene` | [ ] | [ ] |
+| **SLIDE-14** | Person 2 | Asymptotic Master Insight: Impulsive vs. Quasi-Static Limits | `AsymptoticLimitsScene` | [x] | [x] |
 | **SLIDE-15** | Person 3 | Hand-Off Resolution: Closing the Motivating Problem Loop | `IterativeDesignScene` | [ ] | [ ] |
 | **SLIDE-16** | Person 3 | Bracket Thickness Sizing: Evaluating $d = 0.4'', 0.5'', 0.6''$ | `StressVerificationScene` | [ ] | [ ] |
 | **SLIDE-17** | Person 3 | Case Study 2: Overhead Crane Vertical Seismic Derailment | `CraneSeismicScene` | [ ] | [ ] |
