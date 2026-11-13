@@ -32,35 +32,22 @@ class HarmonicVibrationScene(Scene):
         BORDER_MID  = ManimColor("#334155")
 
         # ------------------------------------------------------------------
-        # 2. Header & Title (Centered & Spacious)
+        # 2. Header & Title (Minimal Floating Title - Rule 1 Enforced)
         # ------------------------------------------------------------------
-        header_tag = Tex(
-            r"\textsc{Physical Foundations} \quad $\bullet$ \quad \textsc{Excitation Classification}",
-            font_size=22,
-            color=TEHRAN_BLUE
-        ).move_to([0, 3.42, 0])
-
         main_title = Tex(
-            r"\textbf{Steady-State Harmonic Vibration}",
-            font_size=44,
+            r"\textbf{Harmonic Vibration}",
+            font_size=48,
             color=TEXT_WHITE
-        ).next_to(header_tag, DOWN, buff=0.14)
-
-        header_rule = Line(
-            start=LEFT * 6.2,
-            end=RIGHT * 6.2,
-            color=TEHRAN_BLUE,
-            stroke_width=1.6
-        ).next_to(main_title, DOWN, buff=0.15)
+        ).move_to([0, 3.25, 0])
 
         # ------------------------------------------------------------------
         # 3. Governing Excitation Formula Line (Large & Clean)
         # ------------------------------------------------------------------
         formula_math = MathTex(
             r"F(t) = F_0 \sin(\omega t), \quad t \in [0, \infty)",
-            font_size=32,
+            font_size=36,
             color=FORCE_GOLD
-        ).move_to([0, 2.25, 0])
+        ).move_to([0, 2.30, 0])
 
         # ------------------------------------------------------------------
         # 4. Full-Width Expansive 16:9 Waveform Graph
@@ -72,46 +59,46 @@ class HarmonicVibrationScene(Scene):
             y_length=2.6,
             axis_config={
                 "color": TEXT_DIM,
-                "stroke_width": 1.5,
+                "stroke_width": 2.5,
                 "include_ticks": False,
                 "include_tip": True,
-                "tip_width": 0.12,
-                "tip_height": 0.12,
+                "tip_width": 0.15,
+                "tip_height": 0.15,
             }
         ).move_to([0, 0.12, 0])
 
-        lbl_time = Tex(r"Time $t \to \infty$", font_size=20, color=TEXT_MUTED).next_to(axes.c2p(4.0, 0), RIGHT, buff=0.14)
+        lbl_time = Tex(r"Time $t \to \infty$", font_size=24, color=TEXT_MUTED).next_to(axes.c2p(4.0, 0), RIGHT, buff=0.14)
 
         # Continuous periodic waveforms
         t_vals = np.linspace(0, 4.0, 300)
         force_pts = [axes.c2p(t, 0.80 * np.sin(2 * np.pi * t)) for t in t_vals]
         disp_pts  = [axes.c2p(t, 1.15 * np.sin(2 * np.pi * t - 0.45)) for t in t_vals]
 
-        curve_force = VMobject().set_points_smoothly(force_pts).set_color(FORCE_GOLD).set_stroke(width=2.4)
-        curve_disp  = VMobject().set_points_smoothly(disp_pts).set_color(SPRING_CYAN).set_stroke(width=3.4)
+        curve_force = VMobject().set_points_smoothly(force_pts).set_color(FORCE_GOLD).set_stroke(width=3.2)
+        curve_disp  = VMobject().set_points_smoothly(disp_pts).set_color(SPRING_CYAN).set_stroke(width=4.0)
 
         # Steady amplitude envelopes (+X and -X bounds)
         env_top = DashedLine(
             start=axes.c2p(0, 1.15),
             end=axes.c2p(4.0, 1.15),
             color=BORDER_MID,
-            stroke_width=1.4,
+            stroke_width=2.0,
             dash_length=0.12
         )
         env_bot = DashedLine(
             start=axes.c2p(0, -1.15),
             end=axes.c2p(4.0, -1.15),
             color=BORDER_MID,
-            stroke_width=1.4,
+            stroke_width=2.0,
             dash_length=0.12
         )
-        lbl_env = Tex(r"$\pm X_{\text{steady}} = M \delta_{\text{st}}$", font_size=20, color=TEXT_MUTED).move_to([-2.6, 1.62, 0])
+        lbl_env = Tex(r"$\pm X_{\text{steady}} = M \delta_{\text{st}}$", font_size=24, color=TEXT_MUTED).move_to([-2.6, 1.62, 0])
 
         # Large, Clean Wave Legend
-        leg_disp = Line(ORIGIN, RIGHT * 0.50, color=SPRING_CYAN, stroke_width=3.4)
-        leg_disp_lbl = Tex(r"$x(t)$ Response", font_size=20, color=SPRING_CYAN).next_to(leg_disp, RIGHT, buff=0.10)
-        leg_force = Line(ORIGIN, RIGHT * 0.50, color=FORCE_GOLD, stroke_width=2.4)
-        leg_force_lbl = Tex(r"$F(t)$ Force", font_size=20, color=FORCE_GOLD).next_to(leg_force, RIGHT, buff=0.10)
+        leg_disp = Line(ORIGIN, RIGHT * 0.50, color=SPRING_CYAN, stroke_width=4.0)
+        leg_disp_lbl = Tex(r"$x(t)$ Response", font_size=24, color=SPRING_CYAN).next_to(leg_disp, RIGHT, buff=0.10)
+        leg_force = Line(ORIGIN, RIGHT * 0.50, color=FORCE_GOLD, stroke_width=3.2)
+        leg_force_lbl = Tex(r"$F(t)$ Force", font_size=24, color=FORCE_GOLD).next_to(leg_force, RIGHT, buff=0.10)
         leg_grp = VGroup(
             VGroup(leg_disp, leg_disp_lbl),
             VGroup(leg_force, leg_force_lbl)
@@ -123,18 +110,18 @@ class HarmonicVibrationScene(Scene):
         row_y = -2.50
 
         # Column 1: Duration
-        c1_title = Tex(r"\textsc{Indefinite Duration}", font_size=22, color=TEXT_OFFWH)
-        c1_main  = MathTex(r"t \to \infty", font_size=34, color=FORCE_GOLD)
+        c1_title = Tex(r"\textsc{Indefinite Duration}", font_size=24, color=TEXT_OFFWH)
+        c1_main  = MathTex(r"t \to \infty", font_size=38, color=FORCE_GOLD)
         col1 = VGroup(c1_title, c1_main).arrange(DOWN, buff=0.16).move_to([-4.40, row_y, 0])
 
         # Column 2: Governing Law
-        c2_title = Tex(r"\textsc{Governing Parameter}", font_size=22, color=TEXT_OFFWH)
-        c2_main  = MathTex(r"r = \frac{\omega}{\omega_n} \ \implies \ M(r, \zeta)", font_size=32, color=TEHRAN_BLUE)
+        c2_title = Tex(r"\textsc{Governing Parameter}", font_size=24, color=TEXT_OFFWH)
+        c2_main  = MathTex(r"r = \frac{\omega}{\omega_n} \ \implies \ M(r, \zeta)", font_size=36, color=TEHRAN_BLUE)
         col2 = VGroup(c2_title, c2_main).arrange(DOWN, buff=0.16).move_to([0.0, row_y, 0])
 
         # Column 3: Design Metric
-        c3_title = Tex(r"\textsc{Primary Failure Mode}", font_size=22, color=TEXT_OFFWH)
-        c3_main  = Tex(r"\textbf{High-Cycle Fatigue}", font_size=28, color=DANGER_RED)
+        c3_title = Tex(r"\textsc{Primary Failure Mode}", font_size=24, color=TEXT_OFFWH)
+        c3_main  = Tex(r"\textbf{High-Cycle Fatigue}", font_size=30, color=DANGER_RED)
         col3 = VGroup(c3_title, c3_main).arrange(DOWN, buff=0.16).move_to([4.40, row_y, 0])
 
         # ------------------------------------------------------------------
@@ -142,9 +129,7 @@ class HarmonicVibrationScene(Scene):
         # ------------------------------------------------------------------
         # --- Step 0: Initial Load (Total: 2.0s -> Cuepoint 0 = 2.0s) ---
         self.play(
-            FadeIn(header_tag, shift=DOWN * 0.15),
             Write(main_title),
-            GrowFromCenter(header_rule),
             run_time=0.8
         )
         self.play(

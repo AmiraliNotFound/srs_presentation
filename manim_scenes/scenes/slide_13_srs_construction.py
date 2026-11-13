@@ -61,7 +61,7 @@ class SRSConstructionScene(Scene):
         # ------------------------------------------------------------------
         title = Tex(
             r"\textbf{Constructing the SRS}",
-            font_size=36,
+            font_size=46,
             color=TEXT_WHITE
         ).move_to([0, 3.42, 0])
 

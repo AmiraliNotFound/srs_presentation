@@ -41,39 +41,51 @@ class LaplaceTransferScene(Scene):
         # ------------------------------------------------------------------
         title = Tex(
             r"\textbf{Laplace Formulation}",
-            font_size=36,
+            font_size=48,
             color=TEXT_WHITE
         ).move_to([0, 3.35, 0])
 
         # ------------------------------------------------------------------
-        # 3. Mathematical Equations Configuration
+        # 3. Mathematical Equations Configuration (65" TV Large Typography)
         # ------------------------------------------------------------------
+        iso_base = [r"m", r"\ddot{x}", r"c", r"\dot{x}", r"k", r"x", r"F(t)", r"s^2", r"s", r"X(s)", r"F(s)", r"="]
+
         # Step 0: Time-domain SDOF Differential Equation
         eq0 = MathTex(
-            r"m \ddot{x}", r"+", r"c \dot{x}", r"+", r"k x", r"=", r"F(t)",
-            font_size=46
+            r"m \ddot{x} + c \dot{x} + k x = F(t)",
+            substrings_to_isolate=iso_base,
+            font_size=52
         ).move_to([0, 0.60, 0])
-        eq0.set_color_by_tex(r"m \ddot{x}", CORAL)
-        eq0.set_color_by_tex(r"c \dot{x}", GREEN)
-        eq0.set_color_by_tex(r"k x", CYAN)
+        eq0.set_color_by_tex(r"m", CORAL)
+        eq0.set_color_by_tex(r"\ddot{x}", CORAL)
+        eq0.set_color_by_tex(r"c", GREEN)
+        eq0.set_color_by_tex(r"\dot{x}", GREEN)
+        eq0.set_color_by_tex(r"k", CYAN)
+        eq0.set_color_by_tex(r"x", CYAN)
         eq0.set_color_by_tex(r"F(t)", YELLOW)
 
         # Step 1a: Laplace-Domain Algebraic Polynomial
         eq1 = MathTex(
-            r"(", r"m s^2", r"+", r"c s", r"+", r"k", r")", r"X(s)", r"=", r"F(s)",
-            font_size=46
+            r"(m s^2 + c s + k) X(s) = F(s)",
+            substrings_to_isolate=iso_base,
+            font_size=52
         ).move_to([0, 0.60, 0])
-        eq1.set_color_by_tex(r"m s^2", CORAL)
-        eq1.set_color_by_tex(r"c s", GREEN)
+        eq1.set_color_by_tex(r"m", CORAL)
+        eq1.set_color_by_tex(r"s^2", CORAL)
+        eq1.set_color_by_tex(r"c", GREEN)
+        eq1.set_color_by_tex(r"s", GREEN)
         eq1.set_color_by_tex(r"k", CYAN)
         eq1.set_color_by_tex(r"X(s)", BLUE)
         eq1.set_color_by_tex(r"F(s)", YELLOW)
 
         # Step 1b: Canonical Factored Damping Form
+        iso_factored = [r"m", r"s^2", r"2\zeta\omega_n s", r"\omega_n^2", r"X(s)", r"F(s)", r"="]
         eq2 = MathTex(
-            r"m", r"(", r"s^2", r"+", r"2\zeta\omega_n s", r"+", r"\omega_n^2", r")", r"X(s)", r"=", r"F(s)",
-            font_size=46
+            r"m (s^2 + 2\zeta\omega_n s + \omega_n^2) X(s) = F(s)",
+            substrings_to_isolate=iso_factored,
+            font_size=52
         ).move_to([0, 0.60, 0])
+        eq2.set_color_by_tex(r"m", CORAL)
         eq2.set_color_by_tex(r"s^2", CORAL)
         eq2.set_color_by_tex(r"2\zeta\omega_n s", GREEN)
         eq2.set_color_by_tex(r"\omega_n^2", CYAN)
@@ -82,8 +94,8 @@ class LaplaceTransferScene(Scene):
 
         # Step 2a: System Transfer Function H(s)
         eq3 = MathTex(
-            r"H(s)", r"=", r"\frac{X(s)}{F(s)}", r"=", r"\frac{1}{m(s^2 + 2\zeta\omega_n s + \omega_n^2)}",
-            font_size=44
+            r"H(s) = \frac{X(s)}{F(s)} = \frac{1}{m(s^2 + 2\zeta\omega_n s + \omega_n^2)}",
+            font_size=50
         ).move_to([0, 1.10, 0])
         eq3.set_color_by_tex(r"H(s)", BLUE)
         eq3.set_color_by_tex(r"X(s)", BLUE)
@@ -98,13 +110,13 @@ class LaplaceTransferScene(Scene):
             buff=0.25,
             corner_radius=0.14,
             stroke_color=BLUE,
-            stroke_width=2.0
+            stroke_width=2.5
         )
 
         # Step 2b: Dynamic Impedance Z(s) = 1 / H(s)
         eq4 = MathTex(
-            r"Z(s)", r"=", r"\frac{1}{H(s)}", r"\quad", r"\text{(Dynamic Impedance)}",
-            font_size=38
+            r"Z(s) = \frac{1}{H(s)} \quad \text{(Dynamic Impedance)}",
+            font_size=42
         ).move_to([0, -0.95, 0])
         eq4.set_color_by_tex(r"Z(s)", YELLOW)
         eq4.set_color_by_tex(r"H(s)", BLUE)
@@ -124,11 +136,12 @@ class LaplaceTransferScene(Scene):
             TransformMatchingTex(
                 eq0, eq1,
                 key_map={
-                    r"m \ddot{x}": r"m s^2",
-                    r"c \dot{x}": r"c s",
-                    r"k x": r"k",
+                    r"\ddot{x}": r"s^2",
+                    r"\dot{x}": r"s",
+                    r"x": r"X(s)",
                     r"F(t)": r"F(s)",
-                }
+                },
+                transform_mismatches=True
             ),
             run_time=1.5
         )
@@ -138,10 +151,11 @@ class LaplaceTransferScene(Scene):
             TransformMatchingTex(
                 eq1, eq2,
                 key_map={
-                    r"m s^2": r"s^2",
-                    r"c s": r"2\zeta\omega_n s",
+                    r"c": r"2\zeta\omega_n",
+                    r"s": r"s",
                     r"k": r"\omega_n^2",
-                }
+                },
+                transform_mismatches=True
             ),
             run_time=1.5
         )
@@ -149,7 +163,7 @@ class LaplaceTransferScene(Scene):
 
         # --- STEP 2: Transfer Function & Dynamic Impedance (7.5s - 14.0s) ---
         self.play(
-            TransformMatchingTex(eq2, eq3),
+            FadeTransform(eq2, eq3),
             run_time=1.7
         )
         self.wait(0.3)

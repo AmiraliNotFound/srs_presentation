@@ -33,6 +33,11 @@ class PresentationController {
     this.hudBudget = document.getElementById('hud-budget');
     this.hudScene = document.getElementById('hud-scene');
 
+    // Minimal Floating Deck Status HUD (65" TV Minimalist Indicator)
+    this.deckStatus = document.getElementById('deck-status');
+    this.speakerBadge = document.getElementById('speaker-badge');
+    this.slideCounter = document.getElementById('slide-counter');
+
     // Timer & Telemetry State
     this.slideSecondsRemaining = 90;
     this.slideTimeBudget = 90;
@@ -347,9 +352,29 @@ class PresentationController {
   }
 
   /**
-   * Updates hidden presenter rehearsal HUD metrics.
+   * Updates hidden presenter rehearsal HUD metrics and minimalist on-screen indicator.
    */
   updateHUD(slide) {
+    // 1. Update Minimal Floating Deck Status Indicator (65" TV / 6-Meter Readability)
+    if (this.speakerBadge || this.slideCounter) {
+      const speakerAttr = (slide.dataset.speaker || '').toLowerCase();
+      let presenterName = 'A. Navid';
+      if (speakerAttr.includes('person2') || (this.currentSlideIndex >= 10 && this.currentSlideIndex <= 16)) {
+        presenterName = 'S. Asadi';
+      } else if (speakerAttr.includes('person3') || this.currentSlideIndex >= 17) {
+        presenterName = 'S. Sharifi';
+      } else {
+        presenterName = 'A. Navid';
+      }
+
+      const currentNum = String(this.currentSlideIndex + 1).padStart(2, '0');
+      const totalNum = String(this.totalSlides).padStart(2, '0');
+
+      if (this.speakerBadge) this.speakerBadge.textContent = presenterName;
+      if (this.slideCounter) this.slideCounter.textContent = `${currentNum} / ${totalNum}`;
+    }
+
+    // 2. Update Hidden Rehearsal HUD (Toggled via 'H')
     if (!this.hud) return;
 
     const slideNum = slide.dataset.slideNum || String(this.currentSlideIndex + 1);

@@ -43,12 +43,12 @@ class DualEraPartitionScene(Scene):
         # ------------------------------------------------------------------
         title = Tex(
             r"\textbf{Dual Temporal Eras}",
-            font_size=36,
+            font_size=48,
             color=TEXT_WHITE
         ).move_to([0, 3.42, 0])
 
         # ------------------------------------------------------------------
-        # 3. Mathematical Equations Configuration
+        # 3. Mathematical Equations Configuration (65" TV Large Typography)
         # ------------------------------------------------------------------
         # Step 0: Era 1 Governing Equation (0 <= t <= t0)
         eq1 = MathTex(
@@ -61,7 +61,7 @@ class DualEraPartitionScene(Scene):
             r"F(\tau)",
             r"\sin\omega_n(t - \tau)",
             r"\, d\tau",
-            font_size=31
+            font_size=38
         ).move_to([0, 2.45, 0])
         eq1.set_color_by_tex(r"0 \le t \le t_0", CORAL)
         eq1.set_color_by_tex(r"x_1(t)", CORAL)
@@ -77,7 +77,7 @@ class DualEraPartitionScene(Scene):
             r"x(t_0) = x_1(t_0),",
             r"\quad",
             r"\dot{x}(t_0) = \dot{x}_1(t_0)",
-            font_size=29
+            font_size=36
         ).move_to([0, 1.62, 0])
         eq_boundary.set_color_by_tex(r"t = t_0", BLUE)
         eq_boundary.set_color_by_tex(r"\implies", TEXT_MUTED)
@@ -95,7 +95,7 @@ class DualEraPartitionScene(Scene):
             r"x(t_0)\cos\omega_n(t - t_0)",
             r"+",
             r"\frac{\dot{x}(t_0)}{\omega_n}\sin\omega_n(t - t_0)",
-            font_size=30
+            font_size=36
         ).move_to([0, 1.62, 0])
         eq2.set_color_by_tex(r"t > t_0", CYAN)
         eq2.set_color_by_tex(r"\implies", TEXT_MUTED)
@@ -116,11 +116,11 @@ class DualEraPartitionScene(Scene):
             y_length=3.4,
             axis_config={
                 "color": TEXT_DIM,
-                "stroke_width": 1.6,
+                "stroke_width": 2.5,
                 "include_ticks": False,
                 "include_tip": True,
-                "tip_width": 0.12,
-                "tip_height": 0.12,
+                "tip_width": 0.15,
+                "tip_height": 0.15,
             }
         ).move_to([0.2, -1.45, 0])
 
@@ -267,7 +267,7 @@ class DualEraPartitionScene(Scene):
 
         # --- STEP 2: Era 2 Residual Free Vibration & Peak Comparison (8.0s - 14.5s) ---
         self.play(
-            TransformMatchingTex(eq_boundary, eq2),
+            FadeTransform(eq_boundary, eq2),
             Create(f_zero_line),
             FadeIn(lbl_f_zero),
             run_time=1.1

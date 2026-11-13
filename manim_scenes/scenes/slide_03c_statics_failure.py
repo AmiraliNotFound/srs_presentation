@@ -32,26 +32,13 @@ class StaticsFailureScene(Scene):
         BORDER_MID  = ManimColor("#334155")
 
         # ------------------------------------------------------------------
-        # 2. Header & Title (Floating at top, spacious & minimal)
+        # 2. Header & Title (Minimal Floating Title - Rule 1 Enforced)
         # ------------------------------------------------------------------
-        header_tag = Tex(
-            r"\textsc{Physical Foundations} \quad $\bullet$ \quad \textsc{The Static Analysis Dilemma}",
-            font_size=22,
-            color=TEHRAN_BLUE
-        ).move_to([0, 3.42, 0])
-
         main_title = Tex(
-            r"\textbf{Why Classical Statics Fails}",
-            font_size=46,
+            r"\textbf{Why Statics Fails}",
+            font_size=48,
             color=TEXT_WHITE
-        ).next_to(header_tag, DOWN, buff=0.14)
-
-        header_rule = Line(
-            start=LEFT * 6.0,
-            end=RIGHT * 6.0,
-            color=TEHRAN_BLUE,
-            stroke_width=1.6
-        ).next_to(main_title, DOWN, buff=0.15)
+        ).move_to([0, 3.25, 0])
 
         # ------------------------------------------------------------------
         # 3. Center Stage: The Dynamic Transformation (Perfect Equidistant Spacing)
@@ -61,12 +48,12 @@ class StaticsFailureScene(Scene):
         # --- Left: Naive Static Assumption ---
         f_static_title = Tex(
             r"\textsc{Static Sizing}",
-            font_size=24,
+            font_size=28,
             color=TEXT_MUTED
         )
         f_static_math = MathTex(
             r"x_{\text{static}} = \frac{F_0}{k}",
-            font_size=46,
+            font_size=52,
             color=FORCE_GOLD
         )
         f_static_grp = VGroup(f_static_title, f_static_math).arrange(DOWN, buff=0.22).move_to([-4.40, center_y, 0])
@@ -74,30 +61,27 @@ class StaticsFailureScene(Scene):
         # --- Right: Transient Dynamic Reality ---
         f_dyn_title = Tex(
             r"\textsc{Dynamic Shock Reality}",
-            font_size=24,
+            font_size=28,
             color=DANGER_RED
         )
         f_dyn_math = MathTex(
             r"x_{\max} = \textbf{DLF} \cdot \left(\frac{F_0}{k}\right), \quad \textbf{DLF} \le 2.0",
-            font_size=38,
+            font_size=42,
             color=DANGER_RED
         )
         f_dyn_grp = VGroup(f_dyn_title, f_dyn_math).arrange(DOWN, buff=0.22).move_to([3.40, center_y, 0])
 
         # --- Center: Perfectly Centered Transition Arrow (Equidistant from both formulas) ---
-        # Right edge of static math is at approx -3.25; Left edge of dynamic math is at approx 0.85.
-        # Center of gap = (-3.25 + 0.85)/2 = -1.20. Arrow span = [-2.20, -0.20].
-        # Distance to static = 1.05; Distance to dynamic = 1.05! Perfectly balanced!
         arrow_dyn = Arrow(
             start=[-2.20, center_y - 0.10, 0],
             end=[-0.20, center_y - 0.10, 0],
             color=FORCE_GOLD,
-            stroke_width=3.6,
-            tip_length=0.20
+            stroke_width=4.0,
+            tip_length=0.22
         )
         arrow_lbl = Tex(
             r"\textbf{Dynamic Inertial Lag}",
-            font_size=22,
+            font_size=26,
             color=FORCE_GOLD
         ).next_to(arrow_dyn, UP, buff=0.16)
         arrow_grp = VGroup(arrow_dyn, arrow_lbl)
@@ -107,24 +91,24 @@ class StaticsFailureScene(Scene):
         # ------------------------------------------------------------------
         takeaway_math = MathTex(
             r"U_{\text{dyn}} = \tfrac{1}{2} k (2\delta_{\text{st}})^2 = 4 \times U_{\text{static}}",
-            font_size=36,
+            font_size=42,
             color=DANGER_RED
         )
         takeaway_arrow = Tex(
             r"$\implies$",
-            font_size=34,
+            font_size=38,
             color=TEXT_WHITE
         )
         takeaway_txt = Tex(
             r"\textbf{Doubling Deflection Quadruples Stored Energy!}",
-            font_size=28,
+            font_size=30,
             color=FORCE_GOLD
         )
         takeaway_row = VGroup(takeaway_math, takeaway_arrow, takeaway_txt).arrange(RIGHT, buff=0.30).move_to([0, -1.65, 0])
 
         takeaway_warn = Tex(
             r"\textbf{Classical Static Sizing Guarantees Catastrophic Shock Rupture!}",
-            font_size=26,
+            font_size=28,
             color=DANGER_RED
         ).next_to(takeaway_row, DOWN, buff=0.35)
 
@@ -135,9 +119,7 @@ class StaticsFailureScene(Scene):
         # ------------------------------------------------------------------
         # --- Step 0: Initial Load (Total: 2.0s -> Cuepoint 0 = 2.0s) ---
         self.play(
-            FadeIn(header_tag, shift=DOWN * 0.15),
             Write(main_title),
-            GrowFromCenter(header_rule),
             run_time=0.8
         )
         self.play(

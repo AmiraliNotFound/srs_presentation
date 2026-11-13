@@ -44,17 +44,17 @@ class DuhamelConvolutionScene(Scene):
         # ------------------------------------------------------------------
         title = Tex(
             r"\textbf{Duhamel Convolution}",
-            font_size=36,
+            font_size=48,
             color=TEXT_WHITE
         ).move_to([0, 3.35, 0])
 
         # ------------------------------------------------------------------
-        # 3. Mathematical Formulae Objects
+        # 3. Mathematical Formulae Objects (65" TV Large Typography)
         # ------------------------------------------------------------------
         # Step 0: Unit Impulse Response Building Block
         eq0 = MathTex(
             r"g(t)", r"=", r"\frac{1}{m\omega_n}", r"\sin(\omega_n t)",
-            font_size=42
+            font_size=48
         ).move_to([0, 2.25, 0])
         eq0.set_color_by_tex(r"g(t)", CYAN)
         eq0.set_color_by_tex(r"\frac{1}{m\omega_n}", TEXT_WHITE)
@@ -65,7 +65,7 @@ class DuhamelConvolutionScene(Scene):
             r"d\mathcal{I} = F(\tau) d\tau",
             r"\quad \implies \quad",
             r"dx(t) = F(\tau) g(t - \tau) d\tau",
-            font_size=38
+            font_size=44
         ).move_to([0, 2.25, 0])
         eq1.set_color_by_tex(r"d\mathcal{I} = F(\tau) d\tau", CORAL)
         eq1.set_color_by_tex(r"dx(t) = F(\tau) g(t - \tau) d\tau", CYAN)
@@ -73,7 +73,7 @@ class DuhamelConvolutionScene(Scene):
         # Step 3: Master Duhamel Integral
         eq_duhamel = MathTex(
             r"x(t)", r"=", r"\frac{1}{m\omega_n}", r"\int_0^t", r"F(\tau)", r"\sin\omega_n(t - \tau)", r"\, d\tau",
-            font_size=42
+            font_size=50
         ).move_to([0, 1.15, 0])
         eq_duhamel.set_color_by_tex(r"x(t)", BLUE)
         eq_duhamel.set_color_by_tex(r"\frac{1}{m\omega_n}", TEXT_WHITE)
@@ -87,13 +87,13 @@ class DuhamelConvolutionScene(Scene):
             buff=0.25,
             corner_radius=0.14,
             stroke_color=BLUE,
-            stroke_width=2.0
+            stroke_width=2.5
         )
 
         # Base Acceleration Shock Formulation
         eq_base = MathTex(
             r"z(t)", r"=", r"-\frac{1}{\omega_n}", r"\int_0^t", r"\ddot{y}(\tau)", r"\sin\omega_n(t - \tau)", r"\, d\tau",
-            font_size=40
+            font_size=46
         ).move_to([0, -0.95, 0])
         eq_base.set_color_by_tex(r"z(t)", AMBER)
         eq_base.set_color_by_tex(r"-\frac{1}{\omega_n}", TEXT_WHITE)
@@ -104,7 +104,7 @@ class DuhamelConvolutionScene(Scene):
 
         lbl_base = Tex(
             r"\textbf{Base Shock Acceleration}",
-            font_size=24,
+            font_size=28,
             color=TEXT_MUTED
         ).next_to(eq_base, DOWN, buff=0.25)
 
@@ -118,11 +118,11 @@ class DuhamelConvolutionScene(Scene):
             y_length=3.4,
             axis_config={
                 "color": TEXT_DIM,
-                "stroke_width": 1.6,
+                "stroke_width": 2.5,
                 "include_ticks": False,
                 "include_tip": True,
-                "tip_width": 0.12,
-                "tip_height": 0.12,
+                "tip_width": 0.15,
+                "tip_height": 0.15,
             }
         ).move_to([0, -0.65, 0])
 
@@ -216,7 +216,7 @@ class DuhamelConvolutionScene(Scene):
 
         # --- STEP 1: Slicing the Shock Pulse into Impulses (3.5s - 8.5s) ---
         self.play(
-            TransformMatchingTex(eq0, eq1),
+            FadeTransform(eq0, eq1),
             FadeOut(g_curve),
             FadeOut(lbl_g),
             run_time=1.0

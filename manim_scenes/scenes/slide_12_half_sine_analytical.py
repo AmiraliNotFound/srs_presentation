@@ -39,19 +39,19 @@ class HalfSineAnalyticalScene(Scene):
         # ------------------------------------------------------------------
         title = Tex(
             r"\textbf{Half-Sine Pulse}",
-            font_size=36,
+            font_size=48,
             color=TEXT_WHITE
         ).move_to([0, 3.42, 0])
 
         # ------------------------------------------------------------------
-        # 3. Mathematical Equations Configuration (Top Display Area)
+        # 3. Mathematical Equations Configuration (Top Display Area - 65" TV Typography)
         # ------------------------------------------------------------------
         # Step 0: Era 1 Closed-Form Forced Response (0 <= t <= t0)
         eq0 = MathTex(
             r"0 \le t \le t_0 \implies",
             r"x_1(t) = \frac{\delta_{\text{st}}}{1 - r^2}\left[\sin(\omega t) - r\sin(\omega_n t)\right],",
             r"\quad r = \frac{\tau_n}{2t_0}",
-            font_size=30
+            font_size=36
         ).move_to([0, 2.52, 0])
         eq0.set_color_by_tex(r"0 \le t \le t_0", YELLOW)
         eq0.set_color_by_tex(r"x_1(t)", CYAN)
@@ -64,7 +64,7 @@ class HalfSineAnalyticalScene(Scene):
         eq1 = MathTex(
             r"t > t_0 \implies",
             r"x_2(t) = \frac{2r\delta_{\text{st}}}{1 - r^2}\cos\left(\frac{\pi}{2r}\right)\cos\left[\omega_n\left(t - \frac{t_0}{2}\right)\right]",
-            font_size=30
+            font_size=36
         ).move_to([0, 2.52, 0])
         eq1.set_color_by_tex(r"t > t_0", CYAN)
         eq1.set_color_by_tex(r"x_2(t)", CYAN)
@@ -78,7 +78,7 @@ class HalfSineAnalyticalScene(Scene):
             r"\frac{t_0}{\tau_n} \approx 0.80 \quad (r \approx 0.625)",
             r"\implies",
             r"\mathbf{DLF}_{\max} \approx 1.76",
-            font_size=32
+            font_size=38
         ).move_to([0, 2.52, 0])
         eq2.set_color_by_tex(r"\frac{t_0}{\tau_n} \approx 0.80", YELLOW)
         eq2.set_color_by_tex(r"r \approx 0.625", BLUE)
@@ -97,11 +97,11 @@ class HalfSineAnalyticalScene(Scene):
             y_length=4.0,
             axis_config={
                 "color": TEXT_DIM,
-                "stroke_width": 1.6,
+                "stroke_width": 2.5,
                 "include_ticks": False,
                 "include_tip": True,
-                "tip_width": 0.12,
-                "tip_height": 0.12,
+                "tip_width": 0.15,
+                "tip_height": 0.15,
             }
         ).move_to([0.2, -1.30, 0])
 
@@ -250,7 +250,7 @@ class HalfSineAnalyticalScene(Scene):
 
         # --- STEP 1: Era 2 Residual Wave & Ringdown (4.0s - 8.5s) ---
         self.play(
-            TransformMatchingTex(eq0, eq1),
+            FadeTransform(eq0, eq1),
             Create(boundary_t0),
             FadeIn(lbl_t0),
             run_time=1.0
@@ -269,7 +269,7 @@ class HalfSineAnalyticalScene(Scene):
 
         # --- STEP 2: Peak Resonant Amplification (8.5s - 15.0s) ---
         self.play(
-            TransformMatchingTex(eq1, eq2),
+            FadeTransform(eq1, eq2),
             FadeOut(lbl_env),
             run_time=1.0
         )

@@ -42,12 +42,12 @@ class RectangularPulseScene(Scene):
         # ------------------------------------------------------------------
         title = Tex(
             r"\textbf{Rectangular Pulse}",
-            font_size=36,
+            font_size=48,
             color=TEXT_WHITE
         ).move_to([0, 3.42, 0])
 
         # ------------------------------------------------------------------
-        # 3. Mathematical Equations Configuration (Top Display Area)
+        # 3. Mathematical Equations Configuration (Top Display Area - 65" TV Typography)
         # ------------------------------------------------------------------
         # Step 0: Era 1 Closed-Form Forced Response (0 <= t <= t0)
         eq0 = MathTex(
@@ -55,7 +55,7 @@ class RectangularPulseScene(Scene):
             r"x_1(t) = \delta_{\text{st}}(1 - \cos\omega_n t)",
             r"\implies",
             r"\mathbf{DLF}_{\max} = 2.0",
-            font_size=31
+            font_size=38
         ).move_to([0, 2.50, 0])
         eq0.set_color_by_tex(r"0 \le t \le t_0", YELLOW)
         eq0.set_color_by_tex(r"x_1(t)", CORAL)
@@ -69,7 +69,7 @@ class RectangularPulseScene(Scene):
             r"x_2(t)",
             r"\implies",
             r"\mathbf{DLF}_{\text{res}} = 2\left|\sin\left(\pi \frac{t_0}{\tau_n}\right)\right|",
-            font_size=31
+            font_size=38
         ).move_to([0, 2.50, 0])
         eq1.set_color_by_tex(r"t > t_0", CYAN)
         eq1.set_color_by_tex(r"x_2(t)", CYAN)
@@ -84,7 +84,7 @@ class RectangularPulseScene(Scene):
             r"\implies",
             r"\mathbf{DLF}_{\text{res}} = 0",
             r"\quad \left[x(t_0) = 0, \; \dot{x}(t_0) = 0\right]",
-            font_size=30
+            font_size=36
         ).move_to([0, 2.50, 0])
         eq2.set_color_by_tex(r"\frac{t_0}{\tau_n}", YELLOW)
         eq2.set_color_by_tex(r"\mathbf{DLF}_{\text{res}} = 0", GREEN)
@@ -104,11 +104,11 @@ class RectangularPulseScene(Scene):
             y_length=3.8,
             axis_config={
                 "color": TEXT_DIM,
-                "stroke_width": 1.6,
+                "stroke_width": 2.5,
                 "include_ticks": False,
                 "include_tip": True,
-                "tip_width": 0.12,
-                "tip_height": 0.12,
+                "tip_width": 0.15,
+                "tip_height": 0.15,
             }
         ).move_to([0.2, -1.25, 0])
 
@@ -264,7 +264,7 @@ class RectangularPulseScene(Scene):
 
         # --- STEP 1: Era 2 Residual Amplitude Envelope (4.0s - 8.5s) ---
         self.play(
-            TransformMatchingTex(eq0, eq1),
+            FadeTransform(eq0, eq1),
             Create(boundary_125),
             FadeIn(lbl_t0_125),
             run_time=1.0
@@ -284,7 +284,7 @@ class RectangularPulseScene(Scene):
 
         # --- STEP 2: Complete Residual Cancellation at t0 = tau_n (8.5s - 15.0s) ---
         self.play(
-            TransformMatchingTex(eq1, eq2),
+            FadeTransform(eq1, eq2),
             FadeOut(env_upper),
             FadeOut(env_lower),
             FadeOut(lbl_env),

@@ -209,6 +209,29 @@ body.cursor-hidden * {
 }
 
 /* --------------------------------------------------------------------------
+   5c. Minimal Floating Deck Status Indicator (65" TV / 6-Meter Readability HUD)
+   -------------------------------------------------------------------------- */
+.deck-status-minimal {
+  position: fixed;
+  bottom: 24px;
+  right: 32px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: rgba(255, 255, 255, 0.45);
+  font-family: 'Latin Modern Math', 'CMU Serif', serif;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  user-select: none;
+  pointer-events: none;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transition: opacity 0.3s ease;
+}
+
+/* --------------------------------------------------------------------------
    6. Hidden Presenter Rehearsal HUD (Strictly display: none by default)
    -------------------------------------------------------------------------- */
 #presenter-hud {

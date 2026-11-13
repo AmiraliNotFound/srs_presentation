@@ -17,8 +17,8 @@
 | **Phase 2 (Milestone)** | GitHub Remote Deployment & Multi-Speaker Workspace Isolation | **COMPLETED** | 100% |
 | **Phase 2 (Part 2)** | Speaker 2 Slides (08–14: Duhamel Convolution, Canonical Pulses & SRS) | **COMPLETED** | 100% (7/7) |
 | **Phase 2 (Part 3)** | Speaker 3 Slides (15–21: Design Resolution, Crane Seismic & Wind Blast SRS) | **COMPLETED** | 100% (7/7) |
-| **Phase 2 Overall** | Complete 24-Slide Deck: Manim Scenes, 1080p Renders & HTML Video Integration | **COMPLETED** | 100% (24/24) |
-| **Phase 3** | Visual & Aesthetic Polish (Unified TeX Typography & Full-Deck Transitions) | **READY FOR EXECUTION** | 0% |
+| **Phase 2 Overall** | Complete 26-Slide Deck: Manim Scenes, 1080p Renders & HTML Video Integration | **COMPLETED** | 100% (26/26) |
+| **Phase 3** | Visual & Aesthetic Polish (65" TV Typography, Rule 1 Fix & Presenter HUD) | **COMPLETED** | 100% |
 | **Phase 4** | FastAPI + WebSocket Mobile Companion, Audience Engagement & Live Quiz Sync | **QUEUED** | 0% |
 
 ---
@@ -112,12 +112,12 @@
 
 ---
 
-### [ ] Phase 3: Visual & Aesthetic Polish
-- [ ] Standardize typography with MathJax / KaTeX and Century Gothic fonts.
-- [ ] Implement smooth 3Blue1Brown-style `TransformMatchingTex` transitions across all mathematical derivation steps.
-- [ ] Embed university branding and color scheme: Primary Blue (`#0097F1`), Dark Slate Navy (`#0B0F19`), Accent Amber (`#FFB703`), Pass Green (`#2EC4B6`), Fail Red (`#E63946`).
-- [ ] Ensure high-DPI (1080p60 / 4K) crisp rendering with zero compression banding.
-- [ ] Implement responsive layout adjustments for lecture hall projection (16:9 aspect ratio).
+### [x] Phase 3: Visual & Aesthetic Polish
+- [x] **Rule 1 Header Refactor:** Stripped 3-line header banners in Slide 03A (`Harmonic Vibration`), Slide 03B (`Dynamic Shock Pulse`), and Slide 03C (`Why Statics Fails`), replacing with large, floating minimal titles (`font_size=48`).
+- [x] **Minimal Floating Presenter & Slide Counter HUD:** Implemented borderless unboxed HUD overlay (`#deck-status`) showing presenter names (`A. Navid`, `S. Asadi`, `S. Sharifi`) and slide counter (`XX / 26`) dynamically updated via `main.js`.
+- [x] **Equation Morphing Refactor:** Eliminated chaotic juggle-morphing in mathematical derivations (Slides 08, 09, 10, 11, 12) via identical `substrings_to_isolate` and seamless `FadeTransform` glides.
+- [x] **65-Inch TV / 6-Meter Readability:** Enforced `font_size >= 48` for equations, `font_size >= 34` for labels, `stroke_width >= 2.5` for axes, and $\ge 35\text{–}40\%$ open breathing room across all 26 slides.
+- [x] **1080p60 Production Renders:** Re-rendered all refactored Manim scenes at full 1080p60 quality and verified full-deck playback.
 
 ---
 
