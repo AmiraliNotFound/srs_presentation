@@ -365,16 +365,21 @@
                data-speaker-name="Person 2: Mathematical Theory &amp; Derivations" 
                data-time-budget="120" 
                data-quiz-trigger="" 
+               data-cuepoints="4.0, 8.0, 14.5"
                data-mobile-summary="Temporal Partitioning: Era 1 Forced Phase (0 &le; t &le; t0) vs. Era 2 Residual Free Ringdown (t &gt; t0)." 
+               data-mobile-notes="Dual Temporal Eras: Any transient shock response partitions into two distinct regimes. In Era 1 (0 &le; t &le; t0), the force is active and drives the Duhamel convolution. At t = t0, the pulse ends, leaving boundary state x(t0) and x'(t0). In Era 2 (t &gt; t0), the force is zero and the system rings down in free vibration. The maximum response can occur in Era 1 (Primary SRS) or Era 2 (Residual SRS), which dictates the spectrum envelopes."
                data-manim-scene="DualEraPartitionScene">
         <div class="slide-stage">
           <video class="stage-video" preload="auto" playsinline muted>
             <source src="assets/videos/SLIDE_10_DualEraPartitionScene.mp4" type="video/mp4">
           </video>
+          <!-- Controllable Step Triggers -->
+          <div class="step" data-step="1" data-cuepoint="8.0" data-step-name="Boundary Handoff at t0"></div>
+          <div class="step" data-step="2" data-cuepoint="14.5" data-step-name="Era 2 Residual Ringdown"></div>
           <div class="stage-fallback">
             <span class="slide-num-watermark">10</span>
             <h2 class="fallback-title">DualEraPartitionScene</h2>
-            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
+            <p class="fallback-sub">Forced Response vs. Residual Free Ringdown</p>
           </div>
         </div>
       </section>
