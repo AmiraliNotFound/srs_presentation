@@ -393,16 +393,21 @@
                data-speaker-name="Person 2: Mathematical Theory &amp; Derivations" 
                data-time-budget="150" 
                data-quiz-trigger="" 
+               data-cuepoints="4.0, 8.5, 15.0"
                data-mobile-summary="Rectangular Shock Pulse: DLF = 2.0 dynamic doubling and complete residual cancellation at integer periods." 
+               data-mobile-notes="Rectangular Shock Pulse: In Era 1, x(t) = delta_st*(1 - cos(omega_n*t)), reaching peak DLF = 2.0 at t = tau_n / 2. In Era 2, residual amplitude is DLF_res = 2*|sin(pi*t0/tau_n)|. Crucial physical insight: If pulse duration is an exact integer multiple of natural period (t0/tau_n = 1, 2, 3), DLF_res = 0! The system absorbs energy during the first half-cycle and returns it completely during the second half-cycle, leaving zero residual motion."
                data-manim-scene="RectangularPulseScene">
         <div class="slide-stage">
           <video class="stage-video" preload="auto" playsinline muted>
             <source src="assets/videos/SLIDE_11_RectangularPulseScene.mp4" type="video/mp4">
           </video>
+          <!-- Controllable Step Triggers -->
+          <div class="step" data-step="1" data-cuepoint="8.5" data-step-name="Residual Amplitude Envelope"></div>
+          <div class="step" data-step="2" data-cuepoint="15.0" data-step-name="Zero Residual Cancellation"></div>
           <div class="stage-fallback">
             <span class="slide-num-watermark">11</span>
             <h2 class="fallback-title">RectangularPulseScene</h2>
-            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
+            <p class="fallback-sub">Dynamic Doubling &amp; Zero Residual Cancellation</p>
           </div>
         </div>
       </section>

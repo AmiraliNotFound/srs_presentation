@@ -94,7 +94,7 @@
 | **SLIDE-08** | Person 2 | Governing Equation & Laplace Transform Transfer Function | `LaplaceTransferScene` | [x] | [x] |
 | **SLIDE-09** | Person 2 | Impulse Response Function & The Duhamel Convolution | `DuhamelConvolutionScene` | [x] | [x] |
 | **SLIDE-10** | Person 2 | Two Temporal Eras: Forced ($t \le t_0$) vs. Residual ($t > t_0$) | `DualEraPartitionScene` | [x] | [x] |
-| **SLIDE-11** | Person 2 | Rectangular Pulse Response & Peak Derivation | `RectangularPulseScene` | [ ] | [ ] |
+| **SLIDE-11** | Person 2 | Rectangular Pulse Response & Peak Derivation | `RectangularPulseScene` | [x] | [x] |
 | **SLIDE-12** | Person 2 | Half-Sine Shock Pulse: Era 1 & Era 2 Analytical Solution | `HalfSineAnalyticalScene` | [ ] | [ ] |
 | **SLIDE-13** | Person 2 | Constructing the Shock Response Spectrum (SRS) | `SRSConstructionScene` | [ ] | [ ] |
 | **SLIDE-14** | Person 2 | Asymptotic Master Insight: Impulsive vs. Quasi-Static Limits | `AsymptoticLimitsScene` | [ ] | [ ] |
