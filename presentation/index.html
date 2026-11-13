@@ -421,16 +421,21 @@
                data-speaker-name="Person 2: Mathematical Theory &amp; Derivations" 
                data-time-budget="150" 
                data-quiz-trigger="" 
+               data-cuepoints="4.0, 8.5, 15.0"
                data-mobile-summary="Half-Sine Shock Pulse: Exact analytical solution, DLF = 1.76 peak resonance at t0/tau_n = 0.8." 
+               data-mobile-notes="Half-Sine Shock Pulse: In Era 1, response is a superposition of forced frequency omega = pi/t0 and natural frequency omega_n: x1(t) = delta_st/(1 - r^2) * [sin(omega*t) - r*sin(omega_n*t)]. In Era 2, residual amplitude is modulated by cos(pi/(2r)). Peak dynamic amplification reaches DLF = 1.76 at t0/tau_n = 0.80. This is the exact closed-form solution governing our Helicopter Drop-Box avionics container."
                data-manim-scene="HalfSineAnalyticalScene">
         <div class="slide-stage">
           <video class="stage-video" preload="auto" playsinline muted>
             <source src="assets/videos/SLIDE_12_HalfSineAnalyticalScene.mp4" type="video/mp4">
           </video>
+          <!-- Controllable Step Triggers -->
+          <div class="step" data-step="1" data-cuepoint="8.5" data-step-name="Era 2 Residual Wave"></div>
+          <div class="step" data-step="2" data-cuepoint="15.0" data-step-name="Resonant Amplification Peak"></div>
           <div class="stage-fallback">
             <span class="slide-num-watermark">12</span>
             <h2 class="fallback-title">HalfSineAnalyticalScene</h2>
-            <p class="fallback-sub">Waiting for Phase 2 Manim Render</p>
+            <p class="fallback-sub">Half-Sine Analytical Solution &amp; Resonant Peak Amplification</p>
           </div>
         </div>
       </section>

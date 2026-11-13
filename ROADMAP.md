@@ -15,7 +15,7 @@
 | **Phase 1.5** | 3Blue1Brown Fullscreen Refactor: Zero-Chrome Stage & Card Slop Removal | **COMPLETED** | 100% |
 | **Phase 2 (Part 1)** | Speaker 1 Slides (01–07: Foundations, Rayleigh SDOF, Circular Dilemma) | **COMPLETED** | 100% (10/10) |
 | **Phase 2 (Milestone)** | GitHub Remote Deployment & Multi-Speaker Workspace Isolation | **COMPLETED** | 100% |
-| **Phase 2 (Part 2)** | Speaker 2 Slides (08–14: Duhamel Convolution, Canonical Pulses & SRS) | **IN PROGRESS (Lead)** | 43% (3/7) |
+| **Phase 2 (Part 2)** | Speaker 2 Slides (08–14: Duhamel Convolution, Canonical Pulses & SRS) | **IN PROGRESS (Lead)** | 71% (5/7) |
 | **Phase 2 (Part 3)** | Speaker 3 Slides (15–21: Design Resolution, Crane Seismic & ECU Isolation) | **QUEUED (Colleague via PR)** | 0% |
 | **Phase 3** | Visual & Aesthetic Polish (Unified TeX Typography & Full-Deck Transitions) | **QUEUED (Lead / Post-Merge)** | 0% |
 | **Phase 4** | FastAPI + WebSocket Mobile Companion, Audience Engagement & Live Quiz Sync | **QUEUED** | 0% |
@@ -95,7 +95,7 @@
 | **SLIDE-09** | Person 2 | Impulse Response Function & The Duhamel Convolution | `DuhamelConvolutionScene` | [x] | [x] |
 | **SLIDE-10** | Person 2 | Two Temporal Eras: Forced ($t \le t_0$) vs. Residual ($t > t_0$) | `DualEraPartitionScene` | [x] | [x] |
 | **SLIDE-11** | Person 2 | Rectangular Pulse Response & Peak Derivation | `RectangularPulseScene` | [x] | [x] |
-| **SLIDE-12** | Person 2 | Half-Sine Shock Pulse: Era 1 & Era 2 Analytical Solution | `HalfSineAnalyticalScene` | [ ] | [ ] |
+| **SLIDE-12** | Person 2 | Half-Sine Shock Pulse: Era 1 & Era 2 Analytical Solution | `HalfSineAnalyticalScene` | [x] | [x] |
 | **SLIDE-13** | Person 2 | Constructing the Shock Response Spectrum (SRS) | `SRSConstructionScene` | [ ] | [ ] |
 | **SLIDE-14** | Person 2 | Asymptotic Master Insight: Impulsive vs. Quasi-Static Limits | `AsymptoticLimitsScene` | [ ] | [ ] |
 | **SLIDE-15** | Person 3 | Hand-Off Resolution: Closing the Motivating Problem Loop | `IterativeDesignScene` | [ ] | [ ] |
