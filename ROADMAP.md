@@ -104,8 +104,10 @@
 | **SLIDE-16** | Person 3 | Bracket Thickness Sizing: Evaluating $d = 0.4'', 0.5'', 0.6''$ | `StressVerificationScene` | [x] | [x] |
 | **SLIDE-17** | Person 3 | Case Study 2: Overhead Crane Vertical Seismic Derailment | `CraneSeismicScene` | [x] | [x] |
 | **SLIDE-18** | Person 3 | Counter-Intuitive Stiffness: Why Softer Girders Prevent Derailment | `CraneStiffnessLimitScene` | [x] | [x] |
-| **SLIDE-19** | Person 3 | Case Study 3: Municipal Tower Wind Blast SDOF Modeling | `WindBlastModelScene` | [x] | [x] |
-| **SLIDE-20** | Person 3 | Shock Response Spectrum (SRS) Evaluation & Structural Survival | `WindBlastSRSScene` | [x] | [x] |
+| **SLIDE-19A** | Person 3 | Case Study 3A: Municipal Tower SDOF Modeling & Rayleigh Mass | `MunicipalTowerModelScene` | [x] | [x] |
+| **SLIDE-19B** | Person 3 | Case Study 3B: Wind-Blast Shock Pulse & Dimensionless Ratio | `WindBlastPulseScene` | [x] | [x] |
+| **SLIDE-20A** | Person 3 | Case Study 3C: Shock Response Spectrum (SRS) Evaluation | `WindBlastSRSScene` | [x] | [x] |
+| **SLIDE-20B** | Person 3 | Case Study 3D: Structural Response & Certified Safety Verification | `WindBlastSafetyScene` | [x] | [x] |
 | **SLIDE-21** | Person 3 | Master Synthesis, Live Audience Mobile Quiz & Conclusion | `MasterSummaryScene` | [x] | [x] |
 
 ---

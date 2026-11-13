@@ -613,58 +613,110 @@
         </div>
       </section>
 
-      <!-- SLIDE 19 -->
+      <!-- SLIDE 19A -->
       <section class="slide" 
-               id="slide-19" 
-               data-slide-id="SLIDE-19" 
+               id="slide-19a" 
+               data-slide-id="SLIDE-19A" 
                data-slide-num="19" 
                data-speaker="person3" 
                data-speaker-name="Person 3: Design Resolution &amp; Applications" 
-               data-time-budget="120" 
-               data-cuepoints="3.5, 8.5, 14.2"
-               data-mobile-summary="Case Study 3: Elevated municipal water tower (35m hollow concrete shaft, Meff = 311.7 t) under 180 kN half-sine wind blast (t0 = 1.60 s, beta = 0.9031 in dynamic shock regime)." 
-               data-mobile-notes="Our third and final case study examines heavy civil infrastructure: an elevated municipal water storage tower subjected to an extreme transient wind-blast gust, adapted from Rao Examples 2.2, 2.10, and Figure 9.49. In coastal industrial zones, elevated municipal towers supply emergency firefighting water pressure. We examine a 35-meter reinforced concrete tower holding a 250,000-liter storage tank. The hollow concrete pedestal has outer diameter 2.8 meters and wall thickness 300 mm, giving lateral cantilever stiffness k = 3,919.7 kN/m. Accounting for continuous shaft inertia via Rayleigh's energy method, the column adds 33/140 of its 198-metric-ton self-weight, yielding an effective modal mass Meff = 311,653 kg. This establishes a fundamental natural period tau_n = 1.7717 seconds (omega_n = 3.546 rad/s). The extreme wind blast is characterized as an undamped half-sine shock pulse of peak thrust F0 = 180 kN lasting t0 = 1.60 seconds. Dividing pulse duration by the tower period gives the critical dimensionless ratio beta = t0 / tau_n = 0.9031. Operating in this dynamic shock regime, static design is invalid—we must consult the Shock Response Spectrum."
-               data-manim-scene="WindBlastModelScene">
+               data-time-budget="60" 
+               data-cuepoints="3.2, 7.0, 10.2"
+               data-mobile-summary="Case Study 3: Elevated municipal water tower (35m hollow concrete shaft, Meff = 311.7 t, k = 3,919.7 kN/m, fundamental period &tau;n = 1.7717 s)." 
+               data-mobile-notes="Our third and final case study examines heavy civil infrastructure: an elevated municipal water storage tower subjected to an extreme transient wind-blast gust, adapted from Rao Examples 2.2, 2.10, and Figure 9.49. In coastal industrial zones, elevated municipal towers supply emergency firefighting water pressure. We examine a 35-meter reinforced concrete tower holding a 250,000-liter storage tank (total lumped head mass M = 265 metric tons). The hollow concrete pedestal has outer diameter 2.8 meters and wall thickness 300 mm, giving area moment of inertia I = 1.8673 m^4 and lateral cantilever stiffness k = 3,919.7 kN/m. Accounting for continuous shaft inertia via Rayleigh's energy method, the column adds 33/140 of its 198-metric-ton self-weight, yielding an effective modal mass Meff = 311,653 kg. This establishes a fundamental natural frequency omega_n = 3.546 rad/s and natural period tau_n = 1.7717 seconds."
+               data-manim-scene="MunicipalTowerModelScene">
         <div class="slide-stage">
           <video class="stage-video" preload="auto" playsinline muted>
-            <source src="assets/videos/SLIDE_19_WindBlastModelScene.mp4" type="video/mp4">
+            <source src="assets/videos/SLIDE_19A_MunicipalTowerModelScene.mp4" type="video/mp4">
           </video>
           <!-- Discrete Step Triggers -->
-          <div class="step" data-step="1" data-cuepoint="3.5" data-step-name="Tower SDOF Idealization (35m Shaft, &tau;n = 1.77s)"></div>
-          <div class="step" data-step="2" data-cuepoint="8.5" data-step-name="Half-Sine Wind Blast (F0 = 180 kN, t0 = 1.60s)"></div>
-          <div class="step" data-step="3" data-cuepoint="14.2" data-step-name="Dimensionless Pulse Ratio (&beta; = 0.903: Dynamic Shock)"></div>
+          <div class="step" data-step="1" data-cuepoint="7.0" data-step-name="Section Properties &amp; Equivalent Mass (Meff = 311.7 t)"></div>
+          <div class="step" data-step="2" data-cuepoint="10.2" data-step-name="Fundamental Natural Period (&tau;n = 1.7717 s)"></div>
           <div class="stage-fallback">
-            <span class="slide-num-watermark">19</span>
-            <h2 class="fallback-title">WindBlastModelScene</h2>
-            <p class="fallback-sub">Elevated Municipal Tower Wind Blast SDOF Model</p>
+            <span class="slide-num-watermark">19A</span>
+            <h2 class="fallback-title">MunicipalTowerModelScene</h2>
+            <p class="fallback-sub">Elevated Municipal Tower SDOF Model &amp; Rayleigh Mass</p>
           </div>
         </div>
       </section>
 
-      <!-- SLIDE 20 -->
+      <!-- SLIDE 19B -->
       <section class="slide" 
-               id="slide-20" 
-               data-slide-id="SLIDE-20" 
+               id="slide-19b" 
+               data-slide-id="SLIDE-19B" 
+               data-slide-num="19" 
+               data-speaker="person3" 
+               data-speaker-name="Person 3: Design Resolution &amp; Applications" 
+               data-time-budget="60" 
+               data-cuepoints="3.2, 6.2, 9.0"
+               data-mobile-summary="Wind-Blast Shock Pulse: Undamped half-sine shock pulse (F0 = 180 kN, t0 = 1.60 s, beta = 0.9031 in dynamic shock regime)." 
+               data-mobile-notes="The extreme wind blast striking the elevated tank is characterized as an undamped half-sine shock pulse of peak aerodynamic thrust F0 = 180 kN lasting t0 = 1.60 seconds. Static tip deflection under 180 kN would be delta_st = F0 / k = 45.92 mm. Dividing the pulse duration by the tower's natural period gives the critical dimensionless ratio beta = t0 / tau_n = 1.60 / 1.7717 = 0.9031. Because beta is approximately 0.90, the pulse duration matches the structure's natural period almost one-to-one! Operating in this dynamic shock regime, static design is dangerously invalid—we enter the near-resonance peak of the Shock Response Spectrum."
+               data-manim-scene="WindBlastPulseScene">
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_19B_WindBlastPulseScene.mp4" type="video/mp4">
+          </video>
+          <!-- Discrete Step Triggers -->
+          <div class="step" data-step="1" data-cuepoint="6.2" data-step-name="Half-Sine Wind Blast Profile (F0 = 180 kN, t0 = 1.60 s)"></div>
+          <div class="step" data-step="2" data-cuepoint="9.0" data-step-name="Dimensionless Ratio &amp; Dynamic Shock Regime (&beta; = 0.9031)"></div>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">19B</span>
+            <h2 class="fallback-title">WindBlastPulseScene</h2>
+            <p class="fallback-sub">Transient Aerodynamic Shock Loading &amp; Pulse Ratio</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 20A -->
+      <section class="slide" 
+               id="slide-20a" 
+               data-slide-id="SLIDE-20A" 
                data-slide-num="20" 
                data-speaker="person3" 
                data-speaker-name="Person 3: Design Resolution &amp; Applications" 
-               data-time-budget="120" 
-               data-cuepoints="3.5, 8.5, 14.2"
-               data-mobile-summary="Shock Response Spectrum Evaluation: Peak DLF = 1.7587 at beta = 0.9031; x_max = 80.76 mm, M_base = 11,080 kN m, sigma_max = 8.31 MPa <= 12.0 MPa (FS = 1.44 Certified Safe)."
-               data-mobile-notes="To evaluate dynamic magnification, we project our operating point onto the canonical half-sine Shock Response Spectrum derived by Person 2. Because beta = 0.9031 exceeds 0.5, peak response occurs during the active gust at tm = 1.140 seconds before the blast subsides. The closed-form primary SRS formula yields a governing Dynamic Load Factor of DLF = 1.7587—amplifying static loads by nearly 76%! Static tip deflection under 180 kN would be 45.92 mm; multiplying by DLF gives a maximum dynamic sway x_max = 80.76 mm. This dynamic displacement generates a foundation overturning bending moment of Mb,max = 11,080 kN m. Using the elastic flexure formula at the column root yields peak dynamic bending stress sigma_max = 8.31 MPa. Comparing this against the permissible concrete working limit of 12.0 MPa confirms a factor of safety of 1.44. Even under severe resonant shock gust magnification, the elevated municipal water tower is fully certified safe against rupture."
+               data-time-budget="60" 
+               data-cuepoints="3.8, 5.5, 8.5"
+               data-mobile-summary="Shock Response Spectrum Evaluation: Peak DLF = 1.7587 at beta = 0.9031; +75.9% dynamic overshoot; x_max = 80.76 mm." 
+               data-mobile-notes="To evaluate dynamic magnification, we project our operating point onto the canonical half-sine Shock Response Spectrum derived by Person 2. Because beta = 0.9031 exceeds 0.5, peak response occurs during the active gust at tm = 1.140 seconds before the blast subsides. The closed-form primary SRS formula yields a governing Dynamic Load Factor of DLF = 1.7587—amplifying static loads by nearly 76%! Static tip deflection of 45.92 mm multiplied by DLF gives a maximum dynamic sway x_max = 80.76 mm."
                data-manim-scene="WindBlastSRSScene">
         <div class="slide-stage">
           <video class="stage-video" preload="auto" playsinline muted>
-            <source src="assets/videos/SLIDE_20_WindBlastSRSScene.mp4" type="video/mp4">
+            <source src="assets/videos/SLIDE_20A_WindBlastSRSScene.mp4" type="video/mp4">
           </video>
           <!-- Discrete Step Triggers -->
-          <div class="step" data-step="1" data-cuepoint="3.5" data-step-name="Half-Sine Shock Response Spectrum (DLF vs &beta;)"></div>
-          <div class="step" data-step="2" data-cuepoint="8.5" data-step-name="Tower Operating Point (&beta; = 0.903 &rarr; DLF = 1.759, xmax = 80.8mm)"></div>
-          <div class="step" data-step="3" data-cuepoint="14.2" data-step-name="Bending Stress Certification (&sigma;max = 8.31 MPa &le; 12 MPa, FS = 1.44)"></div>
+          <div class="step" data-step="1" data-cuepoint="5.5" data-step-name="Tower Operating Point on SRS Curve (&beta; = 0.903 &rarr; DLF = 1.759)"></div>
+          <div class="step" data-step="2" data-cuepoint="8.5" data-step-name="Dynamic Amplification &amp; Peak Displacement (xmax = 80.76 mm)"></div>
           <div class="stage-fallback">
-            <span class="slide-num-watermark">20</span>
+            <span class="slide-num-watermark">20A</span>
             <h2 class="fallback-title">WindBlastSRSScene</h2>
-            <p class="fallback-sub">Shock Response Spectrum Evaluation &amp; Safety</p>
+            <p class="fallback-sub">Shock Response Spectrum Spectral Evaluation</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 20B -->
+      <section class="slide" 
+               id="slide-20b" 
+               data-slide-id="SLIDE-20B" 
+               data-slide-num="20" 
+               data-speaker="person3" 
+               data-speaker-name="Person 3: Design Resolution &amp; Applications" 
+               data-time-budget="60" 
+               data-cuepoints="3.2, 6.5, 9.2"
+               data-mobile-summary="Structural Response &amp; Safety: Base moment Mb,max = 11,080 kN m, root stress sigma_max = 8.31 MPa <= 12.0 MPa (FS = 1.44 Certified Safe)." 
+               data-mobile-notes="Now we verify column structural integrity under this 80.76 mm peak dynamic deflection. The dynamic displacement generates a maximum foundation overturning moment of Mb,max = 11,079.8 kN m. Using the elastic flexure formula at the column base (c = 1.40 m, I = 1.8673 m^4) yields a peak dynamic bending stress of sigma_max = 8.31 MPa. Comparing this against the allowable concrete working limit of 12.0 MPa confirms a factor of safety of 1.44. Even under severe resonant shock gust magnification, the elevated municipal water tower is fully certified safe against structural rupture."
+               data-manim-scene="WindBlastSafetyScene">
+        <div class="slide-stage">
+          <video class="stage-video" preload="auto" playsinline muted>
+            <source src="assets/videos/SLIDE_20B_WindBlastSafetyScene.mp4" type="video/mp4">
+          </video>
+          <!-- Discrete Step Triggers -->
+          <div class="step" data-step="1" data-cuepoint="6.5" data-step-name="Base Overturning Moment &amp; Root Stress (&sigma;max = 8.31 MPa)"></div>
+          <div class="step" data-step="2" data-cuepoint="9.2" data-step-name="Safety Verification &amp; Certified Safe Badge (FS = 1.44)"></div>
+          <div class="stage-fallback">
+            <span class="slide-num-watermark">20B</span>
+            <h2 class="fallback-title">WindBlastSafetyScene</h2>
+            <p class="fallback-sub">Structural Response &amp; Certified Factor of Safety</p>
           </div>
         </div>
       </section>
