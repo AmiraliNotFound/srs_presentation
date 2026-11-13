@@ -16,7 +16,7 @@
 | **Phase 2 (Part 1)** | Speaker 1 Slides (01–07: Foundations, Rayleigh SDOF, Circular Dilemma) | **COMPLETED** | 100% (10/10) |
 | **Phase 2 (Milestone)** | GitHub Remote Deployment & Multi-Speaker Workspace Isolation | **COMPLETED** | 100% |
 | **Phase 2 (Part 2)** | Speaker 2 Slides (08–14: Duhamel Convolution, Canonical Pulses & SRS) | **COMPLETED** | 100% (7/7) |
-| **Phase 2 (Part 3)** | Speaker 3 Slides (15–21: Design Resolution, Crane Seismic & ECU Isolation) | **COMPLETED** | 100% (7/7) |
+| **Phase 2 (Part 3)** | Speaker 3 Slides (15–21: Design Resolution, Crane Seismic & Wind Blast SRS) | **COMPLETED** | 100% (7/7) |
 | **Phase 2 Overall** | Complete 24-Slide Deck: Manim Scenes, 1080p Renders & HTML Video Integration | **COMPLETED** | 100% (24/24) |
 | **Phase 3** | Visual & Aesthetic Polish (Unified TeX Typography & Full-Deck Transitions) | **READY FOR EXECUTION** | 0% |
 | **Phase 4** | FastAPI + WebSocket Mobile Companion, Audience Engagement & Live Quiz Sync | **QUEUED** | 0% |
@@ -45,7 +45,7 @@
 - [x] **1.1 Speaker Allocation Matrix:**
   - **Person 1 (0:00 – 15:00):** Real-world shock phenomena, physical intuition, military standards (MIL-STD-810H), the Helicopter Drop-Box Motivating Problem, SDOF continuous-to-lumped Rayleigh reduction, and the circular design dilemma.
   - **Person 2 (15:00 – 30:00):** Mathematical machinery of transient vibrations, Laplace transform transfer function $H(s)$, Duhamel convolution integral, dual temporal eras (Era 1 Forced vs. Era 2 Residual), analytical derivations for Rectangular & Half-Sine pulses, and SRS spectrum properties.
-  - **Person 3 (30:00 – 45:00):** Step-by-step numerical iterative solution of the Helicopter Drop-Box Bracket ($d = 0.6\text{ in}$), Overhead Crane earthquake derailment analysis ($S_a < 1.0g$, stiffness ceiling $k < 365\text{ kN/m}$), Automotive ECU PCB isolation ($T_d \le 10\%$), audience live quiz, and concluding Q&A.
+  - **Person 3 (30:00 – 45:00):** Step-by-step numerical iterative solution of the Helicopter Drop-Box Bracket ($d = 0.6\text{ in}$), Overhead Crane earthquake derailment analysis ($S_a < 1.0g$, stiffness ceiling $k < 365\text{ kN/m}$), Municipal Water Tower Wind Blast SRS ($F_0 = 180\text{ kN}$, $\text{DLF} = 1.76$, $\text{FS} = 1.44$), audience live quiz, and concluding Q&A.
 - [x] **1.2 45-Minute Synchronized Cue Script:**
   - Minute-by-minute speaking cues, slide transition triggers, and interactive pause points in `docs/presentation_script_and_pacing.md`.
 - [x] **1.3 Minimalist HTML5 Presentation Engine:**
@@ -104,8 +104,8 @@
 | **SLIDE-16** | Person 3 | Bracket Thickness Sizing: Evaluating $d = 0.4'', 0.5'', 0.6''$ | `StressVerificationScene` | [x] | [x] |
 | **SLIDE-17** | Person 3 | Case Study 2: Overhead Crane Vertical Seismic Derailment | `CraneSeismicScene` | [x] | [x] |
 | **SLIDE-18** | Person 3 | Counter-Intuitive Stiffness: Why Softer Girders Prevent Derailment | `CraneStiffnessLimitScene` | [x] | [x] |
-| **SLIDE-19** | Person 3 | Case Study 3: Automotive ECU PCB Resonant Amplification | `ECUResonanceScene` | [x] | [x] |
-| **SLIDE-20** | Person 3 | Base Isolator Design: Tuning $(k_{\text{iso}}, c_{\text{iso}})$ for $T_d \le 10\%$ | `ECUIsolatorScene` | [x] | [x] |
+| **SLIDE-19** | Person 3 | Case Study 3: Municipal Tower Wind Blast SDOF Modeling | `WindBlastModelScene` | [x] | [x] |
+| **SLIDE-20** | Person 3 | Shock Response Spectrum (SRS) Evaluation & Structural Survival | `WindBlastSRSScene` | [x] | [x] |
 | **SLIDE-21** | Person 3 | Master Synthesis, Live Audience Mobile Quiz & Conclusion | `MasterSummaryScene` | [x] | [x] |
 
 ---

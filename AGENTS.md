@@ -124,6 +124,6 @@ When authoring equations, numerical values, or physical models, consult the auth
 - **`docs/syllabus_and_problems.md`**: Contains complete, pre-calculated numerical solutions for:
   - **Problem 1 (Helicopter Drop-Box):** $d = 0.6\text{ in}$ sizing, $W_{\text{eq}} = 0.538\text{ lb}$, $k = 540\text{ lb/in}$, $\tau_n = 0.0101\text{ s}$, $t_0/\tau_n = 9.91$, $\text{DLF} = 1.07$, $\sigma_{\max} = 25,664\text{ psi} \le 26\text{ ksi}$.
   - **Problem 2 (Overhead Crane Derailment):** $S_a \ge 1.0g$ derailment threshold, girder stiffness limit $k < 365\text{ kN/m}$.
-  - **Problem 3 (Automotive ECU Isolation):** $351\%$ resonant amplification at $3600\text{ rpm}$, base isolator tuning $k_{\text{iso}} = 24.66\text{ kN/m}$, $c_{\text{iso}} = 5.21\text{ N}\cdot\text{s/m}$ for $T_d \le 10\%$.
+  - **Problem 3 (Municipal Water Tower Blast):** $35\text{ m}$ concrete pedestal, $M_{\text{eff}} = 311,653\text{ kg}$, $k = 3,919.7\text{ kN/m}$, $\tau_n = 1.7717\text{ s}$, half-sine wind blast $F_0 = 180\text{ kN}$, $t_0 = 1.60\text{ s}$, $\beta = 0.9031$, $\text{DLF} = 1.7587$, $x_{\max} = 80.76\text{ mm}$, $M_{b,\max} = 11,080\text{ kN}\cdot\text{m}$, $\sigma_{\max} = 8.31\text{ MPa} \le 12.0\text{ MPa}$ ($\text{FS} = 1.44$ Certified Safe).
 - **`docs/presentation_script_and_pacing.md`**: Minute-by-minute speaking cues and rehearsal timing budgets.
 - **`docs/MANIM_GUIDE.md`**: Manim CLI flags, equation morphing techniques, and video naming conventions.

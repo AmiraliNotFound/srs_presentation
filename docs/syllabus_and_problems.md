@@ -52,7 +52,7 @@ Forced Phase      Free Ringdown                                      SRS        
 9. **Real-World Case Studies & SDOF Idealization:**
    - Case 1: Helicopter avionics drop-box cantilever PCB bracket (Rao Ex. 4.18 & Yousefi pp. 74–76).
    - Case 2: Overhead traveling (EOT) crane trolley under vertical earthquake ground motion (Rao Ex. 4.17 & 4.57).
-   - Case 3: Automotive ECU PCB under harmonic engine excitation and elastomer base isolator design (Rao Ex. 9.10 & 9.11).
+   - Case 3: Wind-Blast Shock Response Spectrum (SRS) Analysis of an Elevated Municipal Water Tower (Rao Ex. 2.2, 2.10 & Fig. 9.49).
 
 ---
 
@@ -390,37 +390,94 @@ Making an overhead crane girder excessively stiff ($k > 365\text{ kN/m}$) drives
 
 ---
 
-### PROBLEM 3: Automotive Engine Control (ECU) PCB Base Isolation
-**Source Reference:** S. S. Rao, *Mechanical Vibrations* (6th Ed.), Chapter 9 (Vibration Control), Examples 9.10 & 9.11 (pp. 868–871).
+### PROBLEM 3: Wind-Blast Shock Response Spectrum (SRS) Analysis of an Elevated Municipal Water Tower
+**Source Reference:** S. S. Rao, *Mechanical Vibrations* (6th Ed.), Chapters 2, 4 & 9 (Examples 2.2, 2.10, Figure 9.49).
 
 #### 3.1 Physical Scenario & Problem Statement
-An engine control unit (ECU) printed circuit board made of glass-epoxy composite is mounted inside a rigid computer chassis bolted to an automobile frame. The engine operates at $N = 3600\text{ rpm}$ ($60\text{ Hz}$) and $3000\text{ rpm}$ ($50\text{ Hz}$), generating continuous harmonic base motion.
-- **Stage 1:** In Example 9.10, the PCB is clamped in a fixed-fixed configuration. Evaluate its flexural stiffness $k$, natural frequency $\omega_n$, and displacement transmissibility $T_d$.
-- **Stage 2:** In Example 9.11, the PCB is mounted as a cantilever inside a chassis ($m_c = 0.25\text{ kg}$) excited at $3000\text{ rpm}$. The unisolated transmissibility is evaluated, and an elastic-damped base isolator $(k_{\text{iso}}, c_{\text{iso}})$ is engineered between chassis and vehicle frame to enforce $T_d \le 0.10$ ($10\%$).
+A coastal municipality is constructing a $35.0\text{ m}$ elevated reinforced concrete water storage tower ($250,000\text{ L}$ capacity) to provide emergency firefighting water pressure to an industrial port facility. Because the facility is situated in a hurricane and industrial blast-hazard corridor, structural dynamics engineers must verify that the tower can survive a severe transient lateral wind-blast shock pulse without structural yielding or foundation cracking.
+- **Support Structure:** Single hollow circular reinforced concrete column fixed into a massive mat foundation, modeled as an equivalent cantilever beam carrying the lumped tank mass at the top.
+- **Dynamic Challenge:** A transient lateral aerodynamic wind blast hits the elevated tank, modeled as an undamped half-sine shock pulse of peak force $F_0 = 180\text{ kN}$ ($180,000\text{ N}$) and duration $t_0 = 1.60\text{ s}$.
 
-#### 3.2 Stage 1 Analytical Solution (Fixed-Fixed PCB at 3600 rpm)
-- Dimensions: Length $l = 0.25\text{ m}$, width $w = 0.20\text{ m}$, thickness $t = 0.003\text{ m}$, mass $m = 1.5\text{ kg}$, $E = 15\text{ GPa}$.
-- Area moment of inertia: $I = \frac{1}{12} w t^3 = \frac{1}{12}(0.20)(0.003)^3 = 4.50 \times 10^{-10}\text{ m}^4$.
-- Fixed-fixed centrally loaded stiffness:
-  $$k_{\text{PCB}} = \frac{192 E I}{l^3} = \frac{192 (15 \times 10^9)(4.50 \times 10^{-10})}{(0.25)^3} = 82,944\text{ N/m}$$
-- Modal effective lumped mass: $m_{\text{eff}} = 0.5 m = 0.75\text{ kg}$.
-- Natural frequency: $\omega_n = \sqrt{\frac{82,944}{0.75}} = 332.55\text{ rad/s}$ ($f_n = 52.93\text{ Hz}$).
-- Engine frequency at $3600\text{ rpm}$: $\omega = \frac{2\pi(3600)}{60} = 376.99\text{ rad/s}$ ($f = 60.0\text{ Hz}$).
-- Frequency ratio: $r = \frac{\omega}{\omega_n} = \frac{376.99}{332.55} = 1.1336$.
-- Displacement Transmissibility (undamped):
-  $$T_d = \frac{1}{|1 - r^2|} = \frac{1}{|1 - (1.1336)^2|} = \frac{1}{0.2851} = 3.508 \quad (\mathbf{351\%\ Resonant\ Amplification!})$$
+#### 3.2 Engineering Specifications & Section Properties
+- Column Free Height: $l = 35.0\text{ m}$ (ground foundation to tank centroid).
+- Column Outer Diameter: $D_o = 2.80\text{ m}$.
+- Column Inner Diameter: $D_i = 2.20\text{ m}$ (wall thickness $t_w = 0.30\text{ m} = 300\text{ mm}$).
+- Material: High-strength reinforced structural concrete with $E = 30.0\text{ GPa} = 30 \times 10^9\text{ N/m}^2$, mass density $\rho_c = 2,400\text{ kg/m}^3$.
+- Allowable Working Bending Stress: $\sigma_{\text{allow}} = 12.0\text{ MPa}$ under extreme lateral gust.
+- Elevated Tank Mass: $M = 265,000\text{ kg}$ ($250,000\text{ kg}$ water + $15,000\text{ kg}$ steel/concrete shell).
+- Damping Ratio: $\zeta = 0.00$ (undamped conservative SRS design envelope).
 
-#### 3.3 Stage 2 Analytical Solution (Base Isolator Design for $T_d \le 10\%$)
-- Combined rigid chassis + PCB mass: $m_{\text{total}} = m_c + m_b = 0.25 + 2.50 = 2.75\text{ kg}$.
-- Operating frequency at $3000\text{ rpm}$: $\omega = \frac{2\pi(3000)}{60} = 314.16\text{ rad/s}$.
-- Specifying isolator damping ratio $\zeta_{\text{iso}} = 0.01$ and target transmissibility $T_d = 0.10$:
-  $$T_d = \sqrt{ \frac{1 + (2\zeta r)^2}{(1 - r^2)^2 + (2\zeta r)^2} } \approx \frac{1}{r^2 - 1} = 0.10 \implies r^2 - 1 = 10 \implies r = \sqrt{11} = 3.3175$$
-- Required isolator natural frequency:
-  $$\omega_{n,\text{iso}} = \frac{\omega}{r} = \frac{314.16}{3.3175} = 94.70\text{ rad/s} \quad (f_{n,\text{iso}} = 15.07\text{ Hz})$$
-- Required Isolator Spring Stiffness:
-  $$k_{\text{isolator}} = m_{\text{total}} \cdot (\omega_{n,\text{iso}})^2 = (2.75\text{ kg})(94.70\text{ rad/s})^2 = 24,662\text{ N/m} = \mathbf{24.66\ kN/m}$$
-- Required Isolator Damping Constant:
-  $$c_{\text{isolator}} = 2 \zeta_{\text{iso}} m_{\text{total}} \omega_{n,\text{iso}} = 2(0.01)(2.75)(94.70) = \mathbf{5.21\ N\cdot s/m}$$
+**Geometric Cross-Section Calculations:**
+- Cross-sectional Area:
+  $$A = \frac{\pi}{4}\left(D_o^2 - D_i^2\right) = \frac{\pi}{4}\left(2.80^2 - 2.20^2\right) = 2.3562\text{ m}^2$$
+- Area Moment of Inertia:
+  $$I = \frac{\pi}{64}\left(D_o^4 - D_i^4\right) = \frac{\pi}{64}\left(2.80^4 - 2.20^4\right) = \frac{\pi}{64}(61.4656 - 23.4256) = 1.8673\text{ m}^4$$
+- Distance to Outer Fiber:
+  $$c = \frac{D_o}{2} = 1.40\text{ m}$$
+- Column Lateral Bending Stiffness ($k$):
+  $$k = \frac{3 E I}{l^3} = \frac{3(30.0 \times 10^9\text{ N/m}^2)(1.8673\text{ m}^4)}{(35.0\text{ m})^3} = \frac{1.6806 \times 10^{11}}{42,875} = 3.9197 \times 10^6\text{ N/m} \quad (3,919.7\text{ kN/m})$$
+
+#### 3.3 Continuous Column Inertia & Effective Modal Mass ($M_{\text{eff}}$ via Rayleigh's Method)
+Unlike simplified models that neglect tower self-weight, the $35\text{ m}$ concrete shaft carries substantial distributed mass:
+- Total Column Mass:
+  $$m_{\text{col}} = \rho_c A l = (2,400\text{ kg/m}^3)(2.3562\text{ m}^2)(35.0\text{ m}) = 197,920\text{ kg}$$
+- Applying Rayleigh's quotient with the static cantilever deflection shape $y(s) = \frac{y_{\max} s^2}{2 l^3}(3l - s)$ (Rao Ex. 2.10), the distributed column contributes $\frac{33}{140} \approx 0.2357$ of its total mass to the equivalent lumped tip mass:
+  $$M_{\text{eff}} = M + \frac{33}{140} m_{\text{col}} = 265,000\text{ kg} + \frac{33}{140}(197,920\text{ kg}) = 265,000 + 46,653 = 311,653\text{ kg}$$
+
+#### 3.4 Fundamental Dynamic Properties & Static Deflection
+- Undamped Circular Natural Frequency:
+  $$\omega_n = \sqrt{\frac{k}{M_{\text{eff}}}} = \sqrt{\frac{3.9197 \times 10^6\text{ N/m}}{311,653\text{ kg}}} = \sqrt{12.5771} = 3.5464\text{ rad/s}$$
+- Cyclic Natural Frequency:
+  $$f_n = \frac{\omega_n}{2\pi} = \frac{3.5464}{2\pi} = 0.5644\text{ Hz}$$
+- Natural Vibration Period:
+  $$\tau_n = \frac{2\pi}{\omega_n} = \frac{2\pi}{3.5464\text{ rad/s}} = 1.7717\text{ s}$$
+- Static Tip Deflection under Peak Force $F_0 = 180\text{ kN}$:
+  $$\delta_{\text{st}} = \frac{F_0}{k} = \frac{180,000\text{ N}}{3.9197 \times 10^6\text{ N/m}} = 0.04592\text{ m} \quad (45.92\text{ mm})$$
+
+#### 3.5 Shock Response Spectrum (SRS) Evaluation
+The wind blast is characterized by an undamped half-sine pulse:
+$$F(t) = \begin{cases} F_0 \sin(\omega_p t), & 0 \le t \le t_0, \quad \omega_p = \frac{\pi}{t_0} = 1.9635\text{ rad/s} \\ 0, & t > t_0 \end{cases}$$
+- Dimensionless Pulse-to-Period Ratio:
+  $$\beta = \frac{t_0}{\tau_n} = \frac{1.60\text{ s}}{1.7717\text{ s}} = 0.9031$$
+- Frequency Ratio:
+  $$r_p = \frac{\omega_p}{\omega_n} = \frac{1}{2\beta} = \frac{1}{2(0.9031)} = 0.5536$$
+
+**Primary Era Response ($0 \le t \le t_0$ — During Gust):**
+- Dynamic response time history from rest:
+  $$\frac{x(t)}{\delta_{\text{st}}} = \frac{1}{1 - \left(\frac{1}{2\beta}\right)^2} \left[ \sin\left(\frac{\pi t}{t_0}\right) - \frac{1}{2\beta} \sin(\omega_n t) \right]$$
+- Peak response time inside forced interval ($\dot{x}(t_m) = 0$, valid for $\beta \ge 0.5$):
+  $$t_m = \frac{2 t_0}{2\beta + 1} = \frac{2(1.60\text{ s})}{2(0.9031) + 1} = \frac{3.20}{2.8062} = 1.1403\text{ s} < t_0$$
+- Primary Shock Response Spectrum formula (Rao Fig. 9.49c):
+  $$\text{DLF}_{\text{primary}}(\beta) = \frac{2\beta}{|2\beta - 1|} \left| \sin\left(\frac{2\pi}{2\beta + 1}\right) \right|$$
+  $$\text{DLF}_{\text{primary}}(0.9031) = \frac{2(0.9031)}{|2(0.9031) - 1|} \sin\left(\frac{2\pi}{2(0.9031)+1}\right) = (2.2404)(0.7850) = \mathbf{1.7587}$$
+
+**Residual Era Response ($t > t_0$ — Free Vibration After Gust):**
+- Residual Shock Response Spectrum formula:
+  $$\text{DLF}_{\text{residual}}(\beta) = \frac{4\beta}{|1 - 4\beta^2|} |\cos(\pi\beta)|$$
+  $$\text{DLF}_{\text{residual}}(0.9031) = \frac{4(0.9031)}{|1 - 4(0.9031)^2|} |\cos(0.9031\pi)| = \frac{3.6124}{2.2624}(0.9539) = \mathbf{1.5231}$$
+
+**Governing Dynamic Load Factor:**
+$$\mathbf{DLF} = \max(\text{DLF}_{\text{primary}}, \text{DLF}_{\text{residual}}) = \max(1.7587, 1.5231) = \mathbf{1.7587}$$
+*Engineering Insight:* Because $\beta = 0.9031$, the gust operates directly adjacent to the global peak of the half-sine SRS curve ($\text{DLF}_{\max} \approx 1.768$ at $\beta \approx 0.81$), amplifying static structural stresses by nearly $76\%$.
+
+#### 3.6 Structural Response & Design Safety Certification
+Using governing $\text{DLF} = 1.7587$:
+1. **Maximum Dynamic Tip Deflection ($x_{\max}$):**
+   $$x_{\max} = \text{DLF} \cdot \delta_{\text{st}} = (1.7587)(0.04592\text{ m}) = \mathbf{0.08076\text{ m}} \quad (80.76\text{ mm})$$
+2. **Peak Tank Horizontal Acceleration ($\ddot{x}_{\max}$):**
+   $$\ddot{x}_{\max} = \omega_n^2 x_{\max} = (3.5464\text{ rad/s})^2(0.08076\text{ m}) = \mathbf{1.0157\text{ m/s}^2} \quad (0.1035g)$$
+3. **Maximum Column Base Shear Force ($V_{\max}$):**
+   $$V_{\max} = k x_{\max} = \text{DLF} \cdot F_0 = (1.7587)(180,000\text{ N}) = \mathbf{316.57\text{ kN}}$$
+4. **Maximum Foundation Overturning Bending Moment ($M_{b,\max}$):**
+   $$M_{b,\max} = V_{\max} \cdot l = (316.57\text{ kN})(35.0\text{ m}) = \mathbf{11,079.8\text{ kN}\cdot\text{m}} \quad (1.108 \times 10^7\text{ N}\cdot\text{m})$$
+5. **Maximum Column Base Bending Stress ($\sigma_{\max}$):**
+   $$\sigma_{\max} = \frac{M_{b,\max} c}{I} = \frac{(1.1080 \times 10^7\text{ N}\cdot\text{m})(1.40\text{ m})}{1.8673\text{ m}^4} = \mathbf{8.307\text{ MPa}}$$
+6. **Structural Safety Verification:**
+   $$\sigma_{\max} = 8.31\text{ MPa} \le \sigma_{\text{allow}} = 12.0\text{ MPa} \implies \mathbf{FS} = \frac{12.0}{8.307} = \mathbf{1.44} \quad [\checkmark\ \mathbf{SAFE\ —\ CERTIFIED}]$$
+
+#### 3.7 Parametric Sensitivity Across Blast Regimes
+- **Short Blast Gust ($t_0 = 0.40\text{ s}$):** $\beta = 0.2258 \implies \text{DLF} = 0.862$ (residual peak governs; impulse-controlled response, $\sigma_{\max} = 4.07\text{ MPa}$).
+- **Zero-Node Gust ($t_0 = 2.66\text{ s}$):** $\beta = 1.5000 \implies \text{DLF} = 1.000$ (residual vibration vanishes identically since $\cos(1.5\pi) = 0$; $\sigma_{\max} = 4.72\text{ MPa}$).
 
 ---
 
@@ -461,8 +518,8 @@ Problem 1 serves as the anchor thread weaving through the entire 45-minute prese
 │ - Proving safety at d = 0.6 in (15.24 mm) with σ = 25.66 ksi ≤ 26.0 ksi.        │
 │ - Seismic Crane Trolley Derailment: Normal reaction N_min = m(g - S_a) and      │
 │   counter-intuitive stiffness ceiling k < 365 kN/m.                            │
-│ - Automotive ECU PCB Isolation: Resonant amplification (351%) vs isolator design│
-│   enforcing T_d ≤ 10%.                                                         │
+│ - Municipal Water Tower Blast: Wind gust DLF = 1.76 near-resonance amplification│
+│   and concrete bending stress survival (σ_max = 8.31 MPa ≤ 12.0 MPa).          │
 │ - Audience Live Quiz Sync via Mobile WebSocket Companion.                       │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```

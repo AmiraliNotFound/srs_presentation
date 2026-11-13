@@ -14,7 +14,7 @@ Allocated Time: 60 s
   - Discrete step-by-step sequential revelation controlled via laptop clicks:
       Step 1 (0.0s - 3.0s): Case 1: Helicopter Drop-Box (d = 0.60'' certified safe)
       Step 2 (3.0s - 6.0s): Case 2: Overhead Crane Derailment (k < 365 kN/m no derailment)
-      Step 3 (6.0s - 9.0s): Case 3: Automotive ECU Base Isolator (Td <= 10% 90% attenuation)
+      Step 3 (6.0s - 9.0s): Case 3: Water Tower Blast (DLF = 1.76, FS = 1.44 certified safe)
       Step 4 (9.0s - 12.5s): Triad Certification Glow, University of Tehran & Open for Questions
 """
 
@@ -123,19 +123,19 @@ class MasterSummaryScene(Scene):
         case2_content = VGroup(c2_header, c2_row1, c2_row2, c2_row3, c2_row4, c2_badge, c2_subbadge)
 
         # ------------------------------------------------------------------
-        # CASE 3: AUTOMOTIVE ECU BASE ISOLATOR (6.0s - 9.0s)
+        # CASE 3: MUNICIPAL WATER TOWER WIND BLAST SRS (6.0s - 9.0s)
         # ------------------------------------------------------------------
         x3 = x_centers[2]
-        c3_header = make_badge(r"\mathbf{Case\ 3:\ ECU\ Isolator}", UT_BLUE, width=3.95, height=0.54, font_size=23)
+        c3_header = make_badge(r"\mathbf{Case\ 3:\ Water\ Tower\ Blast}", UT_BLUE, width=3.95, height=0.54, font_size=22)
         c3_header.move_to([x3, 1.82, 0])
 
-        c3_row1 = MathTex(r"r \ge \sqrt{11} = 3.32 \implies \omega_{n,\text{iso}} = 15.1\text{ Hz}", font_size=21, color=UT_BLUE).move_to([x3, 1.25, 0])
-        c3_row2 = MathTex(r"k_{\text{iso}} = 24.66\text{ kN/m} \quad (4 \times 6.17)", font_size=22, color=CYAN).move_to([x3, 0.72, 0])
-        c3_row3 = MathTex(r"c_{\text{iso}} = 5.21\text{ N}\cdot\text{s/m} \quad (\zeta = 0.01)", font_size=22, color=AMBER).move_to([x3, 0.18, 0])
-        c3_row4 = MathTex(r"T_d \le 10\% \implies -90\%\ \text{Vibration}", font_size=22, color=GREEN_PASS).move_to([x3, -0.36, 0])
-        c3_badge = make_badge(r"\checkmark\ \mathbf{90\%\ ATTENUATION}", GREEN_PASS, width=3.95, height=0.56, font_size=23, fill_color=PASS_BG, stroke_width=2.6)
+        c3_row1 = MathTex(r"\tau_n = 1.77\text{ s}, \quad M_{\text{eff}} = 311.7\text{ t}", font_size=22, color=UT_BLUE).move_to([x3, 1.25, 0])
+        c3_row2 = MathTex(r"t_0 = 1.60\text{ s} \implies \beta = 0.9031", font_size=22, color=CYAN).move_to([x3, 0.72, 0])
+        c3_row3 = MathTex(r"\mathbf{DLF} = 1.76 \implies x_{\max} = 80.8\text{ mm}", font_size=22, color=TEXT_WHITE).move_to([x3, 0.18, 0])
+        c3_row4 = MathTex(r"\sigma_{\max} = 8.31\text{ MPa} \le 12.0\text{ MPa}", font_size=22, color=GREEN_PASS).move_to([x3, -0.36, 0])
+        c3_badge = make_badge(r"\checkmark\ \mathbf{SRS\ CERTIFIED}", GREEN_PASS, width=3.95, height=0.56, font_size=23, fill_color=PASS_BG, stroke_width=2.6)
         c3_badge.move_to([x3, -1.02, 0])
-        c3_subbadge = MathTex(r"\text{Solder Fatigue Eliminated}", font_size=19, color=SLATE).move_to([x3, -1.62, 0])
+        c3_subbadge = MathTex(r"\text{FS} = 1.44 \quad (\text{Blast Resilient})", font_size=19, color=SLATE).move_to([x3, -1.62, 0])
 
         case3_content = VGroup(c3_header, c3_row1, c3_row2, c3_row3, c3_row4, c3_badge, c3_subbadge)
 

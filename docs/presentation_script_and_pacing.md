@@ -6,7 +6,7 @@
 **Academic Speakers:**
 - **Speaker 1 (00:00 – 15:00):** *Physical Intuition, Shock Taxonomy, SDOF Rayleigh Modeling & The Circular Design Dilemma*
 - **Speaker 2 (15:00 – 30:00):** *Mathematical Rigor, Laplace Transfer Functions, Duhamel Convolution & Canonical SRS Derivations*
-- **Speaker 3 (30:00 – 45:00):** *Design Resolution, Seismic Derailment Analysis, ECU Base Isolation & Interactive Mobile Quiz Synthesis*
+- **Speaker 3 (30:00 – 45:00):** *Design Resolution, Seismic Derailment Analysis, Municipal Tower Wind Blast SRS & Interactive Mobile Quiz Synthesis*
 
 ---
 
@@ -31,9 +31,9 @@
 | **15** | `SLIDE-15` | Person 3 | 32:30 – 35:00 | 02:30 | Sizing Bracket Thickness: $d = 0.4'', 0.5'', 0.6''$ | `StressVerificationScene` | — |
 | **16** | `SLIDE-16` | Person 3 | 35:00 – 37:30 | 02:30 | Case Study 2: EOT Crane Vertical Seismic Derailment | `CraneSeismicScene` | — |
 | **17** | `SLIDE-17` | Person 3 | 37:30 – 40:00 | 02:30 | Counter-Intuitive Stiffness: Why Softer Girders Save Cranes | `CraneStiffnessLimitScene` | **Quiz 3: Girder Stiffness & Derailment** |
-| **18** | `SLIDE-18` | Person 3 | 40:00 – 42:00 | 02:00 | Case Study 3: Automotive ECU PCB Resonant Amplification | `ECUResonanceScene` | — |
-| **19** | `SLIDE-19` | Person 3 | 42:00 – 44:00 | 02:00 | Base Isolator Design: Enforcing Transmissibility $T_d \le 10\%$ | `ECUIsolatorScene` | — |
-| **20** | `SLIDE-20` | Person 3 | 44:00 – 45:00 | 01:00 | Master Synthesis, Mobile Quiz Leaderboard & Q&A | `MasterSummaryScene` | **Live Q&A / Polling Summary** |
+| **18** | `SLIDE-19` | Person 3 | 40:00 – 42:00 | 02:00 | Case Study 3: Municipal Tower Wind Blast SDOF Modeling | `WindBlastModelScene` | — |
+| **19** | `SLIDE-20` | Person 3 | 42:00 – 44:00 | 02:00 | Shock Response Spectrum (SRS) Evaluation & Structural Survival | `WindBlastSRSScene` | — |
+| **20** | `SLIDE-21` | Person 3 | 44:00 – 45:00 | 01:00 | Master Synthesis, Mobile Quiz Leaderboard & Q&A | `MasterSummaryScene` | **Live Q&A / Polling Summary** |
 
 ---
 
@@ -53,7 +53,7 @@
   > *In mechanical systems ranging from satellite launch fairings to aircraft avionics and earthquake-resistant industrial cranes, structures rarely fail from gentle cyclic oscillations alone. Instead, catastrophic failure is frequently dictated by sudden, violent transient shocks—millisecond events that shatter traditional quasi-static assumptions.*  
   > *Our 45-minute lecture is structured into three unified acts. I will introduce the fundamental physical differences between steady-state vibration and transient shock, define testing standards, and establish our core motivating engineering problem—a helicopter avionics drop-box container.*  
   > *Then, my colleague will take over to construct the rigorous mathematical framework: the Laplace transfer function, Duhamel convolution, dual temporal eras, and the analytical derivation of the SRS curve.*  
-  > *Finally, our third speaker will close the loop, solving our motivating design dilemma and analyzing two additional industrial case studies: vertical earthquake derailment of an overhead crane, and elastomeric base isolation of an automotive ECU. Let us begin."*
+  > *Finally, our third speaker will close the loop, solving our motivating design dilemma and analyzing two additional industrial case studies: vertical earthquake derailment of an overhead crane, and wind-blast shock response spectrum analysis of an elevated municipal water tower. Let us begin."*
 - **Visual Cue / Presenter Directives:**
   - `[00:00]` Stand centered; click to advance title animation.
   - `[00:45]` Point laser toward the 3-speaker roadmap cards on the right display.
@@ -469,71 +469,69 @@
 
 ---
 
-### SLIDE-18: Case Study 3: Automotive ECU PCB Resonant Amplification
+### SLIDE-19: Case Study 3: Municipal Water Tower Wind Blast SDOF Modeling
 - **Time Window:** `[40:00 – 42:00]` (Duration: 120 s)
 - **Speaker:** Person 3
-- **Visual Asset:** `ECUResonanceScene` (Automobile engine bay cutaway: Engine block vibrating at 3600 rpm transmitting base motion into an unisolated ECU enclosure; PCB bending with 351% resonant displacement amplification).
-- **Curricular Anchors:** S. S. Rao Chapter 9 (Vibration Control), Example 9.10 (pp. 868–869).
+- **Visual Asset:** `WindBlastModelScene` (Elevated municipal water tower schematic: $35.0\text{ m}$ hollow concrete column, $250,000\text{ L}$ tank mass, Rayleigh column modal inertia; transient lateral wind blast pulse $F(t) = F_0 \sin(\omega_p t)$ of duration $t_0 = 1.60\text{ s}$ striking the tank).
+- **Curricular Anchors:** S. S. Rao Chapters 2, 4 & 9 (Examples 2.2, 2.10, Figure 9.49).
 - **Analytical Parameters:**
-  - PCB Dimensions: Glass-epoxy plate, $l = 0.25\text{ m}$, $w = 0.20\text{ m}$, $t = 0.003\text{ m}$
-  - Mass: $m = 1.5\text{ kg}$, $E = 15\text{ GPa}$, $I = \frac{1}{12} w t^3 = 4.50 \times 10^{-10}\text{ m}^4$
-  - Fixed-Fixed Bending Stiffness: $k_{\text{PCB}} = \frac{192 E I}{l^3} = 82,944\text{ N/m}$
-  - Effective Lumped Mass: $m_{\text{eff}} = 0.5 m = 0.75\text{ kg}$
-  - Natural Frequency: $\omega_n = \sqrt{82,944 / 0.75} = 332.55\text{ rad/s}$ ($f_n = 52.93\text{ Hz}$)
-  - Engine Operating Speed: $3600\text{ rpm} \implies \omega = 376.99\text{ rad/s}$ ($f = 60\text{ Hz}$)
-  - Frequency Ratio: $r = \frac{376.99}{332.55} = 1.1336$
-  - Displacement Transmissibility: $T_d = \frac{1}{|1 - r^2|} = \frac{1}{|1 - (1.1336)^2|} = \mathbf{3.508} \quad (\mathbf{351\% \text{ Amplification!}})$
+  - Column Height & Geometry: $l = 35.0\text{ m}$, $D_o = 2.80\text{ m}$, $D_i = 2.20\text{ m}$, wall $t_w = 0.30\text{ m}$
+  - Material: Reinforced concrete, $E = 30.0\text{ GPa}$, $\rho_c = 2,400\text{ kg/m}^3$, $\sigma_{\text{allow}} = 12.0\text{ MPa}$
+  - Stiffness: $I = 1.8673\text{ m}^4$, $k = \frac{3EI}{l^3} = 3.9197 \times 10^6\text{ N/m} = 3,919.7\text{ kN/m}$
+  - Mass Reduction: Tank mass $M = 265,000\text{ kg}$, column mass $m_{\text{col}} = 197,920\text{ kg}$
+  - Rayleigh Equivalent Mass: $M_{\text{eff}} = M + \frac{33}{140}m_{\text{col}} = 311,653\text{ kg}$
+  - Fundamental Frequency & Period: $\omega_n = 3.5464\text{ rad/s}$ ($f_n = 0.5644\text{ Hz}$), $\tau_n = 1.7717\text{ s}$
+  - Wind Blast Pulse: Half-sine pulse $F_0 = 180\text{ kN}$, $t_0 = 1.60\text{ s}$, $\omega_p = \pi/t_0 = 1.9635\text{ rad/s}$
+  - Static Tip Deflection: $\delta_{\text{st}} = F_0 / k = 0.04592\text{ m} = 45.92\text{ mm}$
+  - Pulse Ratio: $\beta = t_0 / \tau_n = 1.60 / 1.7717 = \mathbf{0.9031}$
 - **Fragment Sequence:**
-  1. Fixed-fixed PCB structural properties and modal effective mass reduction ($m_{\text{eff}} = 0.5m$).
-  2. Fundamental frequency calculation: $\omega_n = 332.55\text{ rad/s}$ ($52.9\text{ Hz}$).
-  3. Operating frequency at $3600\text{ rpm}$: $\omega = 376.99\text{ rad/s}$ ($60\text{ Hz}$).
-  4. Transmissibility calculation: $T_d = 3.51$, causing severe solder fatigue.
+  1. Municipal water tower geometry and Rayleigh distributed mass reduction ($M_{\text{eff}} = 311.65\text{ t}$).
+  2. Cantilever lateral stiffness ($k = 3,919.7\text{ kN/m}$) and fundamental period ($\tau_n = 1.772\text{ s}$).
+  3. Dynamic wind-blast pulse profile ($F_0 = 180\text{ kN}$, $t_0 = 1.60\text{ s}$).
+  4. Dimensionless pulse ratio $\beta = t_0/\tau_n = 0.903$, identifying the dynamic shock regime.
 - **Spoken Script:**
-  > *"Our third and final case study addresses automotive electronics packaging: an Engine Control Unit (ECU) printed circuit board under base excitation, from Rao Examples 9.10 and 9.11.*  
-  > *Modern vehicles house microcontrollers inside rigid aluminum enclosures bolted near the engine bay. The engine operates across speeds of 3000 to 3600 rpm, generating continuous harmonic base vibration.*  
-  > *In Rao Example 9.10, the PCB is clamped at both ends inside the chassis. Using plate bending formulas, the clamped stiffness is $k = \frac{192EI}{l^3} = 82,944\text{ N/m}$, and the effective fundamental mass is half the board mass: $0.75\text{ kg}$.*  
-  > *This produces a natural frequency of $\omega_n = 332.55\text{ rad/s}$—or $52.9\text{ Hz}$.*  
-  > *Now evaluate what happens when the engine runs at $3600\text{ rpm}$: the excitation frequency is $\omega = \frac{2\pi(3600)}{60} = 376.99\text{ rad/s}$ ($60\text{ Hz}$).*  
-  > *The frequency ratio is $r = \omega / \omega_n = 1.1336$.*  
-  > *Look at how close this is to unity! Evaluating displacement transmissibility:*  
-  > *$T_d = \frac{1}{|1 - r^2|} = \frac{1}{|1 - 1.285|} = 3.508$.*  
-  > *The PCB experiences **351% resonant amplification** of the engine motion! Surface-mount IC solder joints will suffer rapid fatigue cracking within hours of operation. How do we fix this?"*
+  > *"Our third and final case study turns to heavy civil infrastructure: an elevated municipal water storage tower subjected to an extreme transient wind-blast gust, adapted from Rao Examples 2.2, 2.10, and Figure 9.49.*  
+  > *In coastal industrial zones, elevated municipal towers provide emergency firefighting water pressure. We examine a 35-meter reinforced concrete tower holding a 250,000-liter storage tank.*  
+  > *The support pedestal is a hollow concrete shaft with outer diameter 2.8 meters and wall thickness 300 mm. Its cantilever lateral stiffness is $k = \frac{3EI}{l^3} = 3,919.7\text{ kN/m}$.*  
+  > *Unlike simplified problems that neglect structural self-weight, the 35-meter concrete shaft weighs nearly 198 metric tons. Applying Rayleigh's energy method, the column adds $\frac{33}{140}$ of its distributed mass to the top, yielding an effective modal mass $M_{\text{eff}} = 311,653\text{ kg}$.*  
+  > *This yields a fundamental circular natural frequency of $\omega_n = 3.546\text{ rad/s}$, corresponding to a natural period of $\tau_n = 1.772\text{ seconds}$.*  
+  > *Now, consider the extreme wind-blast gust: an undamped half-sine pressure shock with peak force $F_0 = 180\text{ kN}$ lasting $t_0 = 1.60\text{ seconds}$.*  
+  > *Dividing pulse duration by the tower's natural period gives the critical dimensionless ratio: $\beta = t_0 / \tau_n = 1.60 / 1.772 = 0.9031$.*  
+  > *Notice that $\beta$ is extremely close to unity! In the next slide, we project this operating point onto the Shock Response Spectrum to determine whether the tower survives or yields."*
 
 ---
 
-### SLIDE-19: Base Isolator Sizing: Enforcing Transmissibility $T_d \le 10\%$
+### SLIDE-20: Shock Response Spectrum (SRS) Evaluation & Structural Survival
 - **Time Window:** `[42:00 – 44:00]` (Duration: 120 s)
 - **Speaker:** Person 3
-- **Visual Asset:** `ECUIsolatorScene` (Chassis mounted on 4 elastomeric shock mounts; transmissibility curve $T_d(r)$ highlighting the isolation zone $r > \sqrt{2}$ and pinning the operating point at $r = \sqrt{11} \approx 3.32$).
-- **Curricular Anchors:** S. S. Rao Example 9.11 (pp. 870–871).
-- **Isolator Design Formulations:**
-  $$m_{\text{total}} = m_{\text{chassis}} + m_{\text{PCB}} = 0.25 + 2.50 = 2.75\text{ kg}, \quad \omega = 3000\text{ rpm} = 314.16\text{ rad/s}$$
-  $$T_d \approx \frac{1}{r^2 - 1} \le 0.10 \implies r^2 - 1 \ge 10 \implies r \ge \sqrt{11} \approx 3.3175$$
-  $$\omega_{n,\text{iso}} = \frac{\omega}{r} = \frac{314.16}{3.3175} = 94.70\text{ rad/s} \quad (f_{n,\text{iso}} = 15.07\text{ Hz})$$
-  $$k_{\text{isolator}} = m_{\text{total}} (\omega_{n,\text{iso}})^2 = (2.75\text{ kg})(94.70\text{ rad/s})^2 = \mathbf{24.66\text{ kN/m}}$$
-  $$c_{\text{isolator}} = 2 \zeta_{\text{iso}} m_{\text{total}} \omega_{n,\text{iso}} = 2(0.01)(2.75)(94.70) = \mathbf{5.21\text{ N}\cdot\text{s/m}}$$
+- **Visual Asset:** `WindBlastSRSScene` (Canonical half-sine Shock Response Spectrum curve $\text{DLF}(\beta)$; locating the tower operating point at $\beta = 0.9031 \implies \mathbf{DLF} = 1.7587$; calculation of dynamic tip deflection $x_{\max} = 80.76\text{ mm}$, base overturning moment $M_{b,\max} = 11,080\text{ kN}\cdot\text{m}$, and base bending stress $\sigma_{\max} = 8.31\text{ MPa} \le 12.0\text{ MPa}$ certified safe with $\text{FS} = 1.44$).
+- **Curricular Anchors:** S. S. Rao Chapter 4 & Chapter 9, Figure 9.49.
+- **SRS Design Formulations:**
+  $$\beta = \frac{t_0}{\tau_n} = 0.9031 \implies t_m = \frac{2t_0}{2\beta+1} = 1.1403\text{ s} < t_0$$
+  $$\text{DLF}_{\text{primary}}(\beta) = \frac{2\beta}{|2\beta-1|} \left| \sin\left(\frac{2\pi}{2\beta+1}\right)\right| = \mathbf{1.7587} \quad (\text{Governs})$$
+  $$\text{DLF}_{\text{residual}}(\beta) = \frac{4\beta}{|1-4\beta^2|} |\cos(\pi\beta)| = 1.5231$$
+  $$x_{\max} = \text{DLF} \cdot \delta_{\text{st}} = (1.7587)(0.04592\text{ m}) = \mathbf{80.76\text{ mm}}$$
+  $$V_{\max} = \text{DLF} \cdot F_0 = \mathbf{316.57\text{ kN}}, \quad M_{b,\max} = V_{\max} \cdot l = \mathbf{11,079.8\text{ kN}\cdot\text{m}}$$
+  $$\sigma_{\max} = \frac{M_{b,\max} c}{I} = \mathbf{8.307\text{ MPa}} \le \sigma_{\text{allow}} = 12.0\text{ MPa} \implies \mathbf{FS = 1.44} \quad [\checkmark\ \text{SAFE}]$$
 - **Fragment Sequence:**
-  1. The Base Isolation Principle: To attenuate motion ($T_d < 1$), the frequency ratio must exceed $\sqrt{2}$.
-  2. Isolator specification: Targeting $T_d = 10\%$ ($0.10$) at $3000\text{ rpm}$ requires $r = \sqrt{11} \approx 3.32$.
-  3. Tuning stiffness: $k_{\text{iso}} = 24.66\text{ kN/m}$ ($6.16\text{ kN/m}$ per corner mount).
-  4. Tuning damping: $c_{\text{iso}} = 5.21\text{ N}\cdot\text{s/m}$ with $\zeta = 0.01$.
+  1. Plotting the canonical half-sine SRS curve ($\text{DLF}$ vs. $t_0/\tau_n$).
+  2. Pinpointing tower operating point at $\beta = 0.9031$, highlighting primary era dynamic overshoot ($\text{DLF} = 1.759$).
+  3. Dynamic response evaluation: $x_{\max} = 80.76\text{ mm}$, $M_{b,\max} = 11,080\text{ kN}\cdot\text{m}$.
+  4. Working stress safety certification: $\sigma_{\max} = 8.31\text{ MPa} \le 12.0\text{ MPa}$, $\text{FS} = 1.44$ Certified Safe.
 - **Spoken Script:**
-  > *"In Rao Example 9.11, rather than altering the internal PCB, we install four elastomeric base isolators between the ECU chassis and the vehicle frame.*  
-  > *The combined mass of the chassis and board is $2.75\text{ kg}$. The engine operates at $3000\text{ rpm}$, giving $\omega = 314.16\text{ rad/s}$.*  
-  > *Our engineering requirement is strict: reduce motion transmission to no more than 10% ($T_d \le 0.10$).*  
-  > *Recall the fundamental vibration isolation criterion: isolation occurs **only when $r > \sqrt{2}$**.*  
-  > *Setting $T_d = \frac{1}{r^2 - 1} = 0.10$, we find that $r^2 - 1 = 10$, which requires a frequency ratio of $r = \sqrt{11} \approx 3.3175$.*  
-  > *This immediately dictates the required isolator natural frequency:*  
-  > *$\omega_{n,\text{iso}} = \frac{314.16}{3.3175} = 94.70\text{ rad/s}$—or $15.07\text{ Hz}$.*  
-  > *Now, we size the isolator spring stiffness:*  
-  > *$k_{\text{iso}} = m_{\text{total}} \cdot \omega_{n,\text{iso}}^2 = (2.75)(94.70)^2 = 24,662\text{ N/m} = \mathbf{24.66\text{ kN/m}}$.*  
-  > *Divided across four corner mounts, each elastomer pad requires a stiffness of $6.16\text{ kN/m}$.*  
-  > *Adding a light damping ratio of $\zeta = 1\%$ to control startup resonance gives $c_{\text{iso}} = 2\zeta m \omega_n = \mathbf{5.21\text{ N}\cdot\text{s/m}}$.*  
-  > *By tuning $(k_{\text{iso}}, c_{\text{iso}})$, 90% of dynamic shock and vibration is absorbed before it ever reaches the sensitive silicon circuitry."*
+  > *"To evaluate the dynamic overshoot, we turn to the analytical Shock Response Spectrum for a half-sine shock pulse, derived by Person 2.*  
+  > *Because $\beta = 0.9031$ exceeds $0.5$, the peak response occurs during the active gust at $t_m = \frac{2t_0}{2\beta+1} = 1.140\text{ seconds}$, before the wind blast subsides.*  
+  > *Evaluating the closed-form primary SRS formula yields a governing Dynamic Load Factor of $\mathbf{DLF} = 1.7587$.*  
+  > *The tower operates right near the global peak of the half-sine SRS curve, experiencing nearly 76% dynamic magnification over the static load!*  
+  > *Under static loading of 180 kN, the tower tip would deflect $45.9\text{ mm}$. Multiplying by our DLF of 1.759 gives a peak dynamic sway of $x_{\max} = 80.76\text{ mm}$.*  
+  > *This dynamic displacement generates a base shear force of $V_{\max} = 316.57\text{ kN}$ and a massive overturning bending moment at the foundation: $M_{b,\max} = 11,080\text{ kN}\cdot\text{m}$.*  
+  > *Using the flexure formula, the maximum outer-fiber bending stress at the column root is $\sigma_{\max} = \frac{M c}{I} = 8.31\text{ MPa}$.*  
+  > *Comparing this against the permissible concrete tensile/bending limit of $12.0\text{ MPa}$ reveals a robust factor of safety of $1.44$.*  
+  > *Even under severe resonant-pulse wind blast magnification, the elevated municipal water tower is fully certified safe."*
 
 ---
 
-### SLIDE-20: Master Synthesis, Live Audience Mobile Quiz & Open Q&A
+### SLIDE-21: Master Synthesis, Live Audience Mobile Quiz & Open Q&A
 - **Time Window:** `[44:00 – 45:00]` (Duration: 60 s)
 - **Speaker:** Person 3 (with Person 1 & Person 2 returning to stage)
 - **Visual Asset:** `MasterSummaryScene` (Comprehensive 3-pillar summary dashboard displaying the 3 case studies, live QR code for student companion review, and audience quiz leaderboard).
@@ -541,14 +539,14 @@
   1. The 3-Pillar Technical Synthesis:
      - *Physics:* Shock vs. Vibration; impulsive vs. quasi-static asymptotes.
      - *Mathematics:* Laplace transform, Duhamel integral, dual temporal eras, and closed-form SRS envelopes.
-     - *Design:* Resolving circular loops, avoiding seismic derailment plateaus ($k < 365\text{ kN/m}$), and base isolation ($T_d \le 10\%$).
+     - *Design:* Resolving circular loops, avoiding seismic derailment plateaus ($k < 365\text{ kN/m}$), and wind-blast structural certification ($\sigma_{\max} = 8.31\text{ MPa} \le 12.0\text{ MPa}$).
   2. Mobile Companion Final Scoreboard reveal.
   3. Open Q&A invitation to Professor Yousefi and students.
 - **Spoken Script:**
   > *"To synthesize our 45-minute investigation into the Shock Response Spectrum:*  
   > *First, we established that transient shock cannot be designed using static safety factors. The Dynamic Load Factor reaches $2.0$ for step loads and $1.76$ for half-sine pulses.*  
   > *Second, through Laplace impedance and Duhamel convolution, we partitioned transient dynamics into Era 1 forced action and Era 2 free ringdown, proving that when pulse duration matches integer cycles, residual vibrations self-cancel.*  
-  > *Third, we resolved our motivating helicopter drop problem by certifying a 0.6-inch cantilever bracket, demonstrated why flexible crane girders survive earthquakes where stiff ones derail, and engineered elastomeric base isolators to eliminate ECU resonant fatigue.*  
+  > *Third, we resolved our motivating helicopter drop problem by certifying a 0.6-inch cantilever bracket, demonstrated why flexible crane girders survive earthquakes where stiff ones derail, and verified that elevated municipal towers withstand severe wind-blast shock pulses with a 1.44 factor of safety.*  
   > *On your mobile companion screens, the quiz leaderboard is now live. All derivations, Manim animation codes, and engineering models are open-source in our repository.*  
   > *On behalf of our entire group, thank you for your attention. We now welcome questions from Professor Yousefi and the audience."*
 
@@ -627,8 +625,8 @@
 | `SLIDE-15` | `StressVerificationScene` | 15.0 s sync | Iteration table rows filling: $d=0.4''$ (RED FAIL), $d=0.5''$ (RED FAIL), $d=0.6''$ (GREEN PASS). |
 | `SLIDE-16` | `CraneSeismicScene` | 14.0 s sync | Overhead crane bridge vibrating under vertical seismic motion; wheel normal force vector $N(t)$ fluctuating. |
 | `SLIDE-17` | `CraneStiffnessLimitScene` | 14.0 s sync | Tripartite earthquake spectrum plateau ($S_a > 1.0g$); stiffness threshold $k < 365\text{ kN/m}$ avoiding derailment. |
-| `SLIDE-18` | `ECUResonanceScene` | 12.0 s sync | Automotive engine bay; 3600 rpm base motion causing 351% resonant amplification of clamped PCB. |
-| `SLIDE-19` | `ECUIsolatorScene` | 14.0 s sync | Four elastomeric mounts installed; operating point tuned to $r=\sqrt{11} \approx 3.32$, reducing $T_d$ to $10\%$. |
+| `SLIDE-19` | `WindBlastModelScene` | 14.0 s sync | Elevated municipal water tower SDOF model; 35m hollow shaft, 250kL tank; transient wind blast pulse $F(t) = F_0\sin(\omega_p t)$. |
+| `SLIDE-20` | `WindBlastSRSScene` | 14.0 s sync | Half-sine SRS curve; tower operating point $\beta = 0.903 \implies \text{DLF} = 1.76$; base stress $\sigma_{\max} = 8.31\text{ MPa} \le 12\text{ MPa}$ certified safe. |
 | `SLIDE-20` | `MasterSummaryScene` | 8.0 s loop | 3-pillar synthesis graphic, mobile companion leaderboard, and University of Tehran closing slide. |
 
 ---
