@@ -96,7 +96,7 @@
 | **SLIDE-10** | Person 2 | Two Temporal Eras: Forced ($t \le t_0$) vs. Residual ($t > t_0$) | `DualEraPartitionScene` | [x] | [x] |
 | **SLIDE-11** | Person 2 | Rectangular Pulse Response & Peak Derivation | `RectangularPulseScene` | [x] | [x] |
 | **SLIDE-12** | Person 2 | Half-Sine Shock Pulse: Era 1 & Era 2 Analytical Solution | `HalfSineAnalyticalScene` | [x] | [x] |
-| **SLIDE-13** | Person 2 | Constructing the Shock Response Spectrum (SRS) | `SRSConstructionScene` | [ ] | [ ] |
+| **SLIDE-13** | Person 2 | Constructing the Shock Response Spectrum (SRS) | `SRSConstructionScene` | [x] | [x] |
 | **SLIDE-14** | Person 2 | Asymptotic Master Insight: Impulsive vs. Quasi-Static Limits | `AsymptoticLimitsScene` | [ ] | [ ] |
 | **SLIDE-15** | Person 3 | Hand-Off Resolution: Closing the Motivating Problem Loop | `IterativeDesignScene` | [ ] | [ ] |
 | **SLIDE-16** | Person 3 | Bracket Thickness Sizing: Evaluating $d = 0.4'', 0.5'', 0.6''$ | `StressVerificationScene` | [ ] | [ ] |
